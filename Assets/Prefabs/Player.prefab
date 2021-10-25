@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 646025803121191451}
   - component: {fileID: 646025803121191452}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: gun1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   m_Component:
   - component: {fileID: 646025803537591163}
   - component: {fileID: 646025803537591162}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: gun1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 646025803587269322}
   - component: {fileID: 646025803587269321}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: gun1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 646025803817895846}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Weapons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 646025804113597118}
   - component: {fileID: 646025804113597117}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ashe W
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 646025804223257516}
   - component: {fileID: 646025804223257510}
   - component: {fileID: 646025804223257509}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -388,7 +388,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 646025804225860272}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Skills
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -423,7 +423,7 @@ GameObject:
   - component: {fileID: 646025804312402417}
   - component: {fileID: 646025804312402418}
   - component: {fileID: 646025804312402419}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -617,7 +617,7 @@ GameObject:
   - component: {fileID: 646025804364874186}
   - component: {fileID: 646025804364874187}
   - component: {fileID: 646025804364874184}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -811,7 +811,7 @@ GameObject:
   - component: {fileID: 646025804423721500}
   - component: {fileID: 646025804423721501}
   - component: {fileID: 646025804423721502}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1001,7 +1001,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 646025804981787539}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: groundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -22,4 +22,10 @@ public class health : MonoBehaviour
         if (healthTotal <= 0)
             Destroy(gameObject);
     }
+
+    public void addHealth(int amount)
+    {
+        healthTotal = Mathf.Min(healthTotal + amount, healthMax);
+        hb.setSlider(healthTotal);
+    }
 }

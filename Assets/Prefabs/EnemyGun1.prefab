@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4816908737006556873}
   - component: {fileID: 6024579327371673776}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: gun1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,10 @@ MonoBehaviour:
   myPrefab: {fileID: 4157825302315634755, guid: e9f58bff1925f9048bad0dda02146d6b, type: 3}
   gun: {fileID: 5049360874390593251}
   player: {fileID: 0}
-  attackRange: 30
+  attackRange: 25
+  shotCooldown: 0.5
+  burstCooldown: 3
+  numShots: 3
 --- !u!1 &2409714943915585657
 GameObject:
   m_ObjectHideFlags: 0
@@ -63,7 +66,7 @@ GameObject:
   - component: {fileID: 6605778745008515546}
   - component: {fileID: 5265904755605776306}
   - component: {fileID: 6184349386221922995}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +274,7 @@ GameObject:
   - component: {fileID: 4629209664241391665}
   - component: {fileID: 3165341472467170361}
   - component: {fileID: 6464499447122092200}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Heart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +352,9 @@ GameObject:
   - component: {fileID: 3193926999558305447}
   - component: {fileID: 3193926999558305446}
   - component: {fileID: 7119801124598124876}
-  m_Layer: 0
+  - component: {fileID: 6206667575952853508}
+  - component: {fileID: 4280266946748949723}
+  m_Layer: 7
   m_Name: EnemyGun1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -463,6 +468,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+--- !u!195 &6206667575952853508
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3193926999558305441}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 8
+  m_Acceleration: 15
+  avoidancePriority: 50
+  m_AngularSpeed: 180
+  m_StoppingDistance: 20
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &4280266946748949723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3193926999558305441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bd52eb141c843c449daa7e873490fba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 6206667575952853508}
+  player: {fileID: 0}
+  maxDistance: 25
 --- !u!1 &5049360874390593251
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,7 +517,7 @@ GameObject:
   - component: {fileID: 536512750907796490}
   - component: {fileID: 1001692765854154804}
   - component: {fileID: 9054831148560607415}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -569,7 +611,7 @@ GameObject:
   - component: {fileID: 3064235865684656346}
   - component: {fileID: 7504262647635420995}
   - component: {fileID: 9063183778660571474}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -644,7 +686,7 @@ GameObject:
   - component: {fileID: 2314824586094316752}
   - component: {fileID: 6288345372997588055}
   - component: {fileID: 7600704333931391265}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
