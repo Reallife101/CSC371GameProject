@@ -19,6 +19,9 @@ public class shootEnemyGun : MonoBehaviour
 
     private int shotCounter = 0;
 
+    [SerializeField]
+    int playerLayer = 8;
+
 
 
     // Update is called once per frame
@@ -28,9 +31,12 @@ public class shootEnemyGun : MonoBehaviour
         {
             transform.LookAt(player.transform);
 
-            if (burstTimer > burstCooldown)
+            RaycastHit hit;
+
+            if (burstTimer > burstCooldown && Physics.Raycast(transform.position + Vector3.up, transform.forward, out hit, attackRange))
             {
-                if (shotTimer > shotCooldown)
+                
+                if (shotTimer > shotCooldown && hit.collider.gameObject.layer == playerLayer)
                 {
                     Instantiate(myPrefab, gun.transform.position + gun.transform.forward, gun.transform.rotation);
                     shotTimer = 0f;
