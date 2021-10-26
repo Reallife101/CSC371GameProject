@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageValue: 5
+  destroyMask: 9
 --- !u!54 &1207641567357469524
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 public class switchButton : interactable
 {
     public GameObject clickUI;
-    public lockedDoor ld;
+    public door ld;
     private bool gotten = false;
     // Start is called before the first frame update
     void Start()

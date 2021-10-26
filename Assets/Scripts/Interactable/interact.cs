@@ -7,7 +7,7 @@ public class interact : MonoBehaviour
     public LayerMask PlayerLayerMask;
     public float selectDistance = 10f;
 
-    private switchButton lastIB;
+    private interactable lastIB;
 
 
     // Start is called before the first frame update
@@ -24,9 +24,9 @@ public class interact : MonoBehaviour
         // Right
         if (Physics.Raycast(transform.position, transform.forward, out hit, selectDistance, ~PlayerLayerMask))
         {
-            if (hit.collider.gameObject.GetComponent<switchButton>())
+            if (hit.collider.gameObject.GetComponent<interactable>())
             {
-                lastIB = hit.collider.gameObject.GetComponent<switchButton>();
+                lastIB = hit.collider.gameObject.GetComponent<interactable>();
                 lastIB.selected();
             }
         }
