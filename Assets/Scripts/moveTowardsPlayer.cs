@@ -15,6 +15,8 @@ public class moveTowardsPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.LookAt(player.transform);
+
         float dist = Vector3.Distance(transform.position, player.transform.position);
         if (dist > minDistance && dist < maxDistance)
         {
