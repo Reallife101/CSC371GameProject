@@ -31,6 +31,7 @@ public class startWaves : MonoBehaviour
     public void endWaves()
     {
         walls.SetActive(false);
+        gameObject.SetActive(false);
     }
 
 }
