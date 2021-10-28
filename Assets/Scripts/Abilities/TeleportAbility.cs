@@ -8,7 +8,7 @@ public class TeleportAbility : Ability
     [SerializeField] LayerMask wallMask;
     [SerializeField] CharacterController troubleMaker;
 
-    public float range = 5f;
+    public float range = 7.5f;
 
     public override void triggerEffect(Camera cam)
     {
@@ -16,14 +16,15 @@ public class TeleportAbility : Ability
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         if(Physics.Raycast(ray, out hit, Mathf.Infinity, groundMask))
         {
+            Vector3 oldHitPoint = hit.point;
+            Debug.Log("hit1");
             if(!Physics.Raycast(ray, out hit, Mathf.Infinity, wallMask))
             {
-                if (inRange(transform.position, hit.point))
+                if (inRange(transform.position, oldHitPoint))
                 {
-                    hit.point = new Vector3(hit.point.x, hit.point.y + 0.1f, hit.point.z);
+                    hit.point = new Vector3(oldHitPoint.x, oldHitPoint.y + 0.1f, oldHitPoint.z);
                     troubleMaker.enabled = false;
                     transform.position = hit.point;
-                    troubleMaker.enabled = true;
                     troubleMaker.enabled = true;
                 }
             }
