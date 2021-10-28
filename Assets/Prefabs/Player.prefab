@@ -415,6 +415,9 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
+  wallMask:
+    serializedVersion: 2
+    m_Bits: 512
   troubleMaker: {fileID: 646025804223257515}
   range: 5
 --- !u!1 &646025804225860273

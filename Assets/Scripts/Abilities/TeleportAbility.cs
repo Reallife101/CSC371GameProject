@@ -5,6 +5,7 @@ using UnityEngine;
 public class TeleportAbility : Ability
 {
     [SerializeField] LayerMask groundMask;
+    [SerializeField] LayerMask wallMask;
     [SerializeField] CharacterController troubleMaker;
 
     public float range = 5f;
@@ -13,16 +14,18 @@ public class TeleportAbility : Ability
     {
         RaycastHit hit;
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity, groundMask))
+        if(Physics.Raycast(ray, out hit, Mathf.Infinity, groundMask))
         {
-            if (inRange(transform.position, hit.point))
+            if(!Physics.Raycast(ray, out hit, Mathf.Infinity, wallMask))
             {
-                Debug.Log("In Range");
-                hit.point = new Vector3(hit.point.x, hit.point.y + 0.1f, hit.point.z);
-                troubleMaker.enabled = false;
-                transform.position = hit.point;
-                troubleMaker.enabled = true;
-                troubleMaker.enabled = true;
+                if (inRange(transform.position, hit.point))
+                {
+                    hit.point = new Vector3(hit.point.x, hit.point.y + 0.1f, hit.point.z);
+                    troubleMaker.enabled = false;
+                    transform.position = hit.point;
+                    troubleMaker.enabled = true;
+                    troubleMaker.enabled = true;
+                }
             }
         }
     }
