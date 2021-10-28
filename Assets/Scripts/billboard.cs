@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class billboard : MonoBehaviour
 {
-    public Transform cam;
 
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(transform.position + cam.forward);
+        transform.LookAt(transform.position + Camera.main.transform.forward);
     }
 }

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class movement : MonoBehaviour
 {
-    public Camera cam;
-    public CharacterController controller;
+    private Camera cam;
+    private CharacterController controller;
 
     public float movementSpeed = 12.0f;
     public float gravity = -9.81f;
@@ -19,6 +19,12 @@ public class movement : MonoBehaviour
 
     Vector3 velocity;
     bool isGrounded;
+
+    private void Start()
+    {
+        cam = Camera.main;
+        controller = GetComponent<CharacterController>();
+    }
 
     // Update is called once per frame
     void Update()
