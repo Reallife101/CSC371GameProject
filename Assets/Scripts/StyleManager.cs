@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using EZCameraShake;
 
 public class StyleManager : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class StyleManager : MonoBehaviour
 
     public int numKills;
     private int prevKills;
+    private string prevRating;
 
     private healthBar hb;
     private GameObject ui;
@@ -46,6 +48,7 @@ public class StyleManager : MonoBehaviour
         sm = transform.parent.GetComponentInChildren<scoreManager>();
         numKills = 0;
         prevKills = 0;
+        prevRating = "";
     }
 
     // Update is called once per frame
@@ -86,6 +89,12 @@ public class StyleManager : MonoBehaviour
             rating.text = getRating(numKills);
         }
 
+        if (prevRating != rating.text)
+        {
+            CameraShaker.Instance.ShakeOnce(8f, 10f, 0.1f, .5f);
+        }
+
+        prevRating = rating.text;
         prevKills = numKills;
     }
 

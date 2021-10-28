@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class health : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class health : MonoBehaviour
         {
             Destroy(gameObject);
             sm.numKills += 1;
+            CameraShaker.Instance.ShakeOnce(1f, 10f, 0.05f, .05f);
         }
     }
 
