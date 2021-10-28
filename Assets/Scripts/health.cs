@@ -8,10 +8,13 @@ public class health : MonoBehaviour
     public int healthMax = 15;
     public int healthTotal;
     public healthBar hb;
+
+    private StyleManager sm;
     void Start()
     {
         healthTotal = healthMax;
         hb.sliderMax(healthMax);
+        sm = GameObject.FindGameObjectWithTag("StyleManager").GetComponent<StyleManager>();
     }
 
     // Update is called once per frame
@@ -20,7 +23,10 @@ public class health : MonoBehaviour
         healthTotal = healthTotal - amount;
         hb.setSlider(healthTotal);
         if (healthTotal <= 0)
+        {
             Destroy(gameObject);
+            sm.numKills += 1;
+        }
     }
 
     public void addHealth(int amount)

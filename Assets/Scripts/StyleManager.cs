@@ -11,6 +11,21 @@ public class StyleManager : MonoBehaviour
     [SerializeField]
     int pointsPerKill = 100;
 
+    [SerializeField]
+    int cRatingMin = 3;
+
+    [SerializeField]
+    int bRatingMin = 5;
+
+    [SerializeField]
+    int aRatingMin = 7;
+
+    [SerializeField]
+    int SRatingMin = 10;
+
+    [SerializeField]
+    int SSSRatingMin = 15;
+
     public int numKills;
     private int prevKills;
 
@@ -68,8 +83,35 @@ public class StyleManager : MonoBehaviour
         {
             hb.setSlider(killStreakPeriod);
             comboText.text = "Combo: " + numKills;
+            rating.text = getRating(numKills);
         }
 
         prevKills = numKills;
+    }
+
+    string getRating(int kills)
+    {
+        if (kills >=SSSRatingMin)
+        {
+            return "SSS";
+        } else if (kills >= SRatingMin)
+        {
+            return "S";
+        }
+        else if (kills >= aRatingMin)
+        {
+            return "A";
+        }
+        else if (kills >= bRatingMin)
+        {
+            return "B";
+        }
+        else if (kills >= cRatingMin)
+        {
+            return "C";
+        } else
+        {
+            return "D";
+        }
     }
 }
