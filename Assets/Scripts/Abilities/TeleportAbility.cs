@@ -10,28 +10,34 @@ public class TeleportAbility : Ability
 
     public float range = 7.5f;
 
-    public override void triggerEffect(Camera cam)
+    private void Start()
     {
-        RaycastHit hit;
+        Cooldown = 10f;
+        OnCooldown = false;
+    }
+
+    public override void TriggerEffect(Camera cam)
+    {
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        if(Physics.Raycast(ray, out hit, Mathf.Infinity, groundMask))
+        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, groundMask) & !OnCooldown)
         {
             Vector3 oldHitPoint = hit.point;
             Debug.Log("hit1");
             if(!Physics.Raycast(ray, out hit, Mathf.Infinity, wallMask))
             {
-                if (inRange(transform.position, oldHitPoint))
+                if (InRange(transform.position, oldHitPoint))
                 {
                     hit.point = new Vector3(oldHitPoint.x, oldHitPoint.y + 0.1f, oldHitPoint.z);
                     troubleMaker.enabled = false;
                     transform.position = hit.point;
                     troubleMaker.enabled = true;
+                    StartCoroutine(HandleCoolDown());
                 }
             }
         }
     }
 
-    private bool inRange(Vector3 a, Vector3 b)
+    private bool InRange(Vector3 a, Vector3 b)
     {
         float distance;
         distance = Vector3.Distance(new Vector3(a.x, 0f, a.z),

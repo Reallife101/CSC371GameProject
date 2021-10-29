@@ -24,8 +24,11 @@ public class startWaves : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        w.SetActive(true);
-        walls.SetActive(true);
+        if (other.gameObject.tag == "Player")
+        {
+            w.SetActive(true);
+            walls.SetActive(true);
+        }
     }
 
     public void endWaves()

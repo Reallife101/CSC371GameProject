@@ -24,7 +24,9 @@ public class wave : MonoBehaviour
     {
         if (transform.childCount <=0 )
         {
-            GetNext().gameObject.SetActive(true);
+            var hold = GetNext();
+            Debug.Log(hold);
+            hold.gameObject.SetActive(true);
             gameObject.SetActive(false);
 
         }
