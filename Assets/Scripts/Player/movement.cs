@@ -56,6 +56,7 @@ public class movement : MonoBehaviour
         // Adjust for camera angle
         Vector3 move = cam.transform.right * x + cam.transform.forward * z*(Mathf.Sqrt(2));
         move = new Vector3(move.x, 0f, move.z);
+        Debug.Log(move);
 
         controller.Move(move * movementSpeed * Time.deltaTime);
 
