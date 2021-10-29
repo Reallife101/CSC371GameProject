@@ -19,17 +19,17 @@ public class AbilityManager : MonoBehaviour
     {
         if(Input.GetKeyDown(moveKey))
         {
-            movement.triggerEffect(cam);
+            movement.TriggerEffect(cam);
         }
 
         if(Input.GetKeyDown(crowdKey))
         {
-            crowdCon.triggerEffect(cam);
+            crowdCon.TriggerEffect(cam);
         }
 
         if(Input.GetKeyDown(dmgKey))
         {
-            dmg.triggerEffect(cam);
+            dmg.TriggerEffect(cam);
         }
     }
 }
