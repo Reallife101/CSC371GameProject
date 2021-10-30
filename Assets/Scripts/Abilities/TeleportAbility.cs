@@ -10,7 +10,7 @@ public class TeleportAbility : Ability
 
     public float range = 7.5f;
 
-    private void Start()
+    private void Awake()
     {
         Cooldown = 10f;
         OnCooldown = false;
