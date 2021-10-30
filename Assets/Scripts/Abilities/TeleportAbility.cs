@@ -18,13 +18,15 @@ public class TeleportAbility : Ability
 
     public override void TriggerEffect(Camera cam)
     {
+        // Gets the Mouse posistion
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, groundMask) & !OnCooldown)
         {
+            // Checks if there is a wall in the ray
             Vector3 oldHitPoint = hit.point;
-            Debug.Log("hit1");
             if(!Physics.Raycast(ray, out hit, Mathf.Infinity, wallMask))
             {
+                // Checks if the point is in range
                 if (InRange(transform.position, oldHitPoint))
                 {
                     hit.point = new Vector3(oldHitPoint.x, oldHitPoint.y + 0.1f, oldHitPoint.z);
