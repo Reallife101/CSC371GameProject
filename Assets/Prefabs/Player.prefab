@@ -234,6 +234,7 @@ GameObject:
   - component: {fileID: 646025804223257509}
   - component: {fileID: 4124499525791537971}
   - component: {fileID: 6677169262280664086}
+  - component: {fileID: 3513992534329342150}
   - component: {fileID: 3997853012665630503}
   - component: {fileID: 5322976062415210143}
   m_Layer: 8
@@ -353,8 +354,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98affac2be794a74ca87c07567bb6e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  controller: {fileID: 646025804223257515}
   movementSpeed: 12
   gravity: -9.81
   jumpHeight: 3
@@ -397,7 +396,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movement: {fileID: 6677169262280664086}
   crowdCon: {fileID: 0}
-  dmg: {fileID: 0}
+  dmg: {fileID: 3513992534329342150}
   cam: {fileID: 0}
   moveKey: 49
   crowdKey: 50
@@ -414,6 +413,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58ccdc04db13f66409e3c9856d1adc75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnCooldown: 0
+  Cooldown: 0
   groundMask:
     serializedVersion: 2
     m_Bits: 64
@@ -422,6 +423,28 @@ MonoBehaviour:
     m_Bits: 512
   troubleMaker: {fileID: 646025804223257515}
   range: 7.5
+--- !u!114 &3513992534329342150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646025804223257517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9df852293c8579648abe01c4fea26ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnCooldown: 0
+  Cooldown: 0
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 64
+  wallMask:
+    serializedVersion: 2
+    m_Bits: 512
+  Range: 30
+  effectTrigger: {fileID: 643489304806779848, guid: 0e3d2b9d90bfe3544afa171323fe7986, type: 3}
 --- !u!114 &3997853012665630503
 MonoBehaviour:
   m_ObjectHideFlags: 0
