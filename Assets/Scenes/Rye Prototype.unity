@@ -7904,6 +7904,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3513992534329342150, guid: fce9283bb1fbbaf4e88f2ebb5ec599fc, type: 3}
+      propertyPath: effectTrigger
+      value: 
+      objectReference: {fileID: 643489304806779848, guid: 0e3d2b9d90bfe3544afa171323fe7986, type: 3}
     - target: {fileID: 4124499525791537971, guid: fce9283bb1fbbaf4e88f2ebb5ec599fc, type: 3}
       propertyPath: cam
       value: 
