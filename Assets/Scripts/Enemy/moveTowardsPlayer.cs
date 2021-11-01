@@ -31,4 +31,10 @@ public class moveTowardsPlayer : MonoBehaviour
             }
         }
     }
+
+    public IEnumerator freezePosition(float time)
+    {
+        Debug.Log("frozen");
+        yield return new WaitForSecondsRealtime(time);   
+    }
 }
