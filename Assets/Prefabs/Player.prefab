@@ -234,6 +234,7 @@ GameObject:
   - component: {fileID: 646025804223257509}
   - component: {fileID: 4124499525791537971}
   - component: {fileID: 6677169262280664086}
+  - component: {fileID: 4387131692540530994}
   - component: {fileID: 3513992534329342150}
   - component: {fileID: 3997853012665630503}
   - component: {fileID: 5322976062415210143}
@@ -395,7 +396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 6677169262280664086}
-  crowdCon: {fileID: 0}
+  crowdCon: {fileID: 4387131692540530994}
   dmg: {fileID: 3513992534329342150}
   cam: {fileID: 0}
   moveKey: 49
@@ -423,6 +424,28 @@ MonoBehaviour:
     m_Bits: 512
   troubleMaker: {fileID: 646025804223257515}
   range: 7.5
+--- !u!114 &4387131692540530994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646025804223257517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9443b14195d6d004688ded8d82834c24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnCooldown: 0
+  Cooldown: 0
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 64
+  wallMask:
+    serializedVersion: 2
+    m_Bits: 512
+  Range: 50
+  effectTrigger: {fileID: 6469884053731220648, guid: f17eb184021f10a43940f5990ee6bdd5, type: 3}
 --- !u!114 &3513992534329342150
 MonoBehaviour:
   m_ObjectHideFlags: 0
