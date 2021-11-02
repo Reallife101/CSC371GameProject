@@ -42,15 +42,7 @@ public class movement : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
-        // Sprint
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            movementSpeed = 24.0f;
-        }
-        else
-        {
-            movementSpeed = 12.0f;
-        }
+        movementSpeed = 12.0f;
 
         // Move Character
         // Adjust for camera angle
@@ -60,11 +52,6 @@ public class movement : MonoBehaviour
 
         controller.Move(move * movementSpeed * Time.deltaTime);
 
-        // Jump
-        if (Input.GetButtonDown("Jump") && isGrounded)
-        {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-        }
 
         // Gravity
         velocity.y += gravity * Time.deltaTime;
