@@ -8,6 +8,7 @@ public class RootAbility : Ability
     [SerializeField] LayerMask wallMask;
     [SerializeField] LayerMask enemyMask;
     [SerializeField] CharacterController troubleMaker;
+    private float timeFreeze = 30f;
 
     public float range = 7.5f;
 
@@ -20,24 +21,6 @@ public class RootAbility : Ability
     public override void TriggerEffect(Camera cam)
     {
         // Gets the Mouse posistion
-        /*Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, groundMask) & !OnCooldown)
-        {
-            // Checks if there is a wall in the ray
-            Vector3 oldHitPoint = hit.point;
-            if (!Physics.Raycast(ray, out hit, Mathf.Infinity, wallMask))
-            {
-                // Checks if the point is in range
-                if (InRange(transform.position, oldHitPoint))
-                {
-                    hit.point = new Vector3(oldHitPoint.x, oldHitPoint.y + 0.1f, oldHitPoint.z);
-                    troubleMaker.enabled = false;
-                    transform.position = hit.point;
-                    troubleMaker.enabled = true;
-                    StartCoroutine(HandleCoolDown());
-                }
-            }
-        }*/
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, range, enemyMask);
         Debug.Log("length: " + hitColliders.Length);
         foreach (var hitCollider in hitColliders)
@@ -45,7 +28,7 @@ public class RootAbility : Ability
             hitCollider.GetComponent<moveTowardsPlayer>().enabled = false;
             Debug.Log("Frozen");
         }
-        StartCoroutine(waitForFreeze(5));
+        StartCoroutine(waitForFreeze(timeFreeze));
         foreach (var hitCollider in hitColliders)
         {
             hitCollider.GetComponent<moveTowardsPlayer>().enabled = true;
