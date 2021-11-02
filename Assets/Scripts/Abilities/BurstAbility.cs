@@ -7,7 +7,6 @@ public class BurstAbility : Ability
     [SerializeField] LayerMask groundMask;
     [SerializeField] LayerMask wallMask;
 
-    public float Range = 30f;
     public GameObject effectTrigger;
     public Transform Player; 
 
@@ -34,12 +33,5 @@ public class BurstAbility : Ability
             
         }
 
-    }
-    private bool InRange(Vector3 a, Vector3 b)
-    {
-        float distance;
-        distance = Vector3.Distance(new Vector3(a.x, 0f, a.z),
-                                    new Vector3(b.x, 0f, b.z));
-        return distance <= Range;
     }
 }

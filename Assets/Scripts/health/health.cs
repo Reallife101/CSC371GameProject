@@ -23,7 +23,6 @@ public class health : MonoBehaviour
     {
         healthTotal = healthTotal - amount;
         hb.setSlider(healthTotal);
-        Debug.Log("damage: " + amount);
         if (healthTotal <= 0)
         {
             Destroy(gameObject);

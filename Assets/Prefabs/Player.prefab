@@ -548,7 +548,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnCooldown: 0
-  Cooldown: 15
+  Cooldown: 30
   groundMask:
     serializedVersion: 2
     m_Bits: 64
@@ -557,6 +557,7 @@ MonoBehaviour:
     m_Bits: 512
   Range: 15
   effectTrigger: {fileID: 5970749574269620888, guid: 4a8656a831c6196479f3dfc03be8f187, type: 3}
+  Player: {fileID: 0}
 --- !u!1 &646025804225860273
 GameObject:
   m_ObjectHideFlags: 0
