@@ -5435,7 +5435,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: c6c8dbda964e98b4ebf214cff87bcba7, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 980eea007dac3ac469181a78211fa5c5, type: 2}
 --- !u!4 &725679316
 Transform:
   m_ObjectHideFlags: 0
@@ -5723,11 +5723,10 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 646025804223257517, guid: fce9283bb1fbbaf4e88f2ebb5ec599fc, type: 3}
   m_PrefabInstance: {fileID: 1171062294}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &750282842
+--- !u!114 &750282843 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: -7224506718360609627, guid: fce9283bb1fbbaf4e88f2ebb5ec599fc, type: 3}
+  m_PrefabInstance: {fileID: 1171062294}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750282841}
   m_Enabled: 1
@@ -5735,24 +5734,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32b98e95a838b2246b23af838c80f39d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnCooldown: 0
-  Cooldown: 10
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 64
-  wallMask:
-    serializedVersion: 2
-    m_Bits: 512
-  enemyMask:
-    serializedVersion: 2
-    m_Bits: 128
-  troubleMaker: {fileID: 750282849}
-  range: 7.5
---- !u!143 &750282849 stripped
-CharacterController:
-  m_CorrespondingSourceObject: {fileID: 646025804223257515, guid: fce9283bb1fbbaf4e88f2ebb5ec599fc, type: 3}
-  m_PrefabInstance: {fileID: 1171062294}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &752742999
 GameObject:
   m_ObjectHideFlags: 0
@@ -7912,6 +7893,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1308543283}
+    - target: {fileID: 4124499525791537971, guid: fce9283bb1fbbaf4e88f2ebb5ec599fc, type: 3}
+      propertyPath: crowdCon
+      value: 
+      objectReference: {fileID: 750282843}
     - target: {fileID: 5322976062415210143, guid: fce9283bb1fbbaf4e88f2ebb5ec599fc, type: 3}
       propertyPath: hb
       value: 

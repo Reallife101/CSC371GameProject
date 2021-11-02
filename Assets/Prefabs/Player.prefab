@@ -248,6 +248,7 @@ GameObject:
   - component: {fileID: 3997853012665630503}
   - component: {fileID: 5322976062415210143}
   - component: {fileID: -7224506718360609627}
+  - component: {fileID: 7632676801593592525}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -534,6 +535,28 @@ MonoBehaviour:
     m_Bits: 128
   troubleMaker: {fileID: 646025804223257515}
   range: 7.5
+--- !u!114 &7632676801593592525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646025804223257517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e228d7ebda31b5e4a8af807de9494ec5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnCooldown: 0
+  Cooldown: 15
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 64
+  wallMask:
+    serializedVersion: 2
+    m_Bits: 512
+  Range: 15
+  effectTrigger: {fileID: 5970749574269620888, guid: 4a8656a831c6196479f3dfc03be8f187, type: 3}
 --- !u!1 &646025804225860273
 GameObject:
   m_ObjectHideFlags: 0

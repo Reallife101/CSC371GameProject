@@ -8,27 +8,29 @@ public class RootAbility : Ability
     [SerializeField] LayerMask wallMask;
     [SerializeField] LayerMask enemyMask;
     [SerializeField] CharacterController troubleMaker;
-    private float timeFreeze = 30f;
+    private float timeFreeze = 15f;
 
     public float range = 7.5f;
 
     private void Awake()
     {
-        Cooldown = 10f;
+        Cooldown = 15f;
         OnCooldown = false;
     }
 
     public override void TriggerEffect(Camera cam)
     {
-        // Gets the Mouse posistion
+        // gets all colliders from enemy layer
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, range, enemyMask);
         Debug.Log("length: " + hitColliders.Length);
+        //disable movement script
         foreach (var hitCollider in hitColliders)
         {
             hitCollider.GetComponent<moveTowardsPlayer>().enabled = false;
             Debug.Log("Frozen");
         }
         StartCoroutine(waitForFreeze(timeFreeze));
+        //reenable movement script
         foreach (var hitCollider in hitColliders)
         {
             hitCollider.GetComponent<moveTowardsPlayer>().enabled = true;
