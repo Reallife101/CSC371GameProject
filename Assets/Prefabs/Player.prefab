@@ -410,9 +410,9 @@ MonoBehaviour:
   crowdCon: {fileID: 4387131692540530994}
   dmg: {fileID: 3513992534329342150}
   cam: {fileID: 0}
-  moveKey: 49
-  crowdKey: 50
-  dmgKey: 51
+  moveKey: 304
+  crowdKey: 101
+  dmgKey: 114
 --- !u!114 &6677169262280664086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -555,7 +555,6 @@ MonoBehaviour:
   wallMask:
     serializedVersion: 2
     m_Bits: 512
-  Range: 15
   effectTrigger: {fileID: 5970749574269620888, guid: 4a8656a831c6196479f3dfc03be8f187, type: 3}
   Player: {fileID: 0}
 --- !u!1 &646025804225860273
