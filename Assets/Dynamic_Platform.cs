@@ -16,17 +16,23 @@ public class Dynamic_Platform : MonoBehaviour
         
     }
 
-
-    private void OnCollisionEnter(Collision collision)
+    /*
+    private void OnTriggerEnter(Collider other)
     {
-        print("touched ");
-
-        if (collision.gameObject == Player)
+        if (other.gameObject == Player)
         {
-            print("touched Object");
+            Player.transform.parent = transform;
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject == Player)
+        {
+            Player.transform.parent = null;
+        }
+    }
+    */
     // Update is called once per frame
     void Update()
     {

@@ -11,10 +11,11 @@ public class shootGun : MonoBehaviour
     public int maxMana = 1000;
     public int currentMana;
 
-    public manabar manabar;
+    [SerializeField] manabar manabar;
 
     private void Start()
     {
+
         currentMana = maxMana;
         manabar.SetMaxMana(maxMana);
         manabar.SetMana(currentMana);
