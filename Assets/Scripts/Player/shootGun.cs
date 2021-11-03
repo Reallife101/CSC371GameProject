@@ -8,8 +8,8 @@ public class shootGun : MonoBehaviour
     public GameObject myPrefab;
     public GameObject gun;
 
-    public int maxMana = 1000;
-    public int currentMana;
+    private float maxMana = 4;
+    private float currentMana;
 
     public manabar manabar;
 
@@ -22,18 +22,18 @@ public class shootGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(currentMana < 1000)
+        if(currentMana < 4)
         {
-            currentMana += 2;
+            currentMana = Mathf.Min(maxMana, currentMana + Time.deltaTime);
             manabar.SetMana(currentMana);
         }
         
         if (Input.GetButtonDown("Fire1"))
         {
-            if(currentMana >= 250)
+            if(currentMana >= 1)
             {
                 Instantiate(myPrefab, gun.transform.position + gun.transform.forward, gun.transform.rotation);
-                currentMana -= 250;
+                currentMana -= 1;
                 manabar.SetMana(currentMana);
             }
             
@@ -41,12 +41,12 @@ public class shootGun : MonoBehaviour
 
         if (Input.GetButtonDown("Fire2"))
         {
-                if(currentMana >= 500)
+                if(currentMana >= 2)
                 {
                     Instantiate(myPrefab, gun.transform.position + gun.transform.forward, gun.transform.rotation * Quaternion.Euler(Vector3.up * 10));
                     Instantiate(myPrefab, gun.transform.position + gun.transform.forward, gun.transform.rotation * Quaternion.Euler(Vector3.up * -10));
                     Instantiate(myPrefab, gun.transform.position + gun.transform.forward, gun.transform.rotation * Quaternion.Euler(Vector3.up));
-                    currentMana -= 500;
+                    currentMana -= 2;
                     manabar.SetMana(currentMana);
                 }
         }
