@@ -25,9 +25,10 @@ public class BurstEffect : MonoBehaviour
     // Handles dealing damage to enemies in the aoe
     private void OnTriggerEnter(Collider other)
     {
+        // Check if enemy
         if (other.CompareTag(targetTag))
         {
-            Debug.Log("hitting enemy");
+            //Debug.Log("hitting enemy");
             other.GetComponent<health>().takeDamage(damage);
         }
     }

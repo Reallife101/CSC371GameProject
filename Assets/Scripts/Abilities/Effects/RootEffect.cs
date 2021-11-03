@@ -22,14 +22,16 @@ public class RootEffect : MonoBehaviour
         Destroy(gameObject);
     }
 
-    // Handles dealing damage to enemies in the aoe
+    // Handles freezing enemies in the aoe
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(targetTag))
         {
             Debug.Log("hitting enemy");
+            // disable movement script on enemy
             other.GetComponent<moveTowardsPlayer>().enabled = false;
             StartCoroutine(waitForFreeze());
+            // reenable movement script
             other.GetComponent<moveTowardsPlayer>().enabled = true;
         }
     }
