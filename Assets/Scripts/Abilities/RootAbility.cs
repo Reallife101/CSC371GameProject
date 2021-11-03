@@ -6,12 +6,11 @@ public class RootAbility : Ability
 {
     [SerializeField] LayerMask groundMask;
     [SerializeField] LayerMask wallMask;
-    [SerializeField] LayerMask enemyMask;
-    [SerializeField] CharacterController troubleMaker;
-    private float timeFreeze = 15f;
 
-    public float range = 7.5f;
+    public GameObject effectTrigger;
+    public Transform Player;
 
+    // Used to set the intial cooldown
     private void Awake()
     {
         Cooldown = 15f;
@@ -20,26 +19,17 @@ public class RootAbility : Ability
 
     public override void TriggerEffect(Camera cam)
     {
-        // gets all colliders from enemy layer
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, range, enemyMask);
-        Debug.Log("length: " + hitColliders.Length);
-        //disable movement script
-        foreach (var hitCollider in hitColliders)
+        // Checks if on cooldown
+        if (!OnCooldown)
         {
-            hitCollider.GetComponent<moveTowardsPlayer>().enabled = false;
-            Debug.Log("Frozen");
-        }
-        StartCoroutine(waitForFreeze(timeFreeze));
-        //reenable movement script
-        foreach (var hitCollider in hitColliders)
-        {
-            hitCollider.GetComponent<moveTowardsPlayer>().enabled = true;
-        }
-        StartCoroutine(HandleCoolDown());
-    }
+            // Instantiates the aoe effet
+            GameObject rootEffect = Instantiate(effectTrigger,
+                transform.position,
+                new Quaternion(0f, 0f, 0f, 0f),
+                Player);
+            StartCoroutine(HandleCoolDown());
 
-    internal IEnumerator waitForFreeze(float time)
-    {
-        yield return new WaitForSecondsRealtime(time);
+        }
+
     }
 }

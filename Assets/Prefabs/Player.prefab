@@ -530,11 +530,8 @@ MonoBehaviour:
   wallMask:
     serializedVersion: 2
     m_Bits: 512
-  enemyMask:
-    serializedVersion: 2
-    m_Bits: 128
-  troubleMaker: {fileID: 646025804223257515}
-  range: 7.5
+  effectTrigger: {fileID: 1164850932800989751, guid: e7da90316638c8649b5b7951d0c3e67e, type: 3}
+  Player: {fileID: 646025804223257511}
 --- !u!114 &7632676801593592525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -556,7 +553,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   effectTrigger: {fileID: 5970749574269620888, guid: 4a8656a831c6196479f3dfc03be8f187, type: 3}
-  Player: {fileID: 0}
+  Player: {fileID: 646025804223257511}
 --- !u!1 &646025804225860273
 GameObject:
   m_ObjectHideFlags: 0

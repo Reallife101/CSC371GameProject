@@ -19,8 +19,7 @@ public class BurstAbility : Ability
 
     public override void TriggerEffect(Camera cam)
     {
-        // Gets the Mouse posistion
-        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        // Checks if on cooldown
         if (!OnCooldown)
         {            
             // Instantiates the aoe effet
@@ -28,7 +27,6 @@ public class BurstAbility : Ability
                 transform.position,
                 new Quaternion(0f, 0f, 0f, 0f),
                 Player);
-            //burstEffect.transform.localScale = new Vector3(hit.distance, 1, hit.distance);
             StartCoroutine(HandleCoolDown());
             
         }
