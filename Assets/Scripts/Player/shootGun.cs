@@ -30,21 +30,15 @@ public class shootGun : MonoBehaviour
         
         if (Input.GetButtonDown("Fire1"))
         {
-            if(currentMana >= 1)
-            {
                 Instantiate(myPrefab, gun.transform.position + gun.transform.forward, gun.transform.rotation);
-                currentMana -= 1;
-                manabar.SetMana(currentMana);
-            }
-            
         }
 
         if (Input.GetButtonDown("Fire2"))
         {
                 if(currentMana >= 2)
                 {
-                    Instantiate(myPrefab, gun.transform.position + gun.transform.forward, gun.transform.rotation * Quaternion.Euler(Vector3.up * 10));
-                    Instantiate(myPrefab, gun.transform.position + gun.transform.forward, gun.transform.rotation * Quaternion.Euler(Vector3.up * -10));
+                    Instantiate(myPrefab, gun.transform.position + gun.transform.forward, gun.transform.rotation * Quaternion.Euler(Vector3.up * 5));
+                    Instantiate(myPrefab, gun.transform.position + gun.transform.forward, gun.transform.rotation * Quaternion.Euler(Vector3.up * -5));
                     Instantiate(myPrefab, gun.transform.position + gun.transform.forward, gun.transform.rotation * Quaternion.Euler(Vector3.up));
                     currentMana -= 2;
                     manabar.SetMana(currentMana);
