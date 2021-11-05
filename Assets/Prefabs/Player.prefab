@@ -401,7 +401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 6677169262280664086}
-  crowdCon: {fileID: 1626928589197865993}
+  crowdCon: {fileID: -7224506718360609627}
   dmg: {fileID: 3513992534329342150}
   cam: {fileID: 0}
   moveKey: 304
@@ -428,7 +428,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   troubleMaker: {fileID: 646025804223257515}
-  range: 7.5
+  range: 15
 --- !u!114 &4387131692540530994
 MonoBehaviour:
   m_ObjectHideFlags: 0
