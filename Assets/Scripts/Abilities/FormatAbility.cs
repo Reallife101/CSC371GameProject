@@ -17,7 +17,7 @@ public class FormatAbility : Ability
         OnCooldown = false;
     }
 
-    public override void TriggerEffect(Camera cam)
+    public override void TriggerEffect(Camera cam, GameObject player)
     {
         // Gets the Mouse posistion
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
@@ -31,7 +31,7 @@ public class FormatAbility : Ability
                 targetHitPoint.z = hit.point.z;
             }
 
-            if (InRange(targetHitPoint, transform.position))
+            if (InRange(targetHitPoint, player.transform.position))
             {
                 // Instantiates the aoe effet
                 Instantiate(effectTrigger,

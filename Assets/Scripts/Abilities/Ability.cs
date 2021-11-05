@@ -7,7 +7,7 @@ public abstract class Ability : MonoBehaviour
     public float Cooldown;
 
     // Used to trigger effects, all Abilities will use this
-    public abstract void TriggerEffect(Camera cam);
+    public abstract void TriggerEffect(Camera cam, GameObject player);
 
     // Used to handle cooldowns, Abilities must set the cooldown in thier awake function
     internal IEnumerator HandleCoolDown()

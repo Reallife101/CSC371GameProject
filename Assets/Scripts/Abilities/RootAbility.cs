@@ -8,7 +8,6 @@ public class RootAbility : Ability
     [SerializeField] LayerMask wallMask;
 
     public GameObject effectTrigger;
-    public Transform Player;
 
     // Used to set the intial cooldown
     private void Awake()
@@ -17,7 +16,7 @@ public class RootAbility : Ability
         OnCooldown = false;
     }
 
-    public override void TriggerEffect(Camera cam)
+    public override void TriggerEffect(Camera cam, GameObject player)
     {
         // Checks if on cooldown
         if (!OnCooldown)
@@ -26,7 +25,7 @@ public class RootAbility : Ability
             GameObject rootEffect = Instantiate(effectTrigger,
                 transform.position,
                 new Quaternion(0f, 0f, 0f, 0f),
-                Player);
+                player.transform);
             StartCoroutine(HandleCoolDown());
 
         }

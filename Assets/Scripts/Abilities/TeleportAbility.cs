@@ -16,7 +16,7 @@ public class TeleportAbility : Ability
         OnCooldown = false;
     }
 
-    public override void TriggerEffect(Camera cam)
+    public override void TriggerEffect(Camera cam, GameObject player)
     {
         // Gets the Mouse posistion, must be hovering over an object tagged ground
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
@@ -25,7 +25,7 @@ public class TeleportAbility : Ability
         {
             // Variables
             Vector3 hitPoint = hit.point;
-            Vector3 playerPos = transform.position;
+            Vector3 playerPos = player.transform.position;
             Vector3 direction = new Vector3(hitPoint.x - playerPos.x,
                 0f, hitPoint.z - playerPos.z).normalized;
 
@@ -52,7 +52,7 @@ public class TeleportAbility : Ability
             }
 
             troubleMaker.enabled = false;
-            transform.position = hitPoint;
+            player.transform.position = hitPoint;
             troubleMaker.enabled = true;
             StartCoroutine(HandleCoolDown());
         }
