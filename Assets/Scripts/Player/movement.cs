@@ -13,7 +13,6 @@ public class movement : MonoBehaviour
 
     //Check ground variables
     public Transform groundCheck;
-    public Transform moveCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
     public LayerMask playerMask;
@@ -66,7 +65,7 @@ public class movement : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
-    bool checkMove(Vector3 pos)
+    public bool checkMove(Vector3 pos)
     {
         RaycastHit hit;
 
