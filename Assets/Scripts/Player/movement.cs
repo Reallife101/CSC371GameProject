@@ -13,9 +13,12 @@ public class movement : MonoBehaviour
 
     //Check ground variables
     public Transform groundCheck;
+    public Transform moveCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
-
+    public LayerMask playerMask;
+    [SerializeField]
+    string groundName = "Ground";
 
     Vector3 velocity;
     bool isGrounded;
@@ -46,14 +49,34 @@ public class movement : MonoBehaviour
         // Adjust for camera angle
         Vector3 move = cam.transform.right * x + cam.transform.forward * z*(Mathf.Sqrt(2));
         move = new Vector3(move.x, 0f, move.z);
-        //Debug.Log(move);
 
-        controller.Move(move * movementSpeed * Time.deltaTime);
+        // Check movement
+        Vector3 moveCheck = transform.position + (move * movementSpeed * Time.deltaTime);
 
+        RaycastHit hit;
+
+        if(checkMove(moveCheck))
+        {
+            controller.Move(move * movementSpeed * Time.deltaTime);
+        }
 
         // Gravity
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+    }
+
+    bool checkMove(Vector3 pos)
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(pos, Vector3.down, out hit, Mathf.Infinity, ~playerMask))
+        {
+            if (LayerMask.LayerToName(hit.collider.gameObject.layer) == groundName)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
