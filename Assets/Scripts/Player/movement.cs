@@ -42,8 +42,6 @@ public class movement : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
-        movementSpeed = 12.0f;
-
         // Move Character
         // Adjust for camera angle
         Vector3 move = cam.transform.right * x + cam.transform.forward * z*(Mathf.Sqrt(2));

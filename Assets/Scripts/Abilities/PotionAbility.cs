@@ -13,19 +13,23 @@ public class PotionAbility : Ability
 
     public override void TriggerEffect(Camera cam, GameObject player)
     {
-        // Gets health object and sets the restore amount
-        health h = player.GetComponent<health>();
-        int restore = h.healthMax / 2;
-        
-        // If the amount restored would bea bove max health instead set to max
-        if(h.healthTotal + restore > h.healthMax)
+        if(!OnCooldown)
         {
-            h.addHealth(h.healthMax - h.healthTotal);
-        } else
-        {
-            h.addHealth(restore);
-        }
+            // Gets health object and sets the restore amount
+            health h = player.GetComponent<health>();
+            int restore = h.healthMax / 2;
 
-        StartCoroutine(HandleCoolDown());
+            // If the amount restored would bea bove max health instead set to max
+            if (h.healthTotal + restore > h.healthMax)
+            {
+                h.addHealth(h.healthMax - h.healthTotal);
+            }
+            else
+            {
+                h.addHealth(restore);
+            }
+
+            StartCoroutine(HandleCoolDown());
+        }
     }
 }
