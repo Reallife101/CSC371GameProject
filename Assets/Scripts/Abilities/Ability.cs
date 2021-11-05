@@ -16,4 +16,13 @@ public abstract class Ability : MonoBehaviour
         yield return new WaitForSecondsRealtime(Cooldown);
         OnCooldown = false;
     }
+
+    // For Abilities that need to check range
+    internal bool InRange(Vector3 a, Vector3 b, float range)
+    {
+        float distance;
+        distance = Vector3.Distance(new Vector3(a.x, 0f, a.z),
+                                    new Vector3(b.x, 0f, b.z));
+        return distance <= range;
+    }
 }

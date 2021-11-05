@@ -348,7 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ef3d5898ced2794f980a76ac0c01f3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthMax: 15
+  healthMax: 100
   healthTotal: 0
   hb: {fileID: 0}
 --- !u!1 &646025804312402421
@@ -973,12 +973,12 @@ GameObject:
   m_Component:
   - component: {fileID: 5390304989157903096}
   - component: {fileID: 3379903449979330250}
+  - component: {fileID: 630800079082477967}
   - component: {fileID: 5892679413476568123}
   - component: {fileID: 7975843536984380869}
-  - component: {fileID: 5687775090139766643}
   - component: {fileID: 1612624099906317087}
   - component: {fileID: 6010923268809606419}
-  - component: {fileID: 630800079082477967}
+  - component: {fileID: 5687775090139766643}
   m_Layer: 0
   m_Name: AbilityManager
   m_TagString: Untagged
@@ -1017,10 +1017,25 @@ MonoBehaviour:
   dmg: {fileID: 6010923268809606419}
   potion: {fileID: 630800079082477967}
   cam: {fileID: 0}
+  player: {fileID: 646025804223257517}
   moveKey: 304
   crowdKey: 101
   dmgKey: 114
   potionKey: 113
+--- !u!114 &630800079082477967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8743058502925761153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec5c77aceca50ca4eb01cc1f0d2ca0bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnCooldown: 0
+  Cooldown: 0
 --- !u!114 &5892679413476568123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1042,7 +1057,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   troubleMaker: {fileID: 646025804223257515}
-  range: 15
+  Range: 15
 --- !u!114 &7975843536984380869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1065,6 +1080,48 @@ MonoBehaviour:
     m_Bits: 512
   Range: 50
   effectTrigger: {fileID: 6469884053731220648, guid: f17eb184021f10a43940f5990ee6bdd5, type: 3}
+--- !u!114 &1612624099906317087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8743058502925761153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32b98e95a838b2246b23af838c80f39d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnCooldown: 0
+  Cooldown: 10
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 64
+  wallMask:
+    serializedVersion: 2
+    m_Bits: 512
+  effectTrigger: {fileID: 1164850932800989751, guid: e7da90316638c8649b5b7951d0c3e67e, type: 3}
+--- !u!114 &6010923268809606419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8743058502925761153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e228d7ebda31b5e4a8af807de9494ec5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnCooldown: 0
+  Cooldown: 30
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 64
+  wallMask:
+    serializedVersion: 2
+    m_Bits: 512
+  effectTrigger: {fileID: 5970749574269620888, guid: 4a8656a831c6196479f3dfc03be8f187, type: 3}
 --- !u!114 &5687775090139766643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1087,61 +1144,3 @@ MonoBehaviour:
     m_Bits: 512
   Range: 30
   effectTrigger: {fileID: 643489304806779848, guid: 0e3d2b9d90bfe3544afa171323fe7986, type: 3}
---- !u!114 &1612624099906317087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8743058502925761153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32b98e95a838b2246b23af838c80f39d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnCooldown: 0
-  Cooldown: 10
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 64
-  wallMask:
-    serializedVersion: 2
-    m_Bits: 512
-  effectTrigger: {fileID: 1164850932800989751, guid: e7da90316638c8649b5b7951d0c3e67e, type: 3}
-  Player: {fileID: 646025804223257511}
---- !u!114 &6010923268809606419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8743058502925761153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e228d7ebda31b5e4a8af807de9494ec5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnCooldown: 0
-  Cooldown: 30
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 64
-  wallMask:
-    serializedVersion: 2
-    m_Bits: 512
-  effectTrigger: {fileID: 5970749574269620888, guid: 4a8656a831c6196479f3dfc03be8f187, type: 3}
-  Player: {fileID: 646025804223257511}
---- !u!114 &630800079082477967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8743058502925761153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec5c77aceca50ca4eb01cc1f0d2ca0bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnCooldown: 0
-  Cooldown: 0

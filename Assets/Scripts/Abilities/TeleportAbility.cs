@@ -8,7 +8,7 @@ public class TeleportAbility : Ability
     [SerializeField] LayerMask wallMask;
     [SerializeField] CharacterController troubleMaker;
 
-    public float range = 15f;
+    public float Range = 15f;
 
     private void Awake()
     {
@@ -31,14 +31,14 @@ public class TeleportAbility : Ability
 
             // Checks if there is a wall in the ray
             if (Physics.Raycast(playerPos, direction,
-                out hit, range, wallMask))
+                out hit, Range, wallMask))
             {
                 hitPoint = new Vector3(hit.point.x - (direction.x * 0.5f),
                     playerPos.y,hit.point.z - (direction.z * 0.5f));
             }
 
             // Checks if the point is in range
-            if (InRange(playerPos, hitPoint))
+            if (InRange(playerPos, hitPoint, Range))
             {
                 // Is in range, sets y to make sure no clipping
                 hitPoint = new Vector3(hitPoint.x, playerPos.y, hitPoint.z);
@@ -46,7 +46,7 @@ public class TeleportAbility : Ability
             else
             {
                 // Is not in range, sets the vector to a new vector pased on scaled direction
-                Vector3 scaledDirection = direction * range;
+                Vector3 scaledDirection = direction * Range;
                 hitPoint = new Vector3(playerPos.x + scaledDirection.x,
                     playerPos.y, playerPos.z + scaledDirection.z);
             }
@@ -56,13 +56,5 @@ public class TeleportAbility : Ability
             troubleMaker.enabled = true;
             StartCoroutine(HandleCoolDown());
         }
-    }
-
-    private bool InRange(Vector3 a, Vector3 b)
-    {
-        float distance;
-        distance = Vector3.Distance(new Vector3(a.x, 0f, a.z),
-                                    new Vector3(b.x, 0f, b.z));
-        return distance <= range;
     }
 }

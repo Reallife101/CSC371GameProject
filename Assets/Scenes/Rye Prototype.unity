@@ -7507,6 +7507,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3379903449979330250, guid: fce9283bb1fbbaf4e88f2ebb5ec599fc, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1308543283}
     - target: {fileID: 3513992534329342150, guid: fce9283bb1fbbaf4e88f2ebb5ec599fc, type: 3}
       propertyPath: effectTrigger
       value: 
@@ -7519,10 +7523,6 @@ PrefabInstance:
       propertyPath: hb
       value: 
       objectReference: {fileID: 1336583624}
-    - target: {fileID: 5322976062415210143, guid: fce9283bb1fbbaf4e88f2ebb5ec599fc, type: 3}
-      propertyPath: healthMax
-      value: 10000
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fce9283bb1fbbaf4e88f2ebb5ec599fc, type: 3}
 --- !u!1 &1194735115
