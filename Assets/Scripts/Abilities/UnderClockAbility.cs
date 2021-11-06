@@ -17,7 +17,7 @@ public class UnderClockAbility : Ability
         OnCooldown = false;
     }
 
-    public override void TriggerEffect(Camera cam)
+    public override void TriggerEffect(Camera cam, GameObject player)
     {
         // Gets the Mouse posistion
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
@@ -31,7 +31,7 @@ public class UnderClockAbility : Ability
                 targetHitPoint.z = hit.point.z;
             }
 
-            if (InRange(targetHitPoint, transform.position))
+            if (InRange(targetHitPoint, player.transform.position, Range))
             {
                 // Instantiates the aoe effet
                 Instantiate(effectTrigger,
@@ -40,12 +40,5 @@ public class UnderClockAbility : Ability
                 StartCoroutine(HandleCoolDown());
             }
         }
-    }
-    private bool InRange(Vector3 a, Vector3 b)
-    {
-        float distance;
-        distance = Vector3.Distance(new Vector3(a.x, 0f, a.z),
-                                    new Vector3(b.x, 0f, b.z));
-        return distance <= Range;
     }
 }

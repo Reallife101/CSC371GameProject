@@ -16,7 +16,6 @@ public class movement : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
 
-
     Vector3 velocity;
     bool isGrounded;
 
@@ -42,33 +41,33 @@ public class movement : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
-        // Sprint
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            movementSpeed = 24.0f;
-        }
-        else
-        {
-            movementSpeed = 12.0f;
-        }
-
         // Move Character
         // Adjust for camera angle
         Vector3 move = cam.transform.right * x + cam.transform.forward * z*(Mathf.Sqrt(2));
         move = new Vector3(move.x, 0f, move.z);
-        //Debug.Log(move);
 
-        controller.Move(move * movementSpeed * Time.deltaTime);
+        // Check movement
+        Vector3 moveCheck = transform.position + (move * movementSpeed * Time.deltaTime);
 
-        // Jump
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        RaycastHit hit;
+
+        if(checkMove(moveCheck))
         {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            controller.Move(move * movementSpeed * Time.deltaTime);
         }
 
         // Gravity
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+    }
+
+    public bool checkMove(Vector3 pos)
+    {
+        if (Physics.Raycast(pos, Vector3.down, out _, Mathf.Infinity, groundMask))
+        {
+            return true;
+        }
+        return false;
     }
 }

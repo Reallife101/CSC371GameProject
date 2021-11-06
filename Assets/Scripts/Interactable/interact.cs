@@ -1,39 +1,62 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class interact : MonoBehaviour
 {
-    public LayerMask PlayerLayerMask;
-    public float selectDistance = 10f;
+    [SerializeField]
+    float selectDistance = 10f;
 
     private interactable lastIB;
+    private bool deselect;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        deselect = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        RaycastHit hit;
 
-        // Right
-        if (Physics.Raycast(transform.position, transform.forward, out hit, selectDistance, ~PlayerLayerMask))
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, selectDistance);
+
+        bool foundIB = false;
+
+        foreach (var hitCollider in hitColliders)
         {
-            if (hit.collider.gameObject.GetComponent<interactable>())
+            var ib = hitCollider.gameObject.GetComponent<interactable>();
+            
+
+            if (ib)
             {
-                lastIB = hit.collider.gameObject.GetComponent<interactable>();
+                lastIB = ib;
                 lastIB.selected();
+                deselect = true;
             }
+            else if (lastIB = ib)
+            {
+                foundIB = true;
+            }
+            /*
+            else if (deselect)
+            {
+                lastIB.deselected();
+                lastIB = null;
+                deselect = false;
+            }
+            */
         }
-        else if (lastIB)
+
+        if (deselect && !foundIB)
         {
             lastIB.deselected();
             lastIB = null;
+            deselect = false;
         }
+
     }
 }

@@ -41,6 +41,9 @@ public class UnderClockEffect : MonoBehaviour
         float oldSpeed = other.GetComponent<NavMeshAgent>().speed;
         other.GetComponent<NavMeshAgent>().speed *= slowPercent;
         yield return new WaitForSecondsRealtime(duration);
-        other.GetComponent<NavMeshAgent>().speed = oldSpeed;
+        if (!(other == null))
+        {
+            other.GetComponent<NavMeshAgent>().speed = oldSpeed;
+        }
     }
 }
