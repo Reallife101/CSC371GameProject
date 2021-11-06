@@ -51,10 +51,13 @@ public class TeleportAbility : Ability
                     playerPos.y, playerPos.z + scaledDirection.z);
             }
 
-            troubleMaker.enabled = false;
-            player.transform.position = hitPoint;
-            troubleMaker.enabled = true;
-            StartCoroutine(HandleCoolDown());
+            if(player.GetComponent<movement>().checkMove(hitPoint))
+            {
+                troubleMaker.enabled = false;
+                player.transform.position = hitPoint;
+                troubleMaker.enabled = true;
+                StartCoroutine(HandleCoolDown());
+            }
         }
     }
 }
