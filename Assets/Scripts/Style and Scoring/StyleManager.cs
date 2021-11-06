@@ -27,6 +27,9 @@ public class StyleManager : MonoBehaviour
     [SerializeField]
     int SSSRatingMin = 15;
 
+    [SerializeField]
+    AudioHandler ah;
+
     public int numKills;
     private int prevKills;
     private string prevRating;
@@ -34,6 +37,7 @@ public class StyleManager : MonoBehaviour
     private healthBar hb;
     private GameObject ui;
     private scoreManager sm;
+    private int scoreLevel;
 
     public TMP_Text comboText;
     public TMP_Text rating;
@@ -49,15 +53,12 @@ public class StyleManager : MonoBehaviour
         numKills = 0;
         prevKills = 0;
         prevRating = "";
+        scoreLevel = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            numKills += 1;
-        }
 
         // If we get kill, start the combo bar
         if (prevKills == 0 && numKills > 0)
@@ -80,6 +81,8 @@ public class StyleManager : MonoBehaviour
             sm.score += numKills * pointsPerKill;
             numKills = 0;
             prevKills = 0;
+            scoreLevel = 0;
+            prevRating = "";
         }
 
         if (numKills > prevKills)
@@ -92,10 +95,43 @@ public class StyleManager : MonoBehaviour
         if (prevRating != rating.text)
         {
             CameraShaker.Instance.ShakeOnce(8f, 10f, 0.1f, .5f);
+            playRankup();
         }
 
         prevRating = rating.text;
         prevKills = numKills;
+    }
+
+    void playRankup()
+    {
+        switch (scoreLevel)
+        {
+            case 0:
+                // D
+                ah.playDRankup();
+                break;
+            case 1:
+                //C
+                ah.playCRankup();
+                break;
+            case 2:
+                // B
+                ah.playBRankup();
+                break;
+            case 3:
+                //A
+                ah.playARankup();
+                break;
+            case 4:
+                //S
+                ah.playSRankup();
+                break;
+            case 5:
+                //SSS
+                ah.playSSSRankup();
+                break;
+        }
+        scoreLevel += 1;
     }
 
     string getRating(int kills)
