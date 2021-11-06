@@ -15,9 +15,6 @@ public class movement : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
-    public LayerMask playerMask;
-    [SerializeField]
-    string groundName = "Ground";
 
     Vector3 velocity;
     bool isGrounded;
@@ -67,14 +64,9 @@ public class movement : MonoBehaviour
 
     public bool checkMove(Vector3 pos)
     {
-        RaycastHit hit;
-
-        if (Physics.Raycast(pos, Vector3.down, out hit, Mathf.Infinity, ~playerMask))
+        if (Physics.Raycast(pos, Vector3.down, out _, Mathf.Infinity, groundMask))
         {
-            if (LayerMask.LayerToName(hit.collider.gameObject.layer) == groundName)
-            {
-                return true;
-            }
+            return true;
         }
         return false;
     }
