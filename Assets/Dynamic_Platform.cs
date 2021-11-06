@@ -16,12 +16,14 @@ public class Dynamic_Platform : MonoBehaviour
         
     }
 
-    /*
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == Player)
         {
-            Player.transform.parent = transform;
+            other.transform.SetParent(gameObject.transform);
+            
+
         }
     }
 
@@ -29,10 +31,10 @@ public class Dynamic_Platform : MonoBehaviour
     {
         if (other.gameObject == Player)
         {
-            Player.transform.parent = null;
+            other.transform.SetParent(null);
         }
     }
-    */
+    
     // Update is called once per frame
     void Update()
     {
