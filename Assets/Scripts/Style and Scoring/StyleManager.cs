@@ -42,6 +42,12 @@ public class StyleManager : MonoBehaviour
     public TMP_Text comboText;
     public TMP_Text rating;
 
+    public AudioSource firstSound;
+    public AudioSource secondSound;
+    public AudioSource thirdSound;
+    public AudioSource fourthSound;
+    public AudioSource fifthSound;
+    public AudioSource sixthSound;
 
     void Start()
     {
@@ -75,7 +81,7 @@ public class StyleManager : MonoBehaviour
             hb.setSlider(Mathf.Max(curVal - Time.deltaTime, 0));
         }
 
-        if (curVal<=0)
+        if (curVal <= 0)
         {
             ui.SetActive(false);
             sm.score += numKills * pointsPerKill;
@@ -91,6 +97,38 @@ public class StyleManager : MonoBehaviour
             hb.setSlider(killStreakPeriod);
             comboText.text = "Combo: " + numKills;
             rating.text = getRating(numKills);
+        }
+
+        if (numKills > prevKills)
+        {
+            hb.setSlider(killStreakPeriod);
+            comboText.text = "Combo: " + numKills;
+            rating.text = getRating(numKills);
+
+            if (getRating(numKills) == "D")
+            {
+                firstSound.Play();
+            }
+            if (getRating(numKills) == "C")
+            {
+                secondSound.Play();
+            }
+            if (getRating(numKills) == "B")
+            {
+                thirdSound.Play();
+            }
+            if (getRating(numKills) == "A")
+            {
+                fourthSound.Play();
+            }
+            if (getRating(numKills) == "S")
+            {
+                fifthSound.Play();
+            }
+            if (getRating(numKills) == "SSS")
+            {
+                sixthSound.Play();
+            }
         }
 
         if (prevRating != rating.text)
@@ -137,10 +175,11 @@ public class StyleManager : MonoBehaviour
 
     string getRating(int kills)
     {
-        if (kills >=SSSRatingMin)
+        if (kills >= SSSRatingMin)
         {
             return "SSS";
-        } else if (kills >= SRatingMin)
+        }
+        else if (kills >= SRatingMin)
         {
             return "S";
         }
@@ -155,7 +194,8 @@ public class StyleManager : MonoBehaviour
         else if (kills >= cRatingMin)
         {
             return "C";
-        } else
+        }
+        else
         {
             return "D";
         }
