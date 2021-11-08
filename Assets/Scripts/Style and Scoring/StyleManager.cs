@@ -82,6 +82,7 @@ public class StyleManager : MonoBehaviour
             numKills = 0;
             prevKills = 0;
             scoreLevel = 0;
+            rating.text = "";
             prevRating = "";
         }
 

@@ -9,6 +9,9 @@ public class moveTowardsPlayer : MonoBehaviour
     public float minDistance = 25f;
     public float maxDistance = 40f;
 
+    [SerializeField]
+    bool followRegardless;
+
     private GameObject player;
 
 
@@ -23,7 +26,8 @@ public class moveTowardsPlayer : MonoBehaviour
         RaycastHit hit;
 
         float dist = Vector3.Distance(transform.position, player.transform.position);
-        if (dist > minDistance && dist < maxDistance && Physics.Raycast(transform.position + Vector3.up, transform.forward, out hit, maxDistance))
+
+        if (dist > minDistance && dist < maxDistance && (Physics.Raycast(transform.position + Vector3.up, transform.forward, out hit, maxDistance) || followRegardless))
         {
             if (hit.collider.gameObject.tag == "Player")
             {
