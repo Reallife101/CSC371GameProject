@@ -6367,9 +6367,16 @@ MonoBehaviour:
   aRatingMin: 7
   SRatingMin: 10
   SSSRatingMin: 15
+  ah: {fileID: 0}
   numKills: 0
   comboText: {fileID: 1039068921}
   rating: {fileID: 1432831479}
+  firstSound: {fileID: 0}
+  secondSound: {fileID: 0}
+  thirdSound: {fileID: 0}
+  fourthSound: {fileID: 0}
+  fifthSound: {fileID: 0}
+  sixthSound: {fileID: 0}
 --- !u!1 &971914252
 GameObject:
   m_ObjectHideFlags: 0
@@ -7507,10 +7514,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 3379903449979330250, guid: fce9283bb1fbbaf4e88f2ebb5ec599fc, type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 1308543283}
     - target: {fileID: 3513992534329342150, guid: fce9283bb1fbbaf4e88f2ebb5ec599fc, type: 3}
       propertyPath: effectTrigger
       value: 
@@ -7523,6 +7526,10 @@ PrefabInstance:
       propertyPath: hb
       value: 
       objectReference: {fileID: 1336583624}
+    - target: {fileID: 6010923268809606419, guid: fce9283bb1fbbaf4e88f2ebb5ec599fc, type: 3}
+      propertyPath: BurstEffect
+      value: 
+      objectReference: {fileID: 5970749574269620888, guid: 4a8656a831c6196479f3dfc03be8f187, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fce9283bb1fbbaf4e88f2ebb5ec599fc, type: 3}
 --- !u!1 &1194735115

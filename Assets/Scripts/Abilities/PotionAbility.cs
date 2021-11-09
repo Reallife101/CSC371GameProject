@@ -7,29 +7,33 @@ public class PotionAbility : Ability
     // Sets Cooldown
     private void Awake()
     {
-        Cooldown = 60f;
-        OnCooldown = false;
+        if (Cooldown.Equals(Mathf.NegativeInfinity))
+            Cooldown = 60f;
     }
 
     public override void TriggerEffect(Camera cam, GameObject player)
     {
-        if(!OnCooldown)
+        if (!OnCooldown)
         {
-            // Gets health object and sets the restore amount
+            // Sets the health object and restore amount
             health h = player.GetComponent<health>();
             int restore = h.healthMax / 2;
 
-            // If the amount restored would bea bove max health instead set to max
-            if (h.healthTotal + restore > h.healthMax)
+            // Does not trigger if at max health
+            if (!h.healthMax.Equals(h.healthTotal))
             {
-                h.addHealth(h.healthMax - h.healthTotal);
-            }
-            else
-            {
-                h.addHealth(restore);
-            }
+                // If the amount restored would bea bove max health instead set to max
+                if (h.healthTotal + restore > h.healthMax)
+                {
+                    h.addHealth(h.healthMax - h.healthTotal);
+                }
+                else
+                {
+                    h.addHealth(restore);
+                }
 
-            StartCoroutine(HandleCoolDown());
+                StartCoroutine(HandleCoolDown());
+            }
         }
     }
 }

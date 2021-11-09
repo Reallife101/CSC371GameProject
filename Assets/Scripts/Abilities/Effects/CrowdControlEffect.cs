@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class UnderClockEffect : MonoBehaviour
+public class CrowdControlEffect : MonoBehaviour
 {
-    [SerializeField] float time = 0.5f;
-    [SerializeField] float slowPercent = 0.5f;
-    [SerializeField] float duration = 10f;
+    [SerializeField] float time = 0.1f;
     [SerializeField] string targetTag = "Enemy";
+    
+    public float duration = 10f;
+    public float speedMultiplier = 0.5f;
 
     // Sets the self-destruct
     private void Awake()
@@ -17,7 +18,7 @@ public class UnderClockEffect : MonoBehaviour
         StartCoroutine(HandleDestory());
     }
 
-    // Handle the self-destruct
+    // Handles the self-destruct
     private IEnumerator HandleDestory()
     {
         yield return new WaitForSecondsRealtime(time);
@@ -27,19 +28,20 @@ public class UnderClockEffect : MonoBehaviour
         Destroy(gameObject);
     }
 
-    // Handles dealing damage to enemies in the aoe
+    // Handles tagging enemies in the aoe
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(targetTag))
         {
-            StartCoroutine(HandleSlow(other, slowPercent, duration));
+            StartCoroutine(HandleSlow(other));
         }
     }
 
-    private static IEnumerator HandleSlow(Collider other, float slowPercent, float duration)
+    // Handles appyling and removing the slow effect from enemies hit
+    private IEnumerator HandleSlow(Collider other)
     {
         float oldSpeed = other.GetComponent<NavMeshAgent>().speed;
-        other.GetComponent<NavMeshAgent>().speed *= slowPercent;
+        other.GetComponent<NavMeshAgent>().speed *= speedMultiplier;
         yield return new WaitForSecondsRealtime(duration);
         if (!(other == null))
         {

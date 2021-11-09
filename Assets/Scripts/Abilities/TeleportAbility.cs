@@ -8,35 +8,23 @@ public class TeleportAbility : Ability
     [SerializeField] LayerMask wallMask;
     [SerializeField] CharacterController troubleMaker;
 
-    public float Range = 15f;
+    public float Range = 10f;
 
     private void Awake()
     {
-        Cooldown = 10f;
-        OnCooldown = false;
+        if (Cooldown.Equals(Mathf.NegativeInfinity))
+            Cooldown = 30f;
     }
 
     public override void TriggerEffect(Camera cam, GameObject player)
     {
-        // Gets the Mouse posistion, must be hovering over an object tagged ground
-        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit,
-            Mathf.Infinity, groundMask) & !OnCooldown)
+        // Sets the player postion
+        Vector3 playerPos = player.transform.position;
+        // Gets the target point
+        Vector3 hitPoint = getTargetPoint(cam, groundMask, wallMask, playerPos);
+
+        if (!hitPoint.Equals(Vector3.positiveInfinity))
         {
-            // Variables
-            Vector3 hitPoint = hit.point;
-            Vector3 playerPos = player.transform.position;
-            Vector3 direction = new Vector3(hitPoint.x - playerPos.x,
-                0f, hitPoint.z - playerPos.z).normalized;
-
-            // Checks if there is a wall in the ray
-            if (Physics.Raycast(playerPos, direction,
-                out hit, Range, wallMask))
-            {
-                hitPoint = new Vector3(hit.point.x - (direction.x * 0.5f),
-                    playerPos.y,hit.point.z - (direction.z * 0.5f));
-            }
-
             // Checks if the point is in range
             if (InRange(playerPos, hitPoint, Range))
             {
@@ -45,12 +33,15 @@ public class TeleportAbility : Ability
             }
             else
             {
-                // Is not in range, sets the vector to a new vector pased on scaled direction
-                Vector3 scaledDirection = direction * Range;
+                // Is not in range, sets the hitPoint to a new vector based on scaled direction
+                Vector3 scaledDirection = new Vector3(hitPoint.x - playerPos.x, 0f,
+                    hitPoint.z - playerPos.z).normalized * Range;
+
                 hitPoint = new Vector3(playerPos.x + scaledDirection.x,
                     playerPos.y, playerPos.z + scaledDirection.z);
             }
 
+            // Makes sure teleport will mot teleport off the ground
             if(player.GetComponent<movement>().checkMove(hitPoint))
             {
                 troubleMaker.enabled = false;

@@ -6,37 +6,34 @@ public class UnderClockAbility : Ability
 {
     [SerializeField] LayerMask groundMask;
     [SerializeField] LayerMask wallMask;
+    [SerializeField] float Range = 50f;
+    [SerializeField] float SpeedMultiplier = 0.5f;
+    [SerializeField] GameObject SlowEffect;
 
-    public float Range = 50f;
-    public GameObject effectTrigger;
+    public float AOERange = 10f;
+    public float Duration = 10f;
 
     // Used to set the intial cooldown
     private void Awake()
     {
-        Cooldown = 20f;
-        OnCooldown = false;
+        if (Cooldown is Mathf.NegativeInfinity)
+            Cooldown = 25f;
     }
 
     public override void TriggerEffect(Camera cam, GameObject player)
     {
-        // Gets the Mouse posistion
-        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, groundMask) & !OnCooldown)
+        // Gets the target posistion
+        Vector3 targetHitPoint = getTargetPoint(cam, groundMask, wallMask, player.transform.position);
+        if (!targetHitPoint.Equals(Vector3.positiveInfinity) & !OnCooldown)
         {
-            // Checks if there is a wall in the ray
-            Vector3 targetHitPoint = hit.point;
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, wallMask))
-            {
-                targetHitPoint.x = hit.point.x;
-                targetHitPoint.z = hit.point.z;
-            }
-
+            // Checks if the target point is in range
             if (InRange(targetHitPoint, player.transform.position, Range))
             {
-                // Instantiates the aoe effet
-                Instantiate(effectTrigger,
-                    new Vector3(targetHitPoint.x, targetHitPoint.y + 1f, targetHitPoint.z),
-                    new Quaternion(0f, 0f, 0f, 0f));
+                // Instantiates the slow aoe effet
+                GameObject effect = Instantiate(SlowEffect, targetHitPoint, new Quaternion(0f, 0f, 0f, 0f));
+                effect.transform.localScale = new Vector3(2f * AOERange, 1f, 2f * AOERange);
+                effect.GetComponent<CrowdControlEffect>().speedMultiplier = SpeedMultiplier;
+                effect.GetComponent<CrowdControlEffect>().duration = Duration;
                 StartCoroutine(HandleCoolDown());
             }
         }

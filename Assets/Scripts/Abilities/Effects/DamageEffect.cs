@@ -3,20 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BurstEffect : MonoBehaviour
+public class DamageEffect : MonoBehaviour
 {
-    [SerializeField] float time = 0.5f;
-    [SerializeField] int damage = 30;
+    [SerializeField] float time = 0.1f;
     [SerializeField] string targetTag = "Enemy";
+
+    public int damage = 10;
 
     // Sets the self-destruct
     private void Awake()
     {
-        StartCoroutine(HandleDestroy());
+        StartCoroutine(HandleDestory());
     }
 
     // Handle the self-destruct
-    private IEnumerator HandleDestroy()
+    private IEnumerator HandleDestory()
     {
         yield return new WaitForSecondsRealtime(time);
         Destroy(gameObject);
@@ -25,10 +26,8 @@ public class BurstEffect : MonoBehaviour
     // Handles dealing damage to enemies in the aoe
     private void OnTriggerEnter(Collider other)
     {
-        // Check if enemy
         if (other.CompareTag(targetTag))
         {
-            //Debug.Log("hitting enemy");
             other.GetComponent<health>().takeDamage(damage);
         }
     }

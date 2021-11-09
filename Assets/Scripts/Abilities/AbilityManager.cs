@@ -9,13 +9,20 @@ public class AbilityManager : MonoBehaviour
     [SerializeField] Ability dmg;
     [SerializeField] Ability potion;
 
-    [SerializeField] Camera cam;
+    [SerializeField] Camera cam = null;
     [SerializeField] GameObject player;
     
     [SerializeField] KeyCode moveKey = KeyCode.LeftShift;
     [SerializeField] KeyCode crowdKey = KeyCode.E;
     [SerializeField] KeyCode dmgKey = KeyCode.R;
     [SerializeField] KeyCode potionKey = KeyCode.Q;
+
+    // Sets the cam variable to main unless overidden
+    private void Start()
+    {
+        if (cam.Equals(null))
+            cam = Camera.main;
+    }
 
     // Update is called once per frame
     void Update()

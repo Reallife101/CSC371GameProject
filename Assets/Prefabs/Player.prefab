@@ -316,10 +316,6 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
-  playerMask:
-    serializedVersion: 2
-    m_Bits: 256
-  groundName: Ground
 --- !u!81 &646025804223257510
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1040,7 +1036,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnCooldown: 0
-  Cooldown: 0
+  Cooldown: -Infinity
 --- !u!114 &2037227418348042556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1054,9 +1050,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnCooldown: 0
-  Cooldown: 0
+  Cooldown: -Infinity
   percentageIncrease: 0.5
-  durration: 10
+  Durration: 2
 --- !u!114 &5892679413476568123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1070,7 +1066,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnCooldown: 0
-  Cooldown: 0
+  Cooldown: -Infinity
   groundMask:
     serializedVersion: 2
     m_Bits: 64
@@ -1078,7 +1074,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   troubleMaker: {fileID: 646025804223257515}
-  Range: 15
+  Range: 10
 --- !u!114 &7975843536984380869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1092,7 +1088,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnCooldown: 0
-  Cooldown: 0
+  Cooldown: -Infinity
   groundMask:
     serializedVersion: 2
     m_Bits: 64
@@ -1100,7 +1096,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   Range: 50
-  effectTrigger: {fileID: 6469884053731220648, guid: f17eb184021f10a43940f5990ee6bdd5, type: 3}
+  SlowEffect: {fileID: 6469884053731220648, guid: f17eb184021f10a43940f5990ee6bdd5, type: 3}
+  AOERange: 10
 --- !u!114 &1612624099906317087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1114,14 +1111,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnCooldown: 0
-  Cooldown: 10
+  Cooldown: -Infinity
   groundMask:
     serializedVersion: 2
     m_Bits: 64
   wallMask:
     serializedVersion: 2
     m_Bits: 512
-  effectTrigger: {fileID: 1164850932800989751, guid: e7da90316638c8649b5b7951d0c3e67e, type: 3}
+  Range: 50
+  RootEffect: {fileID: 6469884053731220648, guid: f17eb184021f10a43940f5990ee6bdd5, type: 3}
+  AOERange: 10
 --- !u!114 &6010923268809606419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1135,14 +1134,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnCooldown: 0
-  Cooldown: 30
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 64
-  wallMask:
-    serializedVersion: 2
-    m_Bits: 512
-  effectTrigger: {fileID: 5970749574269620888, guid: 4a8656a831c6196479f3dfc03be8f187, type: 3}
+  Cooldown: -Infinity
+  BurstEffect: {fileID: 643489304806779848, guid: 0e3d2b9d90bfe3544afa171323fe7986, type: 3}
+  AOERange: 6
 --- !u!114 &5687775090139766643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1156,7 +1150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnCooldown: 0
-  Cooldown: 0
+  Cooldown: -Infinity
   groundMask:
     serializedVersion: 2
     m_Bits: 64
@@ -1164,4 +1158,5 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   Range: 30
-  effectTrigger: {fileID: 643489304806779848, guid: 0e3d2b9d90bfe3544afa171323fe7986, type: 3}
+  FormatEffect: {fileID: 643489304806779848, guid: 0e3d2b9d90bfe3544afa171323fe7986, type: 3}
+  AOERange: 6
