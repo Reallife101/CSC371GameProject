@@ -15,7 +15,7 @@ public class moveTowardsPlayer : MonoBehaviour
     private GameObject player;
 
 
-    private void Start()
+    private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
     }
@@ -27,7 +27,12 @@ public class moveTowardsPlayer : MonoBehaviour
 
         float dist = Vector3.Distance(transform.position, player.transform.position);
 
-        if (dist > minDistance && dist < maxDistance && (Physics.Raycast(transform.position + Vector3.up, transform.forward, out hit, maxDistance) || followRegardless))
+        if (followRegardless)
+        {
+            agent.SetDestination(player.transform.position);
+        }
+        else
+        if (dist > minDistance && dist < maxDistance && Physics.Raycast(transform.position + Vector3.up, transform.forward, out hit, maxDistance))
         {
             if (hit.collider.gameObject.tag == "Player")
             {
