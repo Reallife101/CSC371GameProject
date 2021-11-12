@@ -8,6 +8,11 @@ public class toggleWeaponRackUI : interactable
     public GameObject WeaponRackUI;
     public bool on = false;
 
+    [SerializeField]
+    respawnHandler rh;
+    [SerializeField]
+    Vector3 respawnPoint;
+
     private float buttonCooldown = 0.2f;
     private float timer;
     // Start is called before the first frame update
@@ -46,6 +51,8 @@ public class toggleWeaponRackUI : interactable
         if (Input.GetKey(KeyCode.F) && timer >= buttonCooldown)
         {
             timer = 0;
+
+            rh.respawnPoint = respawnPoint;
 
             if (!on)
             {
