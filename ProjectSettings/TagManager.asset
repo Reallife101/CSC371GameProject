@@ -6,6 +6,7 @@ TagManager:
   tags:
   - StyleManager
   - Enemy
+  - respawnHandler
   layers:
   - Default
   - TransparentFX

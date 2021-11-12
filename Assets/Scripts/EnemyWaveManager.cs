@@ -38,10 +38,17 @@ public class EnemyWaveManager : MonoBehaviour
     {
         if (other.gameObject.tag == "Player" && !start)
         {
-            start = false;
+            start = true;
             walls.SetActive(true);
             waves[waveNum].SetActive(true);
         }
+    }
+
+    public void restart()
+    {
+        start = false;
+        walls.SetActive(false);
+        waves[waveNum].SetActive(false);
     }
 
     private GameObject getNext()

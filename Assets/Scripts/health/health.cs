@@ -10,12 +10,17 @@ public class health : MonoBehaviour
     public int healthTotal;
     public healthBar hb;
 
+    [SerializeField]
+    bool isPlayer;
+
     private StyleManager sm;
+    private respawnHandler rh;
     void Start()
     {
         healthTotal = healthMax;
         hb.sliderMax(healthMax);
         sm = GameObject.FindGameObjectWithTag("StyleManager").GetComponent<StyleManager>();
+        rh = GameObject.FindGameObjectWithTag("respawnHandler").GetComponent<respawnHandler>();
     }
 
     // Update is called once per frame
@@ -25,9 +30,16 @@ public class health : MonoBehaviour
         hb.setSlider(healthTotal);
         if (healthTotal <= 0)
         {
-            Destroy(gameObject);
-            sm.numKills += 1;
-            CameraShaker.Instance.ShakeOnce(1f, 10f, 0.05f, .05f);
+            if (isPlayer)
+            {
+                rh.respawn();
+            }
+            else
+            {
+                Destroy(gameObject);
+                sm.numKills += 1;
+                CameraShaker.Instance.ShakeOnce(1f, 10f, 0.05f, .05f);
+            }
         }
     }
 
