@@ -47,4 +47,20 @@ public class AbilityManager : MonoBehaviour
             potion.TriggerEffect(cam, player);
         }
     }
+
+    public Ability getMovementAbility()
+    {
+        return movement;
+    }
+
+    public Ability getCrowdControlAbility()
+    {
+        return crowdCon;
+    }
+
+    public Ability getDmgAbility()
+    {
+        return dmg;
+    }
+
 }

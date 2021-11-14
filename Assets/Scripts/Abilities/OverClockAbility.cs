@@ -34,4 +34,9 @@ public class OverClockAbility : Ability
         m.movementSpeed = normalSpeed;
         StartCoroutine(HandleCoolDown());
     }
+
+    public override int isUpgrade()
+    {
+        return 0;
+    }
 }

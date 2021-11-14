@@ -69,4 +69,6 @@ public abstract class Ability : MonoBehaviour
                 return wallPoint;
         }
     }
+
+    public abstract int isUpgrade();
 }

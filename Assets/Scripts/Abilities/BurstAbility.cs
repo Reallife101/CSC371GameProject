@@ -29,4 +29,9 @@ public class BurstAbility : Ability
             StartCoroutine(HandleCoolDown());
         }
     }
+
+    public override int isUpgrade()
+    {
+        return 0;
+    }
 }

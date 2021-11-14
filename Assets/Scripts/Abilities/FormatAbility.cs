@@ -38,4 +38,9 @@ public class FormatAbility : Ability
             }
         }
     }
+
+    public override int isUpgrade()
+    {
+        return 1;
+    }
 }
