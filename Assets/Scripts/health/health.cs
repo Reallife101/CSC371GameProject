@@ -13,6 +13,12 @@ public class health : MonoBehaviour
     [SerializeField]
     bool isPlayer;
 
+    [SerializeField]
+    List<AudioClip> acs;
+    [SerializeField]
+    AudioSource au;
+
+
     private StyleManager sm;
     private respawnHandler rh;
     void Start()
@@ -37,6 +43,7 @@ public class health : MonoBehaviour
             else
             {
                 Destroy(gameObject);
+                au.PlayOneShot(acs[Random.Range(0, acs.Capacity-1)]);
                 sm.numKills += 1;
                 CameraShaker.Instance.ShakeOnce(1f, 10f, 0.05f, .05f);
             }

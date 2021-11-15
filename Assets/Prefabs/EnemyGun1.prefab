@@ -647,6 +647,13 @@ MonoBehaviour:
   healthMax: 15
   healthTotal: 0
   hb: {fileID: 6184349386221922995}
+  isPlayer: 0
+  acs:
+  - {fileID: 8300000, guid: 504da030c0d9e234fb8e52274d964689, type: 3}
+  - {fileID: 8300000, guid: bce8578db760e254a905b8e75b64bd26, type: 3}
+  - {fileID: 8300000, guid: 9ce15f720315fd14bb8f08f458c9616a, type: 3}
+  - {fileID: 8300000, guid: 149657d804756d446a9c74eed0be41f8, type: 3}
+  au: {fileID: 0}
 --- !u!195 &6206667575952853508
 NavMeshAgent:
   m_ObjectHideFlags: 0
