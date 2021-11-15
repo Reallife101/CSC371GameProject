@@ -97,13 +97,6 @@ public class StyleManager : MonoBehaviour
             hb.setSlider(killStreakPeriod);
             comboText.text = "Combo: " + numKills;
             rating.text = getRating(numKills);
-        }
-
-        if (numKills > prevKills)
-        {
-            hb.setSlider(killStreakPeriod);
-            comboText.text = "Combo: " + numKills;
-            rating.text = getRating(numKills);
 
             if (getRating(numKills) == "D")
             {

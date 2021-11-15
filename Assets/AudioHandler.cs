@@ -32,28 +32,28 @@ public class AudioHandler : MonoBehaviour
     // Style Sounds
     public void playDRankup()
     {
-        audioPlayer.PlayOneShot(DRankup, 0.7f);
+        audioPlayer.PlayOneShot(DRankup, 1f);
     }
 
     public void playCRankup()
     {
-        audioPlayer.PlayOneShot(CRankup, 0.7f);
+        audioPlayer.PlayOneShot(CRankup, 1f);
     }
     public void playBRankup()
     {
-        audioPlayer.PlayOneShot(BRankup, 0.7f);
+        audioPlayer.PlayOneShot(BRankup, 1f);
     }
     public void playARankup()
     {
-        audioPlayer.PlayOneShot(ARankup, 0.7f);
+        audioPlayer.PlayOneShot(ARankup, 1f);
     }
     public void playSRankup()
     {
-        audioPlayer.PlayOneShot(SRankup, 0.7f);
+        audioPlayer.PlayOneShot(SRankup, 1f);
     }
     public void playSSSRankup()
     {
-        audioPlayer.PlayOneShot(SSSRankup, 0.7f);
+        audioPlayer.PlayOneShot(SSSRankup, 1f);
     }
     /*
     public void playHover(float tm)
