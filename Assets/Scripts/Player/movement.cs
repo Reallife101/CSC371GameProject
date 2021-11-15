@@ -19,10 +19,20 @@ public class movement : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
 
+    [SerializeField]
+    List<AudioClip> footsteps;
+
+    private int footstepCounter;
+    private AudioSource audioPlayer;
+    private float footstepTime;
+
     private void Start()
     {
         cam = Camera.main;
         controller = GetComponent<CharacterController>();
+        footstepCounter = 0;
+        footstepTime = 3f;
+        audioPlayer = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -51,15 +61,35 @@ public class movement : MonoBehaviour
 
         RaycastHit hit;
 
-        if(checkMove(moveCheck))
+        footstepTime = footstepTime + Time.deltaTime;
+
+        if (checkMove(moveCheck))
         {
             controller.Move(move * movementSpeed * Time.deltaTime);
+            if (move.magnitude > 0f)
+            {
+                playFootstep();
+            }
         }
 
         // Gravity
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+    }
+
+    void playFootstep()
+    {
+        if (footstepTime > footsteps[footstepCounter].length)
+        {
+            audioPlayer.PlayOneShot(footsteps[footstepCounter], 0.05f);
+            footstepTime = 0;
+            footstepCounter += 1;
+            if (footstepCounter == footsteps.Count)
+            {
+                footstepCounter = 0;
+            }
+        }
     }
 
     public bool checkMove(Vector3 pos)
