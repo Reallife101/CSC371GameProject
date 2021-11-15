@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 8720696612266000888}
   - component: {fileID: 2765473692949558764}
   - component: {fileID: 2821223163120739353}
+  - component: {fileID: 7381466087221693013}
   m_Layer: 5
   m_Name: DmgKeyImage
   m_TagString: Untagged
@@ -209,6 +210,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7381466087221693013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809587764534437278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd6ad86016ffc584d8e67b6b7076e52f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burst: {fileID: 21300000, guid: 294b7cef11ade19458d36ba70ff9b50f, type: 3}
+  format: {fileID: 21300000, guid: 53cff99639470ba4999ae595287143a0, type: 3}
+  AbilityManager: {fileID: 0}
 --- !u!1 &2572847871851494392
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,6 +821,7 @@ GameObject:
   - component: {fileID: 4126726613021152069}
   - component: {fileID: 5351565813100682179}
   - component: {fileID: 4663091459927478098}
+  - component: {fileID: 3552980305916957995}
   m_Layer: 5
   m_Name: CrowdKeyImage
   m_TagString: Untagged
@@ -869,6 +886,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3552980305916957995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3423693061551901951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3921740c0d8287e42ba1e20f6a16b29a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  underclock: {fileID: 21300000, guid: 93078ff18a06bf747a7e22049b702fb3, type: 3}
+  root: {fileID: 21300000, guid: a0995c5e982236145a9e4a6f3828d039, type: 3}
+  AbilityManager: {fileID: 0}
 --- !u!1 &3629310827169227166
 GameObject:
   m_ObjectHideFlags: 0
@@ -1171,7 +1203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   overclock: {fileID: 21300000, guid: 4e822aef56927c04da2502b7392cd5b5, type: 3}
   teleport: {fileID: 21300000, guid: e54101173bdf1fa488e7866a10a1e8de, type: 3}
-  Player: {fileID: 0}
+  AbilityManager: {fileID: 0}
 --- !u!1 &5207410922575638630
 GameObject:
   m_ObjectHideFlags: 0
