@@ -17,6 +17,8 @@ public class health : MonoBehaviour
     List<AudioClip> acs;
     [SerializeField]
     AudioSource au;
+    [SerializeField]
+    GameObject redJelly;
 
 
     private StyleManager sm;
@@ -27,6 +29,7 @@ public class health : MonoBehaviour
         hb.sliderMax(healthMax);
         sm = GameObject.FindGameObjectWithTag("StyleManager").GetComponent<StyleManager>();
         rh = GameObject.FindGameObjectWithTag("respawnHandler").GetComponent<respawnHandler>();
+        redJelly.SetActive(false);
     }
 
     // Update is called once per frame
@@ -34,6 +37,13 @@ public class health : MonoBehaviour
     {
         healthTotal = healthTotal - amount;
         hb.setSlider(healthTotal);
+
+        if (isPlayer)
+        {
+            redJelly.SetActive(true);
+            StartCoroutine(hideUI(0.1f));
+        }
+
         if (healthTotal <= 0)
         {
             if (isPlayer)
@@ -54,5 +64,12 @@ public class health : MonoBehaviour
     {
         healthTotal = Mathf.Min(healthTotal + amount, healthMax);
         hb.setSlider(healthTotal);
+    }
+
+    IEnumerator hideUI(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        redJelly.SetActive(false);
+
     }
 }
