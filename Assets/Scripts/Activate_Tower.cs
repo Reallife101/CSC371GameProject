@@ -19,7 +19,7 @@ public class Activate_Tower : MonoBehaviour
     public GameObject exit;
     public GameObject Lamp;
     public GameObject Beacon;
-
+    [SerializeField] float startTime;
     [SerializeField] float Wave1_1TimeStart;
     [SerializeField] float Wave1_2TimeStart;
     [SerializeField] float Wave1_3TimeStart;
@@ -34,6 +34,7 @@ public class Activate_Tower : MonoBehaviour
     [SerializeField] float Wave3_2TimeStart;
     [SerializeField] float Wave3_3TimeStart;
     [SerializeField] float Wave3_4TimeStart;
+    [SerializeField] bool TowerComplete;
 
     public AudioSource audioSrc;
     private bool isMusicPlaying = false;
@@ -57,13 +58,32 @@ public class Activate_Tower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+       if (TowerComplete)
+        {
+            exit.SetActive(true);
+            Beacon.GetComponent<Light>().color = Color.green;
+            Lamp.GetComponent<Light>().color = Color.green;
+            timeRemaining = 0;
+            timerIsRunning = false;
+            audioSrc.Stop();
+
+            DisplayTime(timeRemaining);
+            if (timeRemaining <= -5)
+            {
+                timerIsRunning = false;
+            }
+        }
+
        if (timerIsRunning)
         {
             timeText.gameObject.SetActive(true);
             
             if (!isMusicPlaying)
             {
+                audioSrc.time = startTime;
                 audioSrc.Play();
+                
                 isMusicPlaying = true;
 
             }
@@ -149,17 +169,22 @@ public class Activate_Tower : MonoBehaviour
                  
             }
 
-
-            else
+             if (timeRemaining < 0)
             {
-                Debug.Log("Player Completed Challenge");
-                timeRemaining = 0;
-                timerIsRunning = false;
+                timeRemaining -= Time.deltaTime;
+                //timeRemaining = audioSrc.time;
                 exit.SetActive(true);
                 Beacon.GetComponent<Light>().color = Color.green;
                 Lamp.GetComponent<Light>().color = Color.green;
 
+                DisplayTime(timeRemaining);
+                if (timeRemaining <= -5)
+                {
+                    timerIsRunning = false;
+                }
             }
+
+
 
         }
        else
@@ -172,6 +197,11 @@ public class Activate_Tower : MonoBehaviour
     
     void DisplayTime(float timeToDisplay)
     {
+        if (timeToDisplay < 0)
+        {
+            timeText.text = string.Format("Challenge Completed!");
+            return;
+        }
         timeToDisplay += 1;
 
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
