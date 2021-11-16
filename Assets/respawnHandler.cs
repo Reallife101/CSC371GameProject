@@ -8,8 +8,6 @@ public class respawnHandler : MonoBehaviour
 
     [SerializeField]
     List<EnemyWaveManager> ew;
-    [SerializeField]
-    GameObject respawnUI;
 
     private GameObject player;
 
@@ -29,7 +27,6 @@ public class respawnHandler : MonoBehaviour
             if (holdTimer > 5f)
             {
                 respawn();
-                respawnUI.SetActive(false);
             }
         }
         if (Input.GetKeyUp(KeyCode.L))
