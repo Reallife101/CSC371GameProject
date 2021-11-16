@@ -13,6 +13,14 @@ public class health : MonoBehaviour
     [SerializeField]
     bool isPlayer;
 
+    [SerializeField]
+    List<AudioClip> acs;
+    [SerializeField]
+    AudioSource au;
+    [SerializeField]
+    GameObject redJelly;
+
+
     private StyleManager sm;
     private respawnHandler rh;
     void Start()
@@ -28,6 +36,13 @@ public class health : MonoBehaviour
     {
         healthTotal = healthTotal - amount;
         hb.setSlider(healthTotal);
+
+        if (isPlayer)
+        {
+            redJelly.SetActive(true);
+            StartCoroutine(hideUI(0.1f));
+        }
+
         if (healthTotal <= 0)
         {
             if (isPlayer)
@@ -36,9 +51,10 @@ public class health : MonoBehaviour
             }
             else
             {
-                Destroy(gameObject);
+                au.PlayOneShot(acs[Random.Range(0, acs.Capacity-1)]);
                 sm.numKills += 1;
                 CameraShaker.Instance.ShakeOnce(1f, 10f, 0.05f, .05f);
+                Destroy(gameObject);
             }
         }
     }
@@ -47,5 +63,12 @@ public class health : MonoBehaviour
     {
         healthTotal = Mathf.Min(healthTotal + amount, healthMax);
         hb.setSlider(healthTotal);
+    }
+
+    IEnumerator hideUI(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        redJelly.SetActive(false);
+
     }
 }

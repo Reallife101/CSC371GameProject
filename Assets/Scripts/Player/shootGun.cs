@@ -10,8 +10,10 @@ public class shootGun : MonoBehaviour
 
     private float maxMana = 4;
     private float currentMana;
+    private AudioSource au;
 
     [SerializeField] manabar manabar;
+    [SerializeField] AudioClip gunShot;
 
     private void Start()
     {
@@ -19,6 +21,7 @@ public class shootGun : MonoBehaviour
         currentMana = maxMana;
         manabar.SetMaxMana(maxMana);
         manabar.SetMana(currentMana);
+        au = GetComponent<AudioSource>();
     }
     // Update is called once per frame
     void Update()
@@ -31,7 +34,8 @@ public class shootGun : MonoBehaviour
         
         if (Input.GetButtonDown("Fire1"))
         {
-                Instantiate(myPrefab, gun.transform.position + gun.transform.forward, gun.transform.rotation);
+            Instantiate(myPrefab, gun.transform.position + gun.transform.forward, gun.transform.rotation);
+            au.PlayOneShot(gunShot);
         }
 
         if (Input.GetButtonDown("Fire2"))

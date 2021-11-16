@@ -19,10 +19,24 @@ public class movement : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
 
+    [SerializeField]
+    List<AudioClip> footsteps;
+    [SerializeField]
+    GameObject respawnUI;
+
+    private int footstepCounter;
+    private AudioSource audioPlayer;
+    private float footstepTime;
+    private float holdTimer;
+
     private void Start()
     {
         cam = Camera.main;
         controller = GetComponent<CharacterController>();
+        footstepCounter = 0;
+        footstepTime = 3f;
+        holdTimer = 0;
+        audioPlayer = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -34,6 +48,20 @@ public class movement : MonoBehaviour
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
+        }
+
+        if(!isGrounded)
+        {
+            holdTimer += Time.deltaTime;
+            if (holdTimer >=3f)
+            {
+                respawnUI.SetActive(true);
+            }
+        }
+        if(isGrounded)
+        {
+            holdTimer = 0f;
+            respawnUI.SetActive(false);
         }
 
 
@@ -51,15 +79,35 @@ public class movement : MonoBehaviour
 
         RaycastHit hit;
 
-        if(checkMove(moveCheck))
+        footstepTime = footstepTime + Time.deltaTime;
+
+        if (checkMove(moveCheck))
         {
             controller.Move(move * movementSpeed * Time.deltaTime);
+            if (move.magnitude > 0f)
+            {
+                playFootstep();
+            }
         }
 
         // Gravity
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+    }
+
+    void playFootstep()
+    {
+        if (footstepTime > footsteps[footstepCounter].length)
+        {
+            audioPlayer.PlayOneShot(footsteps[footstepCounter], 0.05f);
+            footstepTime = 0;
+            footstepCounter += 1;
+            if (footstepCounter == footsteps.Count)
+            {
+                footstepCounter = 0;
+            }
+        }
     }
 
     public bool checkMove(Vector3 pos)
