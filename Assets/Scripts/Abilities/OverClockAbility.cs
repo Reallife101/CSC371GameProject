@@ -7,6 +7,8 @@ public class OverClockAbility : Ability
 {
     [SerializeField] float percentageIncrease = .5f;
     public float Durration = 2f;
+    [SerializeField] CooldownBar cooldownbar;
+    private float currentCool;
 
     // Sets Intial CoolDown
     private void Awake()
@@ -15,10 +17,21 @@ public class OverClockAbility : Ability
             Cooldown = 30f;
     }
 
+    void Update()
+    {
+        if (OnCooldown)
+        {
+            currentCool += 1.0f / Cooldown * Time.deltaTime;
+            cooldownbar.SetCooldown(currentCool);
+        }
+    }
+
     public override void TriggerEffect(Camera cam, GameObject player)
     {
         if(!OnCooldown)
         {
+            currentCool = 0;
+            cooldownbar.SetCooldown(0);
             StartCoroutine(HandleOverClock(player));
         }
     }

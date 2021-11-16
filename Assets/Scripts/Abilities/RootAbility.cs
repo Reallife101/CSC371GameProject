@@ -13,11 +13,23 @@ public class RootAbility : Ability
     public float AOERange = 10f;
     public float Duration = 10f;
 
+    [SerializeField] CooldownBar cooldownbar;
+    private float currentCool;
+
     // Used to set the intial cooldown
     private void Awake()
     {
         if (Cooldown.Equals(Mathf.NegativeInfinity))
             Cooldown = 25f;
+    }
+
+    void Update()
+    {
+        if (OnCooldown)
+        {
+            currentCool += 1.0f / Cooldown * Time.deltaTime;
+            cooldownbar.SetCooldown(currentCool);
+        }
     }
 
     public override void TriggerEffect(Camera cam, GameObject player)
@@ -26,6 +38,8 @@ public class RootAbility : Ability
         Vector3 targetHitPoint = getTargetPoint(cam, groundMask, wallMask, player.transform.position);
         if (!targetHitPoint.Equals(Vector3.positiveInfinity) & !OnCooldown)
         {
+            currentCool = 0;
+            cooldownbar.SetCooldown(0);
             // Checks if the target point is in range
             if (InRange(targetHitPoint, player.transform.position, Range))
             {

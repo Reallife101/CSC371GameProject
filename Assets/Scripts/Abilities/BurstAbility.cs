@@ -9,6 +9,9 @@ public class BurstAbility : Ability
     public int Damage = 10;
     public float AOERange = 6f;
 
+    [SerializeField] CooldownBar cooldownbar;
+    private float currentCool;
+
     // Used to set the intial cooldown
     private void Awake()
     {
@@ -16,11 +19,22 @@ public class BurstAbility : Ability
             Cooldown = 15f;
     }
 
+    void Update()
+    {
+        if (OnCooldown)
+        {
+            currentCool += 1.0f / Cooldown * Time.deltaTime;
+            cooldownbar.SetCooldown(currentCool);
+        }
+    }
+
     public override void TriggerEffect(Camera cam, GameObject player)
     {
         // Checks if on cooldown
         if (!OnCooldown)
         {
+            currentCool = 0;
+            cooldownbar.SetCooldown(0);
             // Instantiates the player centered aoe damage effect
             GameObject effect = Instantiate(BurstEffect, player.transform.position,
                 new Quaternion(0f, 0f, 0f, 0f));

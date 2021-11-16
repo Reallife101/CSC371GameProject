@@ -13,11 +13,23 @@ public class UnderClockAbility : Ability
     public float AOERange = 10f;
     public float Duration = 10f;
 
+    [SerializeField] CooldownBar cooldownbar;
+    private float currentCool;
+
     // Used to set the intial cooldown
     private void Awake()
     {
         if (Cooldown is Mathf.NegativeInfinity)
             Cooldown = 25f;
+    }
+
+    void Update()
+    {
+        if (OnCooldown)
+        {
+            currentCool += 1.0f / Cooldown * Time.deltaTime;
+            cooldownbar.SetCooldown(currentCool);
+        }
     }
 
     public override void TriggerEffect(Camera cam, GameObject player)
@@ -29,6 +41,8 @@ public class UnderClockAbility : Ability
             // Checks if the target point is in range
             if (InRange(targetHitPoint, player.transform.position, Range))
             {
+                currentCool = 0;
+                cooldownbar.SetCooldown(0);
                 // Instantiates the slow aoe effet
                 GameObject effect = Instantiate(SlowEffect, targetHitPoint, new Quaternion(0f, 0f, 0f, 0f));
                 effect.transform.localScale = new Vector3(2f * AOERange, 1f, 2f * AOERange);

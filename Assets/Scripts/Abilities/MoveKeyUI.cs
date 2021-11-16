@@ -21,14 +21,14 @@ public class MoveKeyUI : MonoBehaviour
     void Update()
     {
         movement = ability.getMovementAbility();
-        
-        if(movement.isUpgrade() == 0)
-        {
-            gameObject.GetComponent<Image>().sprite = overclock;
-        }
-        else
-        {
-            gameObject.GetComponent<Image>().sprite = teleport;
-        }
+
+            if (movement.isUpgrade() == 0)
+            {
+                gameObject.GetComponent<Image>().sprite = overclock;
+            }
+            else
+            {
+                gameObject.GetComponent<Image>().sprite = teleport;
+            }
     }
 }

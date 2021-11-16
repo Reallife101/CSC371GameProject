@@ -10,10 +10,22 @@ public class TeleportAbility : Ability
 
     public float Range = 10f;
 
+    [SerializeField] CooldownBar cooldownbar;
+    private float currentCool;
+
     private void Awake()
     {
         if (Cooldown.Equals(Mathf.NegativeInfinity))
             Cooldown = 30f;
+    }
+
+    void Update()
+    {
+        if (OnCooldown)
+        {
+            currentCool += 1.0f / Cooldown * Time.deltaTime;
+            cooldownbar.SetCooldown(currentCool);
+        }
     }
 
     public override void TriggerEffect(Camera cam, GameObject player)
@@ -47,6 +59,8 @@ public class TeleportAbility : Ability
                 troubleMaker.enabled = false;
                 player.transform.position = hitPoint;
                 troubleMaker.enabled = true;
+                currentCool = 0;
+                cooldownbar.SetCooldown(0);
                 StartCoroutine(HandleCoolDown());
             }
         }
