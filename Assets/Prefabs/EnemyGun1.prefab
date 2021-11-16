@@ -47,9 +47,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8635740435258ed49921b681299de109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPrefab: {fileID: 4157825302315634755, guid: e9f58bff1925f9048bad0dda02146d6b, type: 3}
+  myPrefab: {fileID: 4157825302315634755, guid: e9f58bff1925f9048bad0dda02146d6b,
+    type: 3}
   gun: {fileID: 5049360874390593251}
-  player: {fileID: 0}
+  player: {fileID: 646025804223257517, guid: fce9283bb1fbbaf4e88f2ebb5ec599fc, type: 3}
   attackRange: 25
   shotCooldown: 0.5
   burstCooldown: 3
@@ -647,6 +648,7 @@ MonoBehaviour:
   healthMax: 15
   healthTotal: 0
   hb: {fileID: 6184349386221922995}
+  isPlayer: 0
 --- !u!195 &6206667575952853508
 NavMeshAgent:
   m_ObjectHideFlags: 0

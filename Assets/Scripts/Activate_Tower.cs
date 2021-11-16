@@ -19,7 +19,7 @@ public class Activate_Tower : MonoBehaviour
     public GameObject exit;
     public GameObject Lamp;
     public GameObject Beacon;
-
+    [SerializeField] float startTime;
     [SerializeField] float Wave1_1TimeStart;
     [SerializeField] float Wave1_2TimeStart;
     [SerializeField] float Wave1_3TimeStart;
@@ -63,7 +63,9 @@ public class Activate_Tower : MonoBehaviour
             
             if (!isMusicPlaying)
             {
+                audioSrc.time = startTime;
                 audioSrc.Play();
+                
                 isMusicPlaying = true;
 
             }
@@ -149,17 +151,22 @@ public class Activate_Tower : MonoBehaviour
                  
             }
 
-
-            else
+             if (timeRemaining < 0)
             {
-                Debug.Log("Player Completed Challenge");
-                timeRemaining = 0;
-                timerIsRunning = false;
+                timeRemaining -= Time.deltaTime;
+                //timeRemaining = audioSrc.time;
                 exit.SetActive(true);
                 Beacon.GetComponent<Light>().color = Color.green;
                 Lamp.GetComponent<Light>().color = Color.green;
 
+                DisplayTime(timeRemaining);
+                if (timeRemaining <= -5)
+                {
+                    timerIsRunning = false;
+                }
             }
+
+
 
         }
        else
@@ -172,6 +179,11 @@ public class Activate_Tower : MonoBehaviour
     
     void DisplayTime(float timeToDisplay)
     {
+        if (timeToDisplay < 0)
+        {
+            timeText.text = string.Format("Challenge Completed!");
+            return;
+        }
         timeToDisplay += 1;
 
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
