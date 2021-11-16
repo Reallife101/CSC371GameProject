@@ -29,7 +29,6 @@ public class health : MonoBehaviour
         hb.sliderMax(healthMax);
         sm = GameObject.FindGameObjectWithTag("StyleManager").GetComponent<StyleManager>();
         rh = GameObject.FindGameObjectWithTag("respawnHandler").GetComponent<respawnHandler>();
-        redJelly.SetActive(false);
     }
 
     // Update is called once per frame

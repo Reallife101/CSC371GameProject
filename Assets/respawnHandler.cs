@@ -8,12 +8,34 @@ public class respawnHandler : MonoBehaviour
 
     [SerializeField]
     List<EnemyWaveManager> ew;
+    [SerializeField]
+    GameObject respawnUI;
 
     private GameObject player;
+
+    private float holdTimer;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        holdTimer = 0f;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.L))
+        {
+            holdTimer += Time.deltaTime;
+            if (holdTimer > 5f)
+            {
+                respawn();
+                respawnUI.SetActive(false);
+            }
+        }
+        if (Input.GetKeyUp(KeyCode.L))
+        {
+            holdTimer = 0;
+        }
     }
 
     public void respawn()

@@ -21,10 +21,13 @@ public class movement : MonoBehaviour
 
     [SerializeField]
     List<AudioClip> footsteps;
+    [SerializeField]
+    GameObject respawnUI;
 
     private int footstepCounter;
     private AudioSource audioPlayer;
     private float footstepTime;
+    private float holdTimer;
 
     private void Start()
     {
@@ -32,6 +35,7 @@ public class movement : MonoBehaviour
         controller = GetComponent<CharacterController>();
         footstepCounter = 0;
         footstepTime = 3f;
+        holdTimer = 0;
         audioPlayer = GetComponent<AudioSource>();
     }
 
@@ -44,6 +48,20 @@ public class movement : MonoBehaviour
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
+        }
+
+        if(!isGrounded)
+        {
+            holdTimer += Time.deltaTime;
+            if (holdTimer >=3f)
+            {
+                respawnUI.SetActive(true);
+            }
+        }
+        if(isGrounded)
+        {
+            holdTimer = 0f;
+            respawnUI.SetActive(false);
         }
 
 
