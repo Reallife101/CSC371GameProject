@@ -33974,7 +33974,6 @@ MonoBehaviour:
   ew:
   - {fileID: 391974680}
   - {fileID: 529064694}
-  respawnUI: {fileID: 1504899978}
 --- !u!4 &1349934679
 Transform:
   m_ObjectHideFlags: 0
