@@ -17,7 +17,7 @@ public class AttachToPlatform : MonoBehaviour
     {
         if (other.gameObject == Player)
         {
-            Player.transform.parent = transform;
+            Player.transform.parent = transform.parent.parent;
         }
     }
 

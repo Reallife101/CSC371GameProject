@@ -47,10 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8635740435258ed49921b681299de109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPrefab: {fileID: 4157825302315634755, guid: e9f58bff1925f9048bad0dda02146d6b,
-    type: 3}
+  myPrefab: {fileID: 4157825302315634755, guid: e9f58bff1925f9048bad0dda02146d6b, type: 3}
   gun: {fileID: 5049360874390593251}
-  player: {fileID: 646025804223257517, guid: fce9283bb1fbbaf4e88f2ebb5ec599fc, type: 3}
+  player: {fileID: 0}
   attackRange: 25
   shotCooldown: 0.5
   burstCooldown: 3
@@ -649,8 +648,6 @@ MonoBehaviour:
   healthTotal: 0
   hb: {fileID: 6184349386221922995}
   isPlayer: 0
-<<<<<<< HEAD
-=======
   acs:
   - {fileID: 8300000, guid: 504da030c0d9e234fb8e52274d964689, type: 3}
   - {fileID: 8300000, guid: bce8578db760e254a905b8e75b64bd26, type: 3}
@@ -658,7 +655,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 149657d804756d446a9c74eed0be41f8, type: 3}
   au: {fileID: 0}
   redJelly: {fileID: 0}
->>>>>>> f36abb0209e64bd4e096b38c7aedffb8c1d3cc32
 --- !u!195 &6206667575952853508
 NavMeshAgent:
   m_ObjectHideFlags: 0
