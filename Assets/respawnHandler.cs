@@ -8,14 +8,19 @@ public class respawnHandler : MonoBehaviour
 
     [SerializeField]
     List<EnemyWaveManager> ew;
+    [SerializeField]
+    List<AudioClip> acs;
 
     private GameObject player;
 
     private float holdTimer;
 
+    private AudioSource au;
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        au = GetComponent<AudioSource>();
         holdTimer = 0f;
     }
 
@@ -41,6 +46,7 @@ public class respawnHandler : MonoBehaviour
         player.transform.position = respawnPoint;
         player.GetComponent<health>().addHealth(10000);
         player.GetComponent<CharacterController>().enabled = true;
+        au.PlayOneShot(acs[Random.Range(0, acs.Capacity - 1)]);
 
         foreach (EnemyWaveManager wave in ew)
         {
