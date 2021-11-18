@@ -100,27 +100,27 @@ public class StyleManager : MonoBehaviour
 
             if (getRating(numKills) == "D")
             {
-                firstSound.Play();
+                ah.playFirstKill();
             }
             if (getRating(numKills) == "C")
             {
-                secondSound.Play();
+                ah.playSecondKill();
             }
             if (getRating(numKills) == "B")
             {
-                thirdSound.Play();
+                ah.playThirdKill();
             }
             if (getRating(numKills) == "A")
             {
-                fourthSound.Play();
+                ah.playFourthKill();
             }
             if (getRating(numKills) == "S")
             {
-                fifthSound.Play();
+                ah.playFifthKill();
             }
             if (getRating(numKills) == "SSS")
             {
-                sixthSound.Play();
+                ah.playSixthKill();
             }
         }
 

@@ -17,6 +17,18 @@ public class AudioHandler : MonoBehaviour
     AudioClip SRankup;
     [SerializeField]
     AudioClip SSSRankup;
+    [SerializeField]
+    AudioClip FirstKill;
+    [SerializeField]
+    AudioClip SecondKill;
+    [SerializeField]
+    AudioClip ThirdKill;
+    [SerializeField]
+    AudioClip FourthKill;
+    [SerializeField]
+    AudioClip FifthKill;
+    [SerializeField]
+    AudioClip SixthKill;
 
 
     private AudioSource audioPlayer;
@@ -54,6 +66,31 @@ public class AudioHandler : MonoBehaviour
     public void playSSSRankup()
     {
         audioPlayer.PlayOneShot(SSSRankup, 1f);
+    }
+    public void playFirstKill()
+    {
+        audioPlayer.PlayOneShot(FirstKill, 1f);
+    }
+
+    public void playSecondKill()
+    {
+        audioPlayer.PlayOneShot(SecondKill, 1f);
+    }
+    public void playThirdKill()
+    {
+        audioPlayer.PlayOneShot(ThirdKill, 1f);
+    }
+    public void playFourthKill()
+    {
+        audioPlayer.PlayOneShot(FourthKill, 1f);
+    }
+    public void playFifthKill()
+    {
+        audioPlayer.PlayOneShot(FifthKill, 1f);
+    }
+    public void playSixthKill()
+    {
+        audioPlayer.PlayOneShot(SixthKill, 1f);
     }
     /*
     public void playHover(float tm)
