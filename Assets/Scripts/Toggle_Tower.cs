@@ -10,6 +10,9 @@ public class Toggle_Tower : interactable
 
     private float buttonCooldown = 0.2f;
     private float timer;
+    public GameObject respawnDoor;
+    public GameObject respawnSwitch;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +54,8 @@ public class Toggle_Tower : interactable
             {
               //  ld.numLocks -= 1;
                 on = true;
+                respawnDoor.GetComponent<toggleDoor>().numLocks = 1;
+                respawnSwitch.GetComponent<toggleButton>().on = false;
                 StartTheClock();
 
             }

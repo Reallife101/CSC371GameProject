@@ -38,12 +38,14 @@ public class Activate_Tower : MonoBehaviour
 
     public AudioSource audioSrc;
     private bool isMusicPlaying = false;
-    private bool TowerIsFinished = false;
+    public bool TowerIsFinished = false;
     private bool W1_1 = true, W1_2 = true, W1_3 = true, W1_4 = true;
     private bool W2_1 = true, W2_2 = true, W2_3 = true, W2_4 = true;
     private bool W3_1 = true, W3_2 = true, W3_3 = true, W3_4 = true;
-
+    public GameObject respawnTrigger;
+    public GameObject respawnDoor;
     private float TotalTime;
+    public GameObject ExitArrow;
     void Start()
     {
         TotalTime = timeRemaining;
@@ -56,6 +58,15 @@ public class Activate_Tower : MonoBehaviour
     }
 
     // Update is called once per frame
+    
+    public void pauseTower()
+    {
+        timerIsRunning = false;
+        startTime = audioSrc.time;
+        audioSrc.Pause();
+        isMusicPlaying = false;
+    }
+    
     void Update()
     {
 
@@ -73,6 +84,9 @@ public class Activate_Tower : MonoBehaviour
             {
                 timerIsRunning = false;
             }
+            respawnTrigger.SetActive(false);
+            respawnDoor.SetActive(false);
+            ExitArrow.SetActive(true);
             TowerIsFinished = true;
         }
 
@@ -82,6 +96,7 @@ public class Activate_Tower : MonoBehaviour
             
             if (!isMusicPlaying)
             {
+                respawnTrigger.SetActive(true);
                 audioSrc.time = startTime;
                 audioSrc.Play();
                 

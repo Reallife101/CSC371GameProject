@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RespawnBox : MonoBehaviour
+public class StopTower : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] Vector3 newRespawnPoint;
+    public GameObject Tower;
+    public GameObject RotatePlatform;
     void Start()
     {
         
@@ -21,17 +22,13 @@ public class RespawnBox : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            var RespawnLocation = GetComponentInParent<respawnHandler>();
-            RespawnLocation.respawnPoint = newRespawnPoint;
+            Tower.GetComponent<Activate_Tower>().pauseTower();
+           /* if (RotatePlatform != null)
+            {
+                RotatePlatform.GetComponent<RotatePlatform>
+            }*/
 
         }
     }
-
-    private void OnTriggerExit(Collider other)
-    {
-        
-    }
-
-
 
 }
