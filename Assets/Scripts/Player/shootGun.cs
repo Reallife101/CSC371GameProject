@@ -7,6 +7,7 @@ public class shootGun : MonoBehaviour
 
     public GameObject myPrefab;
     public GameObject gun;
+    public int BulletDamage = 5;
 
     private float maxMana = 4;
     private float currentMana;
@@ -34,20 +35,24 @@ public class shootGun : MonoBehaviour
         
         if (Input.GetButtonDown("Fire1"))
         {
-            Instantiate(myPrefab, gun.transform.position + gun.transform.forward, gun.transform.rotation);
+            GameObject bullet = Instantiate(myPrefab, gun.transform.position + gun.transform.forward, gun.transform.rotation);
+            bullet.GetComponent<doDamage>().damageValue = BulletDamage;
             au.PlayOneShot(gunShot);
         }
 
         if (Input.GetButtonDown("Fire2"))
         {
-                if(currentMana >= 2)
-                {
-                    Instantiate(myPrefab, gun.transform.position + gun.transform.forward, gun.transform.rotation * Quaternion.Euler(Vector3.up * 5));
-                    Instantiate(myPrefab, gun.transform.position + gun.transform.forward, gun.transform.rotation * Quaternion.Euler(Vector3.up * -5));
-                    Instantiate(myPrefab, gun.transform.position + gun.transform.forward, gun.transform.rotation * Quaternion.Euler(Vector3.up));
-                    currentMana -= 2;
-                    manabar.SetMana(currentMana);
-                }
+            if(currentMana >= 2)
+            {
+                GameObject bullet = Instantiate(myPrefab, gun.transform.position + gun.transform.forward, gun.transform.rotation * Quaternion.Euler(Vector3.up * 5));
+                bullet.GetComponent<doDamage>().damageValue = BulletDamage;
+                bullet = Instantiate(myPrefab, gun.transform.position + gun.transform.forward, gun.transform.rotation * Quaternion.Euler(Vector3.up * -5));
+                bullet.GetComponent<doDamage>().damageValue = BulletDamage;
+                bullet = Instantiate(myPrefab, gun.transform.position + gun.transform.forward, gun.transform.rotation * Quaternion.Euler(Vector3.up));
+                bullet.GetComponent<doDamage>().damageValue = BulletDamage;
+                currentMana -= 2;
+                manabar.SetMana(currentMana);
+            }
         }
 
     }
