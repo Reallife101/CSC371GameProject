@@ -9,7 +9,7 @@ public class LoadStatsPlayer : MonoBehaviour
     [SerializeField] AbilityManager AbilityManager;
     [SerializeField] CharacterStats Stats;
 
-    private void Awake()
+    private void Start()
     {
         LoadStats();
     }

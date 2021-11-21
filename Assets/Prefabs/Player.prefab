@@ -654,11 +654,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 2037227418348042556}
-  movementAlt: {fileID: 0}
+  movementAlt: {fileID: 5892679413476568123}
   crowdCon: {fileID: 7975843536984380869}
-  crowdConAlt: {fileID: 0}
+  crowdConAlt: {fileID: 1612624099906317087}
   dmg: {fileID: 6010923268809606419}
-  dmgAlt: {fileID: 0}
+  dmgAlt: {fileID: 5687775090139766643}
   potion: {fileID: 630800079082477967}
   MoveAlt: 0
   CCAlt: 0

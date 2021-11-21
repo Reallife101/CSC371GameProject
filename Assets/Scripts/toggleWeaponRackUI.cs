@@ -10,7 +10,7 @@ public class toggleWeaponRackUI : interactable
 
     [SerializeField] respawnHandler rh;
     [SerializeField] Vector3 respawnPoint;
-    [SerializeField] GameObject playerObject;
+    [SerializeField] Collider playerObject;
 
     private float buttonCooldown = 0.2f;
     private float timer;
@@ -30,7 +30,7 @@ public class toggleWeaponRackUI : interactable
         if (other.tag == "Player")
         {
             selected();
-            playerObject = other.gameObject;
+            playerObject = other;
         }
     }
 
@@ -41,9 +41,9 @@ public class toggleWeaponRackUI : interactable
             deselected();
             if (on)
             {
+                on = false;
                 WeaponRackUI.SetActive(false);
                 playerObject.GetComponent<LoadStatsPlayer>().LoadStats();
-                on = false;
             }
             playerObject = null;
         }
@@ -69,9 +69,9 @@ public class toggleWeaponRackUI : interactable
             }
             else
             {
+                on = false;
                 WeaponRackUI.SetActive(false);
                 playerObject.GetComponent<LoadStatsPlayer>().LoadStats();
-                on = false;
             }
         }
     }
