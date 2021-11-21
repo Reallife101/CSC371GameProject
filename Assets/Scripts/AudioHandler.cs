@@ -69,28 +69,28 @@ public class AudioHandler : MonoBehaviour
     }
     public void playFirstKill()
     {
-        audioPlayer.PlayOneShot(FirstKill, 1f);
+        audioPlayer.PlayOneShot(FirstKill, .45f);
     }
 
     public void playSecondKill()
     {
-        audioPlayer.PlayOneShot(SecondKill, 1f);
+        audioPlayer.PlayOneShot(SecondKill, .45f);
     }
     public void playThirdKill()
     {
-        audioPlayer.PlayOneShot(ThirdKill, 1f);
+        audioPlayer.PlayOneShot(ThirdKill, .45f);
     }
     public void playFourthKill()
     {
-        audioPlayer.PlayOneShot(FourthKill, 1f);
+        audioPlayer.PlayOneShot(FourthKill, .45f);
     }
     public void playFifthKill()
     {
-        audioPlayer.PlayOneShot(FifthKill, 1f);
+        audioPlayer.PlayOneShot(FifthKill, .45f);
     }
     public void playSixthKill()
     {
-        audioPlayer.PlayOneShot(SixthKill, 1f);
+        audioPlayer.PlayOneShot(SixthKill, .45f);
     }
     /*
     public void playHover(float tm)

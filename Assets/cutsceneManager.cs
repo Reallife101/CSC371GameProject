@@ -18,6 +18,13 @@ public class cutsceneManager : MonoBehaviour
     string sc;
 
     // Start is called before the first frame update
+    private void Update()
+    {
+        if (videoplayer.enabled && Input.GetKeyDown(KeyCode.Q))
+        {
+            SceneManager.LoadScene(sc);
+        }
+    }
 
 
     public void playVideo()
