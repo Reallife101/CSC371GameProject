@@ -263,7 +263,7 @@ MonoBehaviour:
   healthMax: 100
   healthTotal: 0
   hb: {fileID: 0}
-  isPlayer: 0
+  isPlayer: 1
   acs: []
   au: {fileID: 0}
   redJelly: {fileID: 0}

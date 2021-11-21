@@ -91,12 +91,25 @@ public class CharacterStats : ScriptableObject
         SpentUpgradePointsCC = 0;
     }
 
-    public void resetDamageAbility()
+    public void ResetDamageAbility()
     {
         DamageAOERadius = defaultDamageAOERadius;
         AbilityDamage = defaultAbilityDamage;
         Format = defaultFormat;
         AvailableUpgradePoints += SpentUpgradePointsDamage;
         SpentUpgradePointsDamage = 0;
+    }
+
+    // Used to completely reset the Characters Stats
+    public void resetToDefault()
+    {
+        ResetPlayer();
+        ResetMovementAbility();
+        ResetCCAbility();
+        ResetDamageAbility();
+
+        TotalUpgradePoints = defaultUpgradePoints;
+        AvailableUpgradePoints = defaultUpgradePoints;
+        Score = 0;
     }
 }

@@ -84,7 +84,7 @@ public class StyleManager : MonoBehaviour
         if (curVal <= 0)
         {
             ui.SetActive(false);
-            sm.score += numKills * pointsPerKill;
+            sm.AddScore(numKills * pointsPerKill);
             numKills = 0;
             prevKills = 0;
             scoreLevel = 0;
