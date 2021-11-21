@@ -25,7 +25,7 @@ MonoBehaviour:
   MovementDurration: 10
   MovementRange: 10
   Teleport: 0
-  CCAOERange: 10
+  CCAOERadius: 0
   CCDurration: 10
   Root: 0
   DamageAOERadius: 10

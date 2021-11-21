@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myPrefab: {fileID: 4157825302315634755, guid: e9f58bff1925f9048bad0dda02146d6b, type: 3}
   gun: {fileID: 646025804364874189}
+  BulletDamage: 5
   manabar: {fileID: 0}
   gunShot: {fileID: 0}
 --- !u!1 &646025803817895847
@@ -97,6 +98,7 @@ GameObject:
   - component: {fileID: 646025804223257509}
   - component: {fileID: 5322976062415210143}
   - component: {fileID: 1436598608277460068}
+  - component: {fileID: 456686853342989263}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -225,6 +227,7 @@ MonoBehaviour:
   footsteps:
   - {fileID: 8300000, guid: c77bcaf1591edb3459cb8cef021d7050, type: 3}
   - {fileID: 8300000, guid: e7defe6622c5f5c4e8852973d53b7395, type: 3}
+  respawnUI: {fileID: 0}
 --- !u!81 &646025804223257510
 AudioListener:
   m_ObjectHideFlags: 0
@@ -261,6 +264,9 @@ MonoBehaviour:
   healthTotal: 0
   hb: {fileID: 0}
   isPlayer: 0
+  acs: []
+  au: {fileID: 0}
+  redJelly: {fileID: 0}
 --- !u!82 &1436598608277460068
 AudioSource:
   m_ObjectHideFlags: 0
@@ -357,6 +363,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &456686853342989263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646025804223257517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76b026ca8c698224da03362c497ff470, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Gun: {fileID: 646025803537591162}
+  Health: {fileID: 5322976062415210143}
+  AbilityManager: {fileID: 3379903449979330250}
+  Stats: {fileID: 11400000, guid: 7af4fdd4c07837a448550fd655a5db5e, type: 2}
 --- !u!1 &646025804364874189
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,9 +654,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 2037227418348042556}
+  movementAlt: {fileID: 0}
   crowdCon: {fileID: 7975843536984380869}
+  crowdConAlt: {fileID: 0}
   dmg: {fileID: 6010923268809606419}
+  dmgAlt: {fileID: 0}
   potion: {fileID: 630800079082477967}
+  MoveAlt: 0
+  CCAlt: 0
+  DMGAlt: 0
   cam: {fileID: 0}
   player: {fileID: 646025804223257517}
   moveKey: 304
@@ -655,6 +683,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnCooldown: 0
   Cooldown: -Infinity
+  cooldownbar: {fileID: 0}
 --- !u!114 &2037227418348042556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -671,6 +700,7 @@ MonoBehaviour:
   Cooldown: -Infinity
   percentageIncrease: 0.5
   Durration: 2
+  cooldownbar: {fileID: 0}
 --- !u!114 &5892679413476568123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -693,6 +723,7 @@ MonoBehaviour:
     m_Bits: 512
   troubleMaker: {fileID: 646025804223257515}
   Range: 10
+  cooldownbar: {fileID: 0}
 --- !u!114 &7975843536984380869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -718,6 +749,7 @@ MonoBehaviour:
   SlowEffect: {fileID: 6469884053731220648, guid: f17eb184021f10a43940f5990ee6bdd5, type: 3}
   AOERange: 10
   Duration: 10
+  cooldownbar: {fileID: 0}
 --- !u!114 &1612624099906317087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -743,6 +775,7 @@ MonoBehaviour:
   Range: 50
   AOERange: 10
   Duration: 10
+  cooldownbar: {fileID: 0}
 --- !u!114 &6010923268809606419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -760,6 +793,7 @@ MonoBehaviour:
   BurstEffect: {fileID: 643489304806779848, guid: 0e3d2b9d90bfe3544afa171323fe7986, type: 3}
   Damage: 10
   AOERange: 6
+  cooldownbar: {fileID: 0}
 --- !u!114 &5687775090139766643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -784,3 +818,4 @@ MonoBehaviour:
   FormatEffect: {fileID: 643489304806779848, guid: 0e3d2b9d90bfe3544afa171323fe7986, type: 3}
   Damage: 10
   AOERange: 6
+  cooldownbar: {fileID: 0}

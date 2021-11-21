@@ -6216,6 +6216,12 @@ MonoBehaviour:
   ARankup: {fileID: 8300000, guid: e933a9d61acb49f478b68ee8958f90a4, type: 3}
   SRankup: {fileID: 8300000, guid: ae5962f1dfef27647a16255cc636a5ab, type: 3}
   SSSRankup: {fileID: 8300000, guid: 27af6e22d65df8d42bb5a987742a015b, type: 3}
+  FirstKill: {fileID: 0}
+  SecondKill: {fileID: 0}
+  ThirdKill: {fileID: 0}
+  FourthKill: {fileID: 0}
+  FifthKill: {fileID: 0}
+  SixthKill: {fileID: 0}
 --- !u!4 &848084965
 Transform:
   m_ObjectHideFlags: 0
@@ -13628,6 +13634,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 964967053}
     m_Modifications:
+    - target: {fileID: 260262999282455117, guid: 2621b69d949672a4da1fe80107a3d214, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 260262999282455117, guid: 2621b69d949672a4da1fe80107a3d214, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1405551216314832056, guid: 2621b69d949672a4da1fe80107a3d214, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1405551216314832056, guid: 2621b69d949672a4da1fe80107a3d214, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2362757750674457018, guid: 2621b69d949672a4da1fe80107a3d214, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2362757750674457018, guid: 2621b69d949672a4da1fe80107a3d214, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2572847873388408462, guid: 2621b69d949672a4da1fe80107a3d214, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -13715,6 +13745,14 @@ PrefabInstance:
     - target: {fileID: 2572847873388408463, guid: 2621b69d949672a4da1fe80107a3d214, type: 3}
       propertyPath: m_Name
       value: AbilitiesUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253713896715648076, guid: 2621b69d949672a4da1fe80107a3d214, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253713896715648076, guid: 2621b69d949672a4da1fe80107a3d214, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7019895864399971874, guid: 2621b69d949672a4da1fe80107a3d214, type: 3}
       propertyPath: Player

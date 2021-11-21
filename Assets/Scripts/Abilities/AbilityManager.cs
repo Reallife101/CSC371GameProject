@@ -5,9 +5,16 @@ using UnityEngine;
 public class AbilityManager : MonoBehaviour
 {
     [SerializeField] Ability movement;
+    [SerializeField] Ability movementAlt;
     [SerializeField] Ability crowdCon;
+    [SerializeField] Ability crowdConAlt;
     [SerializeField] Ability dmg;
+    [SerializeField] Ability dmgAlt;
     [SerializeField] Ability potion;
+
+    public bool MoveAlt = false;
+    public bool CCAlt = false;
+    public bool DMGAlt = false;
 
     [SerializeField] Camera cam = null;
     [SerializeField] GameObject player;
@@ -29,17 +36,38 @@ public class AbilityManager : MonoBehaviour
     {
         if(Input.GetKeyDown(moveKey))
         {
-            movement.TriggerEffect(cam, player);
+            if (!MoveAlt)
+            {
+                movement.TriggerEffect(cam, player);
+            }
+            else
+            {
+                movementAlt.TriggerEffect(cam, player);
+            }
         }
 
         if(Input.GetKeyDown(crowdKey))
         {
-            crowdCon.TriggerEffect(cam, player);
+            if (!CCAlt)
+            {
+                crowdCon.TriggerEffect(cam, player);
+            }
+            else
+            {
+                crowdConAlt.TriggerEffect(cam, player);
+            }
         }
 
         if(Input.GetKeyDown(dmgKey))
         {
-            dmg.TriggerEffect(cam, player);
+            if (!DMGAlt)
+            {
+                dmg.TriggerEffect(cam, player);
+            }
+            else
+            {
+                dmgAlt.TriggerEffect(cam, player);
+            }
         }
 
         if(Input.GetKeyDown(potionKey))
@@ -50,17 +78,37 @@ public class AbilityManager : MonoBehaviour
 
     public Ability getMovementAbility()
     {
-        return movement;
+        if (MoveAlt)
+        {
+            return movementAlt;
+        }
+        else
+        {
+            return movement;
+        }
     }
 
     public Ability getCrowdControlAbility()
     {
-        return crowdCon;
+        if (CCAlt)
+        {
+            return crowdConAlt;
+        }
+        else
+        {
+            return crowdCon;
+        }
     }
 
     public Ability getDmgAbility()
     {
-        return dmg;
+        if (DMGAlt)
+        {
+            return dmg;
+        }
+        else
+        {
+            return dmgAlt;
+        }
     }
-
 }

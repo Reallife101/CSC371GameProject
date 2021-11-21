@@ -43,7 +43,7 @@ public class CharacterStats : ScriptableObject
 
     // CrowdControl Abilitiy
     [SerializeField] private const float defaultCCAOERadius = 10f;
-    public float CCAOERange;
+    public float CCAOERadius;
 
     [SerializeField] private const float defaultCCDurration = 10f;
     public float CCDurration;
@@ -84,7 +84,7 @@ public class CharacterStats : ScriptableObject
 
     public void ResetCCAbility()
     {
-        CCAOERange = defaultCCAOERadius;
+        CCAOERadius = defaultCCAOERadius;
         CCDurration = defaultCCDurration;
         Root = defaultRoot;
         AvailableUpgradePoints += SpentUpgradePointsCC;
