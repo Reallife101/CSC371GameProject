@@ -7,19 +7,47 @@ public class bossAI : MonoBehaviour
     public GameObject projectile;
     
     [SerializeField] GameObject bossModel;
+    [SerializeField] bosshealth bh;
+    [SerializeField] cellHealth ch1;
+    [SerializeField] cellHealth ch2;
     [SerializeField] GameObject lazerModel1;
+    [SerializeField] GameObject lazerModel2;
     [SerializeField] List<GameObject> walls;
+
+    bool phase2;
+    bool phase3;
+    float timeBetweenAttack;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(attack(5f));
+        timeBetweenAttack = 5f; 
+        StartCoroutine(attack(timeBetweenAttack));
+        phase2 = false;
+        phase3 = false;
+    }
+
+    private void Update()
+    {
+        if (bh.healthTotal <= (bh.healthMax*2/3) && !phase2)
+        {
+            phase2 = true;
+            timeBetweenAttack -= 1.25f;
+            ch1.addHealth(ch1.healthMax);
+            ch2.addHealth(ch2.healthMax);
+        } else if (bh.healthTotal <= (bh.healthMax/ 3) && !phase3)
+        {
+            phase3 = true;
+            timeBetweenAttack -= 1.25f;
+            ch1.addHealth(ch1.healthMax);
+            ch2.addHealth(ch2.healthMax);
+        }
     }
 
     void randomAttack()
     {
         
-        switch(Random.Range(0, 3))
+        switch(Random.Range(0, 4))
         {
             case 0:
                 StartCoroutine(spray1(.1f, 30, 0, true));
@@ -29,6 +57,9 @@ public class bossAI : MonoBehaviour
                 break;
             case 2:
                 StartCoroutine(lazer1(5f));
+                break;
+            case 3:
+                StartCoroutine(lazer2(5f));
                 break;
             default:
                 
@@ -52,14 +83,14 @@ public class bossAI : MonoBehaviour
 
     IEnumerator attack(float waitTime)
     {
-        yield return new WaitForSeconds(waitTime-1);
+        yield return new WaitForSeconds(timeBetweenAttack - 1);
         disableWalls();
         yield return new WaitForSeconds(.3f);
         enableWalls();
         yield return new WaitForSeconds(.3f);
         randomAttack();
 
-        StartCoroutine(attack(waitTime));
+        StartCoroutine(attack(timeBetweenAttack));
 
     }
 
@@ -68,6 +99,13 @@ public class bossAI : MonoBehaviour
         lazerModel1.SetActive(true);
         yield return new WaitForSeconds(waitTime);
         lazerModel1.SetActive(false);
+    }
+
+    IEnumerator lazer2(float waitTime)
+    {
+        lazerModel2.SetActive(true);
+        yield return new WaitForSeconds(waitTime);
+        lazerModel2.SetActive(false);
 
 
     }
