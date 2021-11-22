@@ -13,6 +13,13 @@ public class bossAI : MonoBehaviour
     [SerializeField] GameObject lazerModel1;
     [SerializeField] GameObject lazerModel2;
     [SerializeField] List<GameObject> walls;
+    [SerializeField] AudioSource voiceline;
+    [SerializeField] AudioClip phase2vc;
+    [SerializeField] AudioClip phase3vc;
+    [SerializeField] AudioSource attackQuips;
+    [SerializeField] List<AudioClip> attackACS;
+    [SerializeField] AudioSource attackSounds;
+    [SerializeField] AudioClip explosion;
 
     bool phase2;
     bool phase3;
@@ -32,21 +39,24 @@ public class bossAI : MonoBehaviour
         if (bh.healthTotal <= (bh.healthMax*2/3) && !phase2)
         {
             phase2 = true;
+            voiceline.PlayOneShot(phase2vc);
             timeBetweenAttack -= 1.25f;
-            ch1.addHealth(ch1.healthMax);
-            ch2.addHealth(ch2.healthMax);
+            ch1.addHealth(10000);
+            ch2.addHealth(10000);
         } else if (bh.healthTotal <= (bh.healthMax/ 3) && !phase3)
         {
             phase3 = true;
+            voiceline.PlayOneShot(phase3vc);
             timeBetweenAttack -= 1.25f;
-            ch1.addHealth(ch1.healthMax);
-            ch2.addHealth(ch2.healthMax);
+            ch1.addHealth(10000);
+            ch2.addHealth(10000);
         }
     }
 
     void randomAttack()
     {
-        
+
+        attackQuips.PlayOneShot(attackACS[Random.Range(0, attackACS.Capacity - 1)]);
         switch(Random.Range(0, 4))
         {
             case 0:
@@ -128,6 +138,8 @@ public class bossAI : MonoBehaviour
             add = 5;
         }
 
+        attackSounds.PlayOneShot(explosion, .1f);
+
         Instantiate(projectile, bossModel.transform.position + bossModel.transform.forward * 7, bossModel.transform.rotation * Quaternion.Euler(Vector3.up * (-50 - add)));
         Instantiate(projectile, bossModel.transform.position + bossModel.transform.forward * 7, bossModel.transform.rotation * Quaternion.Euler(Vector3.up * (-40-add)));
         Instantiate(projectile, bossModel.transform.position + bossModel.transform.forward * 7, bossModel.transform.rotation * Quaternion.Euler(Vector3.up * (-30 - add)));
@@ -155,6 +167,8 @@ public class bossAI : MonoBehaviour
         {
             yield break;
         }
+
+        attackSounds.PlayOneShot(explosion, .05f);
 
         Instantiate(projectile, bossModel.transform.position + bossModel.transform.forward * 7, bossModel.transform.rotation * Quaternion.Euler(Vector3.up * degrees));
 

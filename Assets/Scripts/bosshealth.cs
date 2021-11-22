@@ -12,11 +12,15 @@ public class bosshealth : health
     [SerializeField] GameObject invincibleUI;
     [SerializeField] cellHealth ch1;
     [SerializeField] cellHealth ch2;
+    [SerializeField] List<AudioClip> damageSounds;
+
+    AudioSource au;
 
     void Start()
     {
         healthTotal = healthMax;
         hb.sliderMax(healthMax);
+        au = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -47,8 +51,9 @@ public class bosshealth : health
             return;
         }
 
-        healthTotal = healthTotal - amount;
+        healthTotal = Mathf.Max(healthTotal - amount, 0);
         hb.setSlider(healthTotal);
+        au.PlayOneShot(damageSounds[Random.Range(0, damageSounds.Capacity - 1)], 1f);
 
 
         if (healthTotal <= 0)
