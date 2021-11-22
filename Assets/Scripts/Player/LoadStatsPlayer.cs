@@ -28,37 +28,47 @@ public class LoadStatsPlayer : MonoBehaviour
         // Sets the abilites
         // Movement
         AbilityManager.MoveAlt = Stats.Teleport;
-        Ability movement = AbilityManager.getMovementAbility();
-        movement.Cooldown = Stats.MovementCooldown;
-        if (AbilityManager.MoveAlt) { ((TeleportAbility)movement).Range = Stats.MovementDurrationRange; }
-        else { ((OverClockAbility)movement).Durration = Stats.MovementDurrationRange; }
+        if (AbilityManager.MoveAlt)
+        {
+            TeleportAbility teleport = AbilityManager.GetComponent<TeleportAbility>();
+            teleport.Cooldown = Stats.MovementCooldown;
+            teleport.Range = Stats.MovementDurrationRange;
+        }
+        else 
+        {
+            OverClockAbility overClock = AbilityManager.GetComponent<OverClockAbility>();
+            overClock.Cooldown = Stats.MovementCooldown;
+            overClock.Durration = Stats.MovementDurrationRange;
+        }
 
         // Crowd Control
         AbilityManager.CCAlt = Stats.Root;
-        Ability cc = AbilityManager.getCrowdControlAbility();
         if (AbilityManager.CCAlt)
         {
-            ((RootAbility)cc).AOERange = Stats.CCAOERadius;
-            ((RootAbility)cc).Duration = Stats.CCDurration;
+            RootAbility root = AbilityManager.GetComponent<RootAbility>();
+            root.AOERange = Stats.CCAOERadius;
+            root.Duration = Stats.CCDurration;
         }
         else
         {
-            ((UnderClockAbility)cc).AOERange = Stats.CCAOERadius;
-            ((UnderClockAbility)cc).Duration = Stats.CCDurration;
+            UnderClockAbility underClock = AbilityManager.GetComponent<UnderClockAbility>();
+            underClock.AOERange = Stats.CCAOERadius;
+            underClock.Duration = Stats.CCDurration;
         }
 
         // Damage
         AbilityManager.DMGAlt = Stats.Format;
-        Ability dmg = AbilityManager.getDmgAbility();
         if (AbilityManager.DMGAlt)
         {
-            ((FormatAbility)dmg).AOERange = Stats.DamageAOERadius;
-            ((FormatAbility)dmg).Damage = Stats.AbilityDamage;
+            FormatAbility format = AbilityManager.GetComponent<FormatAbility>();
+            format.AOERange = Stats.DamageAOERadius;
+            format.Damage = Stats.AbilityDamage;
         }
         else
         {
-            ((BurstAbility)dmg).SetToRadius(Stats.DamageAOERadius);
-            ((BurstAbility)dmg).Damage = Stats.AbilityDamage;
+            BurstAbility burst = AbilityManager.GetComponent<BurstAbility>();
+            burst.AOERange = Stats.DamageAOERadius;
+            burst.Damage = Stats.AbilityDamage;
         }
     }
 }

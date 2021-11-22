@@ -15,7 +15,6 @@ public class CharacterStats : ScriptableObject
 
     // Score & Upgrade Points
     [SerializeField] private const int defaultUpgradePoints = 0;
-    public int TotalUpgradePoints;
     public int AvailableUpgradePoints;
     public int SpentUpgradePointsPlayer;
     public int SpentUpgradePointsMovement;
@@ -23,6 +22,9 @@ public class CharacterStats : ScriptableObject
     public int SpentUpgradePointsDamage;
 
     public int Score;
+
+    [SerializeField] private const int defaultLevelThreshold = 500;
+    public int LevelThreshold;
 
 
     // Abilty Stats
@@ -42,7 +44,7 @@ public class CharacterStats : ScriptableObject
 
     // CrowdControl Abilitiy
     [SerializeField] private const float defaultCCAOERadius = 10f;
-    [SerializeField] private const float maxCCAOERadius = 26f;
+    [SerializeField] private const float maxCCAOERadius = 21f;
     public float CCAOERadius;
 
     [SerializeField] private const float defaultCCDurration = 10f;
@@ -110,9 +112,9 @@ public class CharacterStats : ScriptableObject
         ResetCCAbility();
         ResetDamageAbility();
 
-        TotalUpgradePoints = defaultUpgradePoints;
         AvailableUpgradePoints = defaultUpgradePoints;
         Score = 0;
+        LevelThreshold = defaultLevelThreshold;
     }
 
     // Used by the Weapon Rack UI to increase stats

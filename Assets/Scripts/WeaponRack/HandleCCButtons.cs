@@ -10,10 +10,12 @@ public class HandleCCButtons : MonoBehaviour
 
     [SerializeField] CharacterStats Stats;
 
+    private float delta = 10f / 3f;
+
     // Handles the button presses for the movement block of the Weapon Rack UI
     public void HandleAOERadiusButton()
     {
-        if (Stats.IncreaseCCAOE(5f)) { AOERadiusBar.increaseValue(1); }
+        if (Stats.IncreaseCCAOE(delta)) { AOERadiusBar.increaseValue(1); }
     }
 
     public void HandleDurrationButton()

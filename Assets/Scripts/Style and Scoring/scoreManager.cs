@@ -7,6 +7,9 @@ public class scoreManager : MonoBehaviour
 {
     private TMP_Text scoreUI;
     public int score;
+    public int levelThreshold;
+
+    [SerializeField] float thresholdMultipler = 1.5f;
 
     [SerializeField] CharacterStats Stats;
 
@@ -15,6 +18,12 @@ public class scoreManager : MonoBehaviour
     {
         scoreUI = GetComponent<TMP_Text>();
         score = Stats.Score;
+        levelThreshold = Stats.LevelThreshold;
+        if (levelThreshold == 0)
+        {
+            Stats.LevelThreshold = levelThreshold = 500;
+        }
+        
     }
 
     // Called to add to the score
@@ -24,6 +33,17 @@ public class scoreManager : MonoBehaviour
         Stats.Score += toAdd;
     }
 
+    // Called to check if Upgrade Points should be awarded
+    private void checkLevelUp()
+    {
+        if (score >= levelThreshold)
+        {
+            Stats.AvailableUpgradePoints++;
+            Stats.LevelThreshold = levelThreshold = (int) System.Math.Round(levelThreshold * thresholdMultipler);
+        }
+    }
+
+    // Handles reseting the Character Stats Object
     private void OnApplicationQuit()
     {
         Stats.ResetToDefault();
@@ -33,5 +53,6 @@ public class scoreManager : MonoBehaviour
     void Update()
     {
         scoreUI.text = "Score: " + score+"  ";
+        checkLevelUp();
     }
 }

@@ -20,7 +20,7 @@ public class UnderClockAbility : Ability
     private void Awake()
     {
         if (Cooldown is Mathf.NegativeInfinity)
-            Cooldown = 25f;
+            Cooldown = 30f;
     }
 
     void Update()
