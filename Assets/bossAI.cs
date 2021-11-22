@@ -8,17 +8,12 @@ public class bossAI : MonoBehaviour
     
     [SerializeField] GameObject bossModel;
     [SerializeField] GameObject lazerModel1;
+    [SerializeField] List<GameObject> walls;
 
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(attack(5f));
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     void randomAttack()
@@ -41,9 +36,27 @@ public class bossAI : MonoBehaviour
         }
     }
 
+    void disableWalls()
+    {
+        foreach (GameObject wall in walls)
+        {
+            wall.SetActive(false);
+        }
+    }
+
+    void enableWalls()
+    {
+        walls[Random.Range(0, walls.Capacity)].SetActive(true);
+        walls[Random.Range(0, walls.Capacity)].SetActive(true);
+    }
+
     IEnumerator attack(float waitTime)
     {
-        yield return new WaitForSeconds(waitTime);
+        yield return new WaitForSeconds(waitTime-1);
+        disableWalls();
+        yield return new WaitForSeconds(.3f);
+        enableWalls();
+        yield return new WaitForSeconds(.3f);
         randomAttack();
 
         StartCoroutine(attack(waitTime));
