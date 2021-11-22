@@ -29,13 +29,12 @@ public class CharacterStats : ScriptableObject
 
     // Movement Abilty
     [SerializeField] private const float defaultMovementCooldown = 30f;
+    [SerializeField] private const float minMovementCooldown = 19f;
     public float MovementCooldown;
 
-    [SerializeField] private const float defaultMovementDurration = 10f;
-    public float MovementDurration;
-
-    [SerializeField] private const float defaultMovementRange = 10f;
-    public float MovementRange;
+    [SerializeField] private const float defaultMovementDurrationRange = 10f;
+    [SerializeField] private const float maxMovementDurrationRange = 20f;
+    public float MovementDurrationRange;
 
     [SerializeField] private const bool defaultTeleport = false;
     public bool Teleport;
@@ -43,9 +42,11 @@ public class CharacterStats : ScriptableObject
 
     // CrowdControl Abilitiy
     [SerializeField] private const float defaultCCAOERadius = 10f;
+    [SerializeField] private const float maxCCAOERadius = 26f;
     public float CCAOERadius;
 
     [SerializeField] private const float defaultCCDurration = 10f;
+    [SerializeField] private const float maxCCDurration = 26f;
     public float CCDurration;
 
     [SerializeField] private const bool defaultRoot = false;
@@ -53,10 +54,12 @@ public class CharacterStats : ScriptableObject
 
 
     // Damage Ability
-    [SerializeField] private const float defaultDamageAOERadius = 10f;
+    [SerializeField] private const float defaultDamageAOERadius = 6f;
+    [SerializeField] private const float maxDamageAOERadius = 16f;
     public float DamageAOERadius;
 
     [SerializeField] private const int defaultAbilityDamage = 10;
+    [SerializeField] private const int maxAbilityDamage = 26;
     public int AbilityDamage;
 
     [SerializeField] private const bool defaultFormat = false;
@@ -75,8 +78,7 @@ public class CharacterStats : ScriptableObject
     public void ResetMovementAbility()
     {
         MovementCooldown = defaultMovementCooldown;
-        MovementDurration = defaultMovementDurration;
-        MovementRange = defaultMovementRange;
+        MovementDurrationRange = defaultMovementDurrationRange;
         Teleport = defaultTeleport;
         AvailableUpgradePoints += SpentUpgradePointsMovement;
         SpentUpgradePointsMovement = 0;
@@ -101,7 +103,7 @@ public class CharacterStats : ScriptableObject
     }
 
     // Used to completely reset the Characters Stats
-    public void resetToDefault()
+    public void ResetToDefault()
     {
         ResetPlayer();
         ResetMovementAbility();
@@ -111,5 +113,138 @@ public class CharacterStats : ScriptableObject
         TotalUpgradePoints = defaultUpgradePoints;
         AvailableUpgradePoints = defaultUpgradePoints;
         Score = 0;
+    }
+
+    // Used by the Weapon Rack UI to increase stats
+    public bool IncreaseHealth(int toAdd)
+    {
+        if (AvailableUpgradePoints > 0)
+        {
+            HealthMax += toAdd;
+            SpentUpgradePointsPlayer++;
+            AvailableUpgradePoints--;
+            return true;
+        }
+        return false;
+    }
+    
+    public bool IncreaseDamage(int toAdd)
+    {
+        if (AvailableUpgradePoints > 0)
+        {
+            BulletDamage += toAdd;
+            SpentUpgradePointsPlayer++;
+            AvailableUpgradePoints--;
+            return true;
+        }
+        return false;
+    }
+
+    public bool DecreaseMoveCoolDown(float toSubtract)
+    {
+        if (AvailableUpgradePoints > 0 & (MovementCooldown - toSubtract > minMovementCooldown))
+        {
+            MovementCooldown -= toSubtract;
+            SpentUpgradePointsMovement++;
+            AvailableUpgradePoints--;
+            return true;
+        }
+        return false;
+    }
+
+    public bool IncreaseMoveDurrationRange(float toAdd)
+    {
+        if (AvailableUpgradePoints > 0 & (MovementDurrationRange + toAdd < maxMovementDurrationRange))
+        {
+            MovementDurrationRange += toAdd;
+            SpentUpgradePointsMovement++;
+            AvailableUpgradePoints--;
+            return true;
+        }
+        return false;
+    }
+
+    public bool ActivateTeleport()
+    {
+        if (AvailableUpgradePoints >= 3 & !Teleport)
+        {
+            Teleport = true;
+            SpentUpgradePointsMovement += 3;
+            AvailableUpgradePoints -= 3;
+            return true;
+        }
+        return false;
+    }
+
+    public bool IncreaseCCAOE(float toAdd)
+    {
+        if (AvailableUpgradePoints > 0 & (CCAOERadius + toAdd < maxCCAOERadius))
+        {
+            CCAOERadius += toAdd;
+            SpentUpgradePointsCC++;
+            AvailableUpgradePoints--;
+            return true;
+        }
+        return false;
+    }
+
+    public bool IncreaseCCDurration(float toAdd)
+    {
+        if (AvailableUpgradePoints > 0 & (CCDurration + toAdd < maxCCDurration))
+        {
+            CCDurration += toAdd;
+            SpentUpgradePointsCC++;
+            AvailableUpgradePoints--;
+            return true;
+        }
+        return false;
+    }
+
+    public bool ActivateRoot()
+    {
+        if (AvailableUpgradePoints >= 3 & !Root)
+        {
+            Root = true;
+            SpentUpgradePointsCC += 3;
+            AvailableUpgradePoints -= 3;
+            return true;
+        }
+        return false;
+    }
+
+    public bool IncreaseDmgAOE(float toAdd)
+    {
+        if (AvailableUpgradePoints > 0 & (DamageAOERadius + toAdd < maxDamageAOERadius))
+        {
+            DamageAOERadius += toAdd;
+            SpentUpgradePointsDamage++;
+            AvailableUpgradePoints--;
+            return true;
+        }
+        return false;
+    }
+
+    public bool IncreaseAbilityDmg(int toAdd)
+    {
+        if (AvailableUpgradePoints > 0 & (AbilityDamage + toAdd < maxAbilityDamage))
+        {
+            AbilityDamage += toAdd;
+            SpentUpgradePointsDamage++;
+            AvailableUpgradePoints--;
+            return true;
+        }
+        return false;
+    }
+
+    public bool ActivateFormat()
+    {
+        if (AvailableUpgradePoints >= 3 & !Format)
+        {
+            Format = true;
+            SpentUpgradePointsDamage += 3;
+            AvailableUpgradePoints -= 3;
+            return true;
+        }
+        return false;
     }
 }

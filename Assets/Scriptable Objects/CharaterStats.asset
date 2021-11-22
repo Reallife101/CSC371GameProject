@@ -22,12 +22,11 @@ MonoBehaviour:
   SpentUpgradePointsDamage: 0
   Score: 0
   MovementCooldown: 30
-  MovementDurration: 10
-  MovementRange: 10
+  MovementDurrationRange: 10
   Teleport: 0
-  CCAOERadius: 0
+  CCAOERadius: 10
   CCDurration: 10
   Root: 0
-  DamageAOERadius: 10
+  DamageAOERadius: 6
   AbilityDamage: 10
   Format: 0

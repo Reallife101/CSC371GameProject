@@ -26,7 +26,7 @@ public class scoreManager : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        Stats.resetToDefault();
+        Stats.ResetToDefault();
     }
 
     // Update is called once per frame

@@ -30,8 +30,8 @@ public class LoadStatsPlayer : MonoBehaviour
         AbilityManager.MoveAlt = Stats.Teleport;
         Ability movement = AbilityManager.getMovementAbility();
         movement.Cooldown = Stats.MovementCooldown;
-        if (AbilityManager.MoveAlt) { ((TeleportAbility)movement).Range = Stats.MovementRange; }
-        else { ((OverClockAbility)movement).Durration = Stats.MovementDurration; }
+        if (AbilityManager.MoveAlt) { ((TeleportAbility)movement).Range = Stats.MovementDurrationRange; }
+        else { ((OverClockAbility)movement).Durration = Stats.MovementDurrationRange; }
 
         // Crowd Control
         AbilityManager.CCAlt = Stats.Root;
@@ -57,7 +57,7 @@ public class LoadStatsPlayer : MonoBehaviour
         }
         else
         {
-            ((BurstAbility)dmg).AOERange = Stats.DamageAOERadius;
+            ((BurstAbility)dmg).SetToRadius(Stats.DamageAOERadius);
             ((BurstAbility)dmg).Damage = Stats.AbilityDamage;
         }
     }

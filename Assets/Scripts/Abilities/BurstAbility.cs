@@ -48,4 +48,9 @@ public class BurstAbility : Ability
     {
         return 0;
     }
+
+    public void SetToRadius(float newValue)
+    {
+        AOERange = newValue;
+    }
 }
