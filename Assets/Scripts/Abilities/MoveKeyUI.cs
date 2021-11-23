@@ -9,7 +9,7 @@ public class MoveKeyUI : MonoBehaviour
 
     [SerializeField] GameObject AbilityManager;
     private AbilityManager ability;
-    private Ability movement;
+    //private Ability movement;
 
     // Start is called before the first frame update
     void Start()
@@ -20,13 +20,11 @@ public class MoveKeyUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement = ability.getMovementAbility();
-
-            if (movement.isUpgrade() == 0)
+        if (!ability.MoveAlt)
             {
                 gameObject.GetComponent<Image>().sprite = overclock;
             }
-            else
+        else
             {
                 gameObject.GetComponent<Image>().sprite = teleport;
             }
