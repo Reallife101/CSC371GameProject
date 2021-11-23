@@ -9,6 +9,8 @@ public class respawnHandler : MonoBehaviour
     [SerializeField]
     List<EnemyWaveManager> ew;
     [SerializeField]
+    List<startBossFight> bf;
+    [SerializeField]
     List<AudioClip> acs;
 
     private GameObject player;
@@ -51,6 +53,11 @@ public class respawnHandler : MonoBehaviour
         foreach (EnemyWaveManager wave in ew)
         {
             wave.restart();
+        }
+
+        foreach (startBossFight b in bf)
+        {
+            b.restart();
         }
     }
 }

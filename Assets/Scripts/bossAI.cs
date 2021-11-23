@@ -22,16 +22,26 @@ public class bossAI : MonoBehaviour
     [SerializeField] AudioClip explosion;
 
     bool phase2;
+    bool started = false;
     bool phase3;
     float timeBetweenAttack;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         timeBetweenAttack = 5f; 
-        StartCoroutine(attack(timeBetweenAttack));
+        StartCoroutine(attack(10f));
+        started = true;
         phase2 = false;
         phase3 = false;
+    }
+
+    private void OnEnable()
+    {
+        if (started)
+        {
+            StartCoroutine(attack(timeBetweenAttack));
+        }
     }
 
     private void Update()
@@ -93,7 +103,7 @@ public class bossAI : MonoBehaviour
 
     IEnumerator attack(float waitTime)
     {
-        yield return new WaitForSeconds(timeBetweenAttack - 1);
+        yield return new WaitForSeconds(waitTime - 1);
         disableWalls();
         yield return new WaitForSeconds(.3f);
         enableWalls();

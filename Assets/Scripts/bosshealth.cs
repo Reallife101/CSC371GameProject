@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class bosshealth : health
 {
@@ -13,6 +14,12 @@ public class bosshealth : health
     [SerializeField] cellHealth ch1;
     [SerializeField] cellHealth ch2;
     [SerializeField] List<AudioClip> damageSounds;
+
+    [SerializeField] GameObject bossFight;
+    [SerializeField] GameObject lazers;
+    [SerializeField] GameObject newPlatform;
+    [SerializeField] AudioClip win1;
+    [SerializeField] AudioSource au2;
 
     AudioSource au;
 
@@ -58,7 +65,12 @@ public class bosshealth : health
 
         if (healthTotal <= 0)
         {
-            //do something
+            au2.PlayOneShot(win1);
+            newPlatform.SetActive(true);
+            lazers.SetActive(false);
+            bossFight.SetActive(false);
+
+            //SceneManager.LoadScene("Win Scene");
         }
     }
 
