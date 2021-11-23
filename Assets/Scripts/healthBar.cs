@@ -16,6 +16,14 @@ public class healthBar : MonoBehaviour
         fill.color = gradient.Evaluate(slider.normalizedValue);
     }
 
+    // Used to add to the value instead of setting
+    public void increaseValue(float valueToAdd)
+    {
+        slider.value += valueToAdd;
+
+        fill.color = gradient.Evaluate(slider.normalizedValue);
+    }
+
     public void sliderMax(float value)
     {
         slider.maxValue = value;

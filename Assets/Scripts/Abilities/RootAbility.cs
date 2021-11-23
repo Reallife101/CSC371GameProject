@@ -20,7 +20,7 @@ public class RootAbility : Ability
     private void Awake()
     {
         if (Cooldown.Equals(Mathf.NegativeInfinity))
-            Cooldown = 25f;
+            Cooldown = 30f;
     }
 
     void Update()
