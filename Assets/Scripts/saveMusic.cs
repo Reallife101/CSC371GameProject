@@ -32,8 +32,8 @@ public static class saveMusic
         }
         else
         {
-            Debug.LogError("Save file not found in " + path);
-            return null;
+            musicData data = new musicData(new bool[10] { true, false, false, false, false, false, false, false, false, false }, new bool[10] { true, false, false, false, false, false, false, false, false, false });
+            return data;
         }
     }
 }

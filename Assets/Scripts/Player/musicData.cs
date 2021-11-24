@@ -14,4 +14,11 @@ public class musicData
         songsUnlocked = mm.songsUnlocked;
 
     }
+
+    public musicData(bool[] inUse, bool[] Unlocked)
+    {
+        songsInUse = inUse;
+        songsUnlocked = Unlocked;
+
+    }
 }
