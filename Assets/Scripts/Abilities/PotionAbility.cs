@@ -50,9 +50,4 @@ public class PotionAbility : Ability
             }
         }
     }
-
-    public override int isUpgrade()
-    {
-        return 0;
-    }
 }

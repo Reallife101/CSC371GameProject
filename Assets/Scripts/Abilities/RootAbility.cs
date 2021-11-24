@@ -52,9 +52,4 @@ public class RootAbility : Ability
             }
         }
     }
-
-    public override int isUpgrade()
-    {
-        return 1;
-    }
 }

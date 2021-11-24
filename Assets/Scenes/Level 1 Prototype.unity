@@ -30340,6 +30340,10 @@ PrefabInstance:
       propertyPath: cooldownbar
       value: 
       objectReference: {fileID: 1156577541}
+    - target: {fileID: 6010923268809606419, guid: fce9283bb1fbbaf4e88f2ebb5ec599fc, type: 3}
+      propertyPath: abilityNoise
+      value: 
+      objectReference: {fileID: 8300000, guid: a37f44cbf8c2a7443a3c361efa2f233a, type: 3}
     - target: {fileID: 7975843536984380869, guid: fce9283bb1fbbaf4e88f2ebb5ec599fc, type: 3}
       propertyPath: cooldownbar
       value: 

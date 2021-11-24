@@ -52,9 +52,4 @@ public class UnderClockAbility : Ability
             }
         }
     }
-
-    public override int isUpgrade()
-    {
-        return 0;
-    }
 }
