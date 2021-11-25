@@ -13,10 +13,14 @@ public class TeleportAbility : Ability
     [SerializeField] CooldownBar cooldownbar;
     private float currentCool;
 
+    private AudioSource au;
+    [SerializeField] AudioClip abilityNoise;
+
     private void Awake()
     {
         if (Cooldown.Equals(Mathf.NegativeInfinity))
             Cooldown = 30f;
+        au = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -56,6 +60,7 @@ public class TeleportAbility : Ability
             // Makes sure teleport will mot teleport off the ground
             if(player.GetComponent<movement>().checkMove(hitPoint))
             {
+                au.PlayOneShot(abilityNoise);
                 troubleMaker.enabled = false;
                 player.transform.position = hitPoint;
                 troubleMaker.enabled = true;

@@ -16,11 +16,15 @@ public class RootAbility : Ability
     [SerializeField] CooldownBar cooldownbar;
     private float currentCool;
 
+    private AudioSource au;
+    [SerializeField] AudioClip abilityNoise;
+
     // Used to set the intial cooldown
     private void Awake()
     {
         if (Cooldown.Equals(Mathf.NegativeInfinity))
             Cooldown = 30f;
+        au = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -40,6 +44,7 @@ public class RootAbility : Ability
         {
             currentCool = 0;
             cooldownbar.SetCooldown(0);
+            au.PlayOneShot(abilityNoise);
             // Checks if the target point is in range
             if (InRange(targetHitPoint, player.transform.position, Range))
             {

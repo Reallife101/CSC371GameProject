@@ -10,11 +10,15 @@ public class OverClockAbility : Ability
     [SerializeField] CooldownBar cooldownbar;
     private float currentCool;
 
+    private AudioSource au;
+    [SerializeField] AudioClip abilityNoise;
+
     // Sets Intial CoolDown
     private void Awake()
     {
         if (Cooldown.Equals(Mathf.NegativeInfinity))
             Cooldown = 30f;
+        au = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -30,6 +34,7 @@ public class OverClockAbility : Ability
     {
         if(!OnCooldown)
         {
+            au.PlayOneShot(abilityNoise);
             currentCool = 0;
             cooldownbar.SetCooldown(0);
             StartCoroutine(HandleOverClock(player));

@@ -7,11 +7,15 @@ public class PotionAbility : Ability
 
     [SerializeField] CooldownBar cooldownbar;
     private float currentCool;
+
+    private AudioSource au;
+    [SerializeField] AudioClip abilityNoise;
     // Sets Cooldown
     private void Awake()
     {
         if (Cooldown.Equals(Mathf.NegativeInfinity))
             Cooldown = 60f;
+        au = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -36,6 +40,7 @@ public class PotionAbility : Ability
             {
                 currentCool = 0;
                 cooldownbar.SetCooldown(0);
+                au.PlayOneShot(abilityNoise);
                 // If the amount restored would bea bove max health instead set to max
                 if (h.healthTotal + restore > h.healthMax)
                 {
