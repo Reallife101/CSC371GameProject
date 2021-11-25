@@ -15,11 +15,15 @@ public class FormatAbility : Ability
     [SerializeField] CooldownBar cooldownbar;
     private float currentCool;
 
+    private AudioSource au;
+    [SerializeField] AudioClip abilityNoise;
+
     // Used to set the intial cooldown
     private void Awake()
     {
         if (Cooldown.Equals(Mathf.NegativeInfinity))
             Cooldown = 15f;
+        au = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -42,6 +46,7 @@ public class FormatAbility : Ability
             {
                 currentCool = 0;
                 cooldownbar.SetCooldown(0);
+                au.PlayOneShot(abilityNoise);
                 // Instantiates the aoe damage effect
                 GameObject effect = Instantiate(FormatEffect,
                     new Vector3(targetHitPoint.x, targetHitPoint.y + 1f, targetHitPoint.z),
