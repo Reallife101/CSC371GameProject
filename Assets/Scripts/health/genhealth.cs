@@ -34,6 +34,7 @@ public class genhealth : health
     {
         healthTotal = healthTotal - amount;
         hb.setSlider(healthTotal);
+        Debug.Log("damage taken: " + amount);
 
         if (isPlayer)
         {

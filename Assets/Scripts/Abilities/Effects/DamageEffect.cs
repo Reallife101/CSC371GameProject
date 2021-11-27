@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DamageEffect : MonoBehaviour
 {
-    [SerializeField] float time = 0.1f;
+    [SerializeField] float time = .5f;
     [SerializeField] string targetTag = "Enemy";
 
     public int damage = 10;
@@ -28,6 +28,7 @@ public class DamageEffect : MonoBehaviour
     {
         if (other.CompareTag(targetTag))
         {
+            Debug.Log("Hit");
             other.GetComponent<health>().takeDamage(damage);
         }
     }
