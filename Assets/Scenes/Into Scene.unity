@@ -325,7 +325,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!1 &113589574
 GameObject:
@@ -779,7 +779,7 @@ MonoBehaviour:
   score: 0
   levelThreshold: 0
   thresholdMultipler: 1.5
-  Stats: {fileID: 0}
+  Stats: {fileID: 11400000, guid: 7af4fdd4c07837a448550fd655a5db5e, type: 2}
 --- !u!114 &194176534
 MonoBehaviour:
   m_ObjectHideFlags: 0
