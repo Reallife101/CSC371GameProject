@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthMax: 100
   BulletDamage: 5
-  TotalUpgradePoints: 0
   AvailableUpgradePoints: 0
   SpentUpgradePointsPlayer: 0
   SpentUpgradePointsMovement: 0
   SpentUpgradePointsCC: 0
   SpentUpgradePointsDamage: 0
   Score: 0
+  LevelThreshold: 500
   MovementCooldown: 30
   MovementDurrationRange: 10
   Teleport: 0

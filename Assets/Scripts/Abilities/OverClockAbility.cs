@@ -25,7 +25,7 @@ public class OverClockAbility : Ability
     {
         if (OnCooldown)
         {
-            currentCool += 1.0f / Cooldown * Time.deltaTime;
+            currentCool += 1.0f / (Cooldown + Durration) * Time.deltaTime;
             cooldownbar.SetCooldown(currentCool);
         }
     }
