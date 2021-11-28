@@ -45,7 +45,7 @@ public class bgmManager : MonoBehaviour
         {
             trackCounter += 1;
 
-            if (trackCounter >= usedClips.Capacity)
+            if (trackCounter >= usedClips.Count)
             {
                 trackCounter = 0;
             }

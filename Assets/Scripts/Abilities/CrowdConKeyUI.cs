@@ -9,7 +9,7 @@ public class CrowdConKeyUI : MonoBehaviour
 
     [SerializeField] GameObject AbilityManager;
     private AbilityManager ability;
-    private Ability crowdCon;
+    //private Ability crowdCon;
 
     // Start is called before the first frame update
     void Start()
@@ -20,9 +20,8 @@ public class CrowdConKeyUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        crowdCon = ability.getCrowdControlAbility();
 
-        if (crowdCon.isUpgrade() == 0)
+        if (!ability.CCAlt)
         {
             gameObject.GetComponent<Image>().sprite = underclock;
         }

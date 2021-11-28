@@ -12,11 +12,15 @@ public class BurstAbility : Ability
     [SerializeField] CooldownBar cooldownbar;
     private float currentCool;
 
+    private AudioSource au;
+    [SerializeField] AudioClip abilityNoise;
+
     // Used to set the intial cooldown
     private void Awake()
     {
         if (Cooldown.Equals(Mathf.NegativeInfinity))
             Cooldown = 15f;
+        au = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -33,19 +37,16 @@ public class BurstAbility : Ability
         // Checks if on cooldown
         if (!OnCooldown)
         {
+            au.PlayOneShot(abilityNoise);
             currentCool = 0;
             cooldownbar.SetCooldown(0);
             // Instantiates the player centered aoe damage effect
             GameObject effect = Instantiate(BurstEffect, player.transform.position,
                 new Quaternion(0f, 0f, 0f, 0f));
-            effect.transform.localScale = new Vector3(2f * AOERange, 1f, 2f * AOERange);
+            effect.transform.localScale = new Vector3(AOERange, 1f, 2f * AOERange);
             effect.GetComponent<DamageEffect>().damage = Damage;
             StartCoroutine(HandleCoolDown());
         }
     }
 
-    public override int isUpgrade()
-    {
-        return 0;
-    }
 }

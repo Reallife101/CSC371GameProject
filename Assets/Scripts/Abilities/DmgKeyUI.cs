@@ -9,7 +9,7 @@ public class DmgKeyUI : MonoBehaviour
 
     [SerializeField] GameObject AbilityManager;
     private AbilityManager ability;
-    private Ability dmg;
+    //private Ability dmg;
 
     // Start is called before the first frame update
     void Start()
@@ -20,9 +20,7 @@ public class DmgKeyUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        dmg = ability.getDmgAbility();
-
-        if (dmg.isUpgrade() == 0)
+        if (!ability.DMGAlt)
         {
             gameObject.GetComponent<Image>().sprite = burst;
         }

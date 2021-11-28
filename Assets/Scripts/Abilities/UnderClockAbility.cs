@@ -16,11 +16,15 @@ public class UnderClockAbility : Ability
     [SerializeField] CooldownBar cooldownbar;
     private float currentCool;
 
+    private AudioSource au;
+    [SerializeField] AudioClip abilityNoise;
+
     // Used to set the intial cooldown
     private void Awake()
     {
         if (Cooldown is Mathf.NegativeInfinity)
             Cooldown = 30f;
+        au = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -41,6 +45,7 @@ public class UnderClockAbility : Ability
             // Checks if the target point is in range
             if (InRange(targetHitPoint, player.transform.position, Range))
             {
+                au.PlayOneShot(abilityNoise);
                 currentCool = 0;
                 cooldownbar.SetCooldown(0);
                 // Instantiates the slow aoe effet
@@ -51,10 +56,5 @@ public class UnderClockAbility : Ability
                 StartCoroutine(HandleCoolDown());
             }
         }
-    }
-
-    public override int isUpgrade()
-    {
-        return 0;
     }
 }

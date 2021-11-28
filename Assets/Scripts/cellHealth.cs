@@ -10,6 +10,7 @@ public class cellHealth : health
     [SerializeField] Material yellow;
     [SerializeField] Material blue;
     [SerializeField] List<AudioClip> acs;
+    [SerializeField] GameObject cellBeam;
 
     AudioSource au;
     bool playAudio;
@@ -35,6 +36,7 @@ public class cellHealth : health
             gameObject.GetComponent<MeshRenderer>().material = yellow;
             au.PlayOneShot(acs[Random.Range(0, acs.Capacity - 1)]);
             playAudio = false;
+            cellBeam.SetActive(false);
         }
     }
 
@@ -44,5 +46,6 @@ public class cellHealth : health
         hb.setSlider(healthTotal);
         gameObject.GetComponent<MeshRenderer>().material = blue;
         playAudio = true;
+        cellBeam.SetActive(true);
     }
 }
