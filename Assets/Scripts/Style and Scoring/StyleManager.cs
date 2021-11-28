@@ -38,6 +38,7 @@ public class StyleManager : MonoBehaviour
     private GameObject ui;
     private scoreManager sm;
     private int scoreLevel;
+    private float multiplier;
 
     public TMP_Text comboText;
     public TMP_Text rating;
@@ -60,6 +61,7 @@ public class StyleManager : MonoBehaviour
         prevKills = 0;
         prevRating = "";
         scoreLevel = 0;
+        multiplier = 1f;
     }
 
     // Update is called once per frame
@@ -84,12 +86,13 @@ public class StyleManager : MonoBehaviour
         if (curVal <= 0)
         {
             ui.SetActive(false);
-            sm.AddScore(numKills * pointsPerKill);
+            sm.AddScore((int) (numKills * pointsPerKill * multiplier));
             numKills = 0;
             prevKills = 0;
             scoreLevel = 0;
             rating.text = "";
             prevRating = "";
+            multiplier = 1.0f;
         }
 
         if (numKills > prevKills)
@@ -101,26 +104,32 @@ public class StyleManager : MonoBehaviour
             if (getRating(numKills) == "D")
             {
                 ah.playFirstKill();
+                multiplier = 1.0f;
             }
             if (getRating(numKills) == "C")
             {
                 ah.playSecondKill();
+                multiplier = 1.1f;
             }
             if (getRating(numKills) == "B")
             {
                 ah.playThirdKill();
+                multiplier = 1.3f;
             }
             if (getRating(numKills) == "A")
             {
                 ah.playFourthKill();
+                multiplier = 1.5f;
             }
             if (getRating(numKills) == "S")
             {
                 ah.playFifthKill();
+                multiplier = 1.7f;
             }
             if (getRating(numKills) == "SSS")
             {
                 ah.playSixthKill();
+                multiplier = 2.0f;
             }
         }
 
