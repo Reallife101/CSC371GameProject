@@ -29,6 +29,8 @@ public class AudioHandler : MonoBehaviour
     AudioClip FifthKill;
     [SerializeField]
     AudioClip SixthKill;
+    [SerializeField]
+    List<AudioClip> LevelUp;
 
 
     private AudioSource audioPlayer;
@@ -91,6 +93,10 @@ public class AudioHandler : MonoBehaviour
     public void playSixthKill()
     {
         audioPlayer.PlayOneShot(SixthKill, .45f);
+    }
+    public void playLevelUp()
+    {
+        audioPlayer.PlayOneShot(LevelUp[Random.Range(0, LevelUp.Capacity - 1)]);
     }
     /*
     public void playHover(float tm)

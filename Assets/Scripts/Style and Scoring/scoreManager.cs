@@ -12,6 +12,7 @@ public class scoreManager : MonoBehaviour
     [SerializeField] float thresholdMultipler = 1.5f;
 
     [SerializeField] CharacterStats Stats;
+    [SerializeField] AudioHandler Ah;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +41,7 @@ public class scoreManager : MonoBehaviour
         {
             Stats.AvailableUpgradePoints++;
             Stats.LevelThreshold = levelThreshold = (int) System.Math.Round(levelThreshold * thresholdMultipler);
+            Ah.playLevelUp();
         }
     }
 
