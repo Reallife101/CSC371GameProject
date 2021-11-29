@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1985235402}
-  m_IndirectSpecularColor: {r: 0.72091156, g: 0.9493939, b: 1.0501333, a: 1}
+  m_IndirectSpecularColor: {r: 0.7209211, g: 0.94939035, b: 1.0501428, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -29898,6 +29898,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 630800079082477967, guid: fce9283bb1fbbaf4e88f2ebb5ec599fc, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 750282843}
+    - target: {fileID: 630800079082477967, guid: fce9283bb1fbbaf4e88f2ebb5ec599fc, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -29905,6 +29909,10 @@ PrefabInstance:
       propertyPath: cooldownbar
       value: 
       objectReference: {fileID: 514046617}
+    - target: {fileID: 630800079082477967, guid: fce9283bb1fbbaf4e88f2ebb5ec599fc, type: 3}
+      propertyPath: PotionEffect
+      value: 
+      objectReference: {fileID: 8159510434230908692, guid: d42b88dbd7154b240a6060021d571274, type: 3}
     - target: {fileID: 630800079082477967, guid: fce9283bb1fbbaf4e88f2ebb5ec599fc, type: 3}
       propertyPath: abilityNoise
       value: 
@@ -30008,7 +30016,7 @@ PrefabInstance:
     - target: {fileID: 2037227418348042556, guid: fce9283bb1fbbaf4e88f2ebb5ec599fc, type: 3}
       propertyPath: abilityNoise
       value: 
-      objectReference: {fileID: 8300000, guid: cc6699269b4c1d44ea1e860518b9bb73, type: 3}
+      objectReference: {fileID: 8300000, guid: 3f9118436964d9b45a2ecd7127b428ef, type: 3}
     - target: {fileID: 2037227418348042556, guid: fce9283bb1fbbaf4e88f2ebb5ec599fc, type: 3}
       propertyPath: OverClockEffect
       value: 
@@ -30106,7 +30114,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 200
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
