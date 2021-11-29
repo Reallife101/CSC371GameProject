@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class TeleportAbility : Ability
 {
+
+    [SerializeField] GameObject TeleportEffect;
+
     [SerializeField] LayerMask groundMask;
     [SerializeField] LayerMask wallMask;
     [SerializeField] CharacterController troubleMaker;
@@ -15,6 +18,8 @@ public class TeleportAbility : Ability
 
     private AudioSource au;
     [SerializeField] AudioClip abilityNoise;
+
+    [SerializeField] float effectDuration = 4f;
 
     private void Awake()
     {
@@ -61,13 +66,28 @@ public class TeleportAbility : Ability
             if(player.GetComponent<movement>().checkMove(hitPoint))
             {
                 au.PlayOneShot(abilityNoise);
+                GameObject effect = Instantiate(TeleportEffect, hitPoint,
+                    new Quaternion(0f, 0f, 0f, 0f));
                 troubleMaker.enabled = false;
+                player.GetComponent<Collider>().enabled = false;
+                player.GetComponent<MeshRenderer>().enabled = false;
+                player.transform.GetChild(1).gameObject.SetActive(false);
                 player.transform.position = hitPoint;
+                StartCoroutine(HandleTeleportEffect(effect, player));
                 troubleMaker.enabled = true;
                 currentCool = 0;
                 cooldownbar.SetCooldown(0);
                 StartCoroutine(HandleCoolDown());
             }
         }
+    }
+
+    private IEnumerator HandleTeleportEffect(GameObject effect, GameObject player)
+    {
+        yield return new WaitForSecondsRealtime(effectDuration);
+        player.GetComponent<Collider>().enabled = true;
+        player.GetComponent<MeshRenderer>().enabled = true;
+        player.transform.GetChild(1).gameObject.SetActive(true);
+        Destroy(effect);
     }
 }
