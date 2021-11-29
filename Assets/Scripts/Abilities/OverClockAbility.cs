@@ -5,12 +5,16 @@ using UnityEngine;
 
 public class OverClockAbility : Ability
 {
+
+    [SerializeField] GameObject OverClockEffect;
+
     [SerializeField] float percentageIncrease = .5f;
     public float Durration = 2f;
+
     [SerializeField] CooldownBar cooldownbar;
     private float currentCool;
 
-    [SerializeField] Camera cam;
+    [SerializeField] Transform parent;
 
     private AudioSource au;
     [SerializeField] AudioClip abilityNoise;
@@ -49,9 +53,11 @@ public class OverClockAbility : Ability
         movement m = player.GetComponent<movement>();
         float normalSpeed = m.movementSpeed;
         m.movementSpeed = m.movementSpeed * (1f + percentageIncrease);
+        GameObject effect = Instantiate(OverClockEffect, player.transform.position,
+                new Quaternion(0f, 0f, 0f, 0f), parent);
         OnCooldown = true;
-        cam.backgroundColor = Color.green;
         yield return new WaitForSecondsRealtime(Durration);
+        Destroy(effect);
         m.movementSpeed = normalSpeed;
         StartCoroutine(HandleCoolDown());
     }
