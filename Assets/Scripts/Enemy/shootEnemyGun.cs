@@ -22,6 +22,11 @@ public class shootEnemyGun : MonoBehaviour
     [SerializeField]
     int playerLayer = 8;
 
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
 
 
     // Update is called once per frame
