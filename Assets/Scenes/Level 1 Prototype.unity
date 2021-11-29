@@ -29998,7 +29998,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: cc6699269b4c1d44ea1e860518b9bb73, type: 3}
     - target: {fileID: 3379903449979330250, guid: fce9283bb1fbbaf4e88f2ebb5ec599fc, type: 3}
       propertyPath: DMGAlt
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4124499525791537971, guid: fce9283bb1fbbaf4e88f2ebb5ec599fc, type: 3}
       propertyPath: cam

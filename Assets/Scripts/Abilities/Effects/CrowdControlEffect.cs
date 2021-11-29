@@ -34,7 +34,6 @@ public class CrowdControlEffect : MonoBehaviour
     {
         if (other.CompareTag(targetTag))
         {
-            Debug.Log("Hit");
             StartCoroutine(HandleSlow(other));
         }
     }
