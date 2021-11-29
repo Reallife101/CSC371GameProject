@@ -5,9 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class cutsceneManager : MonoBehaviour
 {
-
-    GameObject camera;
-
     [SerializeField]
     UnityEngine.Video.VideoPlayer videoplayer;
 
