@@ -14,7 +14,7 @@ public class PotionAbility : Ability
 
     [SerializeField] Transform parent;
 
-    private float effectDuration = 1.5f;
+    private float effectDuration = 1f;
 
     // Sets Cooldown
     private void Awake()
