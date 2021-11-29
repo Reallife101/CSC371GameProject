@@ -19,7 +19,7 @@ public class TeleportAbility : Ability
     private AudioSource au;
     [SerializeField] AudioClip abilityNoise;
 
-    [SerializeField] float effectDuration = 4f;
+    private float effectDuration = 1f;
 
     private void Awake()
     {
