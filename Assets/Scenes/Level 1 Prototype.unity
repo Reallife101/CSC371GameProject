@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1985235402}
-  m_IndirectSpecularColor: {r: 0.7209211, g: 0.94939035, b: 1.0501428, a: 1}
+  m_IndirectSpecularColor: {r: 0.72091156, g: 0.9493939, b: 1.0501333, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -40448,6 +40448,13 @@ MonoBehaviour:
   acs:
   - {fileID: 8300000, guid: 313301dfb319d1b4cbcbc7920603696e, type: 3}
   - {fileID: 8300000, guid: efc4d243485153346ba3a812e864b2f1, type: 3}
+  - {fileID: 8300000, guid: 6a3887ee21976744b8125503378b84e4, type: 3}
+  - {fileID: 8300000, guid: 8e94c31ab26037a43a2458745677f3ad, type: 3}
+  - {fileID: 8300000, guid: 6a3887ee21976744b8125503378b84e4, type: 3}
+  - {fileID: 8300000, guid: 6a3887ee21976744b8125503378b84e4, type: 3}
+  - {fileID: 8300000, guid: 6a3887ee21976744b8125503378b84e4, type: 3}
+  - {fileID: 8300000, guid: 6a3887ee21976744b8125503378b84e4, type: 3}
+  - {fileID: 8300000, guid: 6a3887ee21976744b8125503378b84e4, type: 3}
   - {fileID: 8300000, guid: 6a3887ee21976744b8125503378b84e4, type: 3}
   trackUI: {fileID: 361872481}
   mainUI: {fileID: 1420110042}

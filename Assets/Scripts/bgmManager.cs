@@ -29,8 +29,10 @@ public class bgmManager : MonoBehaviour
     
     void addSongs()
     {
-        for (int i=0; i< acs.Capacity; i++)
+        for (int i=0; i< acs.Count; i++)
         {
+            Debug.Log(i);
+            Debug.Log(acs[i].name);
             if (data.songsInUse[i])
             {
                 usedClips.Add(acs[i]);
