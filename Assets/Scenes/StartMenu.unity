@@ -1954,7 +1954,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   songsInUse: 00000000000000000000
-  songsUnlocked: 01010101010100010101
+  songsUnlocked: 01010101010101010101
   songsUI:
   - {fileID: 685846955}
   - {fileID: 394520713}
