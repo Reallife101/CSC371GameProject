@@ -10,6 +10,8 @@ public class OverClockAbility : Ability
     [SerializeField] CooldownBar cooldownbar;
     private float currentCool;
 
+    [SerializeField] Camera cam;
+
     private AudioSource au;
     [SerializeField] AudioClip abilityNoise;
 
@@ -48,6 +50,7 @@ public class OverClockAbility : Ability
         float normalSpeed = m.movementSpeed;
         m.movementSpeed = m.movementSpeed * (1f + percentageIncrease);
         OnCooldown = true;
+        cam.backgroundColor = Color.green;
         yield return new WaitForSecondsRealtime(Durration);
         m.movementSpeed = normalSpeed;
         StartCoroutine(HandleCoolDown());

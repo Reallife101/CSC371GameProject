@@ -23,8 +23,9 @@ public class CrowdControlEffect : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(time);
         GetComponent<Collider>().enabled = false;
-        GetComponent<MeshRenderer>().enabled = false;
+        //GetComponent<MeshRenderer>().enabled = false;
         yield return new WaitForSecondsRealtime(duration + 1f);
+        GetComponent<ParticleSystem>().gameObject.SetActive(false);
         Destroy(gameObject);
     }
 
@@ -33,6 +34,7 @@ public class CrowdControlEffect : MonoBehaviour
     {
         if (other.CompareTag(targetTag))
         {
+            Debug.Log("Hit");
             StartCoroutine(HandleSlow(other));
         }
     }

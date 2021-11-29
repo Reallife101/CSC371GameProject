@@ -50,7 +50,8 @@ public class RootAbility : Ability
             {
                 // Instantiates the root aoe effet
                 GameObject effect = Instantiate(RootEffect, targetHitPoint, new Quaternion(0f, 0f, 0f, 0f));
-                effect.transform.localScale = new Vector3(2f * AOERange, 1f, 2f * AOERange);
+                effect.transform.Rotate(new Vector3(-90f, 0f, 0f));
+                effect.transform.localScale = new Vector3(AOERange, AOERange, AOERange);
                 effect.GetComponent<CrowdControlEffect>().speedMultiplier = SpeedMultiplier;
                 effect.GetComponent<CrowdControlEffect>().duration = Duration;
                 StartCoroutine(HandleCoolDown());

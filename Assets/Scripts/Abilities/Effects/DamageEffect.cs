@@ -28,7 +28,6 @@ public class DamageEffect : MonoBehaviour
     {
         if (other.CompareTag(targetTag))
         {
-            Debug.Log("Hit");
             other.GetComponent<health>().takeDamage(damage);
         }
     }

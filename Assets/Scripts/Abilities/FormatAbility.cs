@@ -51,7 +51,7 @@ public class FormatAbility : Ability
                 GameObject effect = Instantiate(FormatEffect,
                     new Vector3(targetHitPoint.x, targetHitPoint.y + 1f, targetHitPoint.z),
                     new Quaternion(0f, 0f, 0f, 0f));
-                effect.transform.localScale = new Vector3(2f * AOERange, .5f, 2f * AOERange);
+                effect.transform.localScale = new Vector3(AOERange, .5f, 2f * AOERange);
                 effect.GetComponent<DamageEffect>().damage = Damage;
                 StartCoroutine(HandleCoolDown());
             }
