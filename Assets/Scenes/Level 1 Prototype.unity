@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1985235402}
-  m_IndirectSpecularColor: {r: 0.72091156, g: 0.9493939, b: 1.0501333, a: 1}
+  m_IndirectSpecularColor: {r: 0.7209211, g: 0.94939035, b: 1.0501428, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -29717,6 +29717,7 @@ MonoBehaviour:
   SSSRatingMin: 15
   ah: {fileID: 1005303006}
   numKills: 0
+  EndImmediately: 0
   comboText: {fileID: 1039068921}
   rating: {fileID: 1432831479}
   firstSound: {fileID: 0}
@@ -50312,6 +50313,7 @@ MonoBehaviour:
   reward2im: {fileID: 1753873669}
   reward3im: {fileID: 1420227218}
   sm: {fileID: 1069175980}
+  styleManager: {fileID: 965320071}
   score: {fileID: 409063705}
   reward1text: {fileID: 854448893}
   reward2text: {fileID: 2081216442}

@@ -8400,6 +8400,7 @@ MonoBehaviour:
   reward2im: {fileID: 154064431}
   reward3im: {fileID: 2070163650}
   sm: {fileID: 194176533}
+  styleManager: {fileID: 1278507307}
   score: {fileID: 35799554}
   reward1text: {fileID: 535664237}
   reward2text: {fileID: 46226630}
@@ -14568,6 +14569,7 @@ MonoBehaviour:
   SSSRatingMin: 15
   ah: {fileID: 1935458083}
   numKills: 0
+  EndImmediately: 0
   comboText: {fileID: 2096643585}
   rating: {fileID: 417204808}
   firstSound: {fileID: 0}

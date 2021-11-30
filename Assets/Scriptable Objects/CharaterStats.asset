@@ -15,7 +15,10 @@ MonoBehaviour:
   HealthMax: 100
   BulletDamage: 5
   AvailableUpgradePoints: 0
-  SpentUpgradePointsPlayer: 0
+  SpentUpgradePointsHealth: 0
+  healthUpgrades: 0
+  SpentUpgradePointsBulletDamage: 0
+  bulletUpgrades: 0
   SpentUpgradePointsMovement: 0
   SpentUpgradePointsCC: 0
   SpentUpgradePointsDamage: 0

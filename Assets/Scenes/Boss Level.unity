@@ -2690,6 +2690,7 @@ MonoBehaviour:
   reward2im: {fileID: 696073769}
   reward3im: {fileID: 337715427}
   sm: {fileID: 1069175980}
+  styleManager: {fileID: 965320071}
   score: {fileID: 1155267737}
   reward1text: {fileID: 108567293}
   reward2text: {fileID: 492471728}
@@ -12666,6 +12667,7 @@ MonoBehaviour:
   SSSRatingMin: 15
   ah: {fileID: 1005303006}
   numKills: 0
+  EndImmediately: 0
   comboText: {fileID: 1039068921}
   rating: {fileID: 1432831479}
   firstSound: {fileID: 0}
