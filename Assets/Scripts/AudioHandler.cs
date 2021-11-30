@@ -101,7 +101,7 @@ public class AudioHandler : MonoBehaviour
             int selction = Random.Range(0, LevelUp.Capacity - 1);
             audioPlayer.PlayOneShot(LevelUp[selction]);
             levelUpPlaying = true;
-            handleLevelUp(selction);
+            StartCoroutine(handleLevelUp(selction));
         }
     }
     private IEnumerator handleLevelUp(int selection)
