@@ -16,6 +16,7 @@ public class bgmManager : MonoBehaviour
     private float timer;
     private musicData data;
     private List<AudioClip> usedClips = new List<AudioClip>();
+    private bool paused = false;
 
     void Start()
     {
@@ -54,7 +55,11 @@ public class bgmManager : MonoBehaviour
             au.PlayOneShot(usedClips[trackCounter]);
             showTrackUI();
         }
-        timer += Time.deltaTime;
+
+        if (!paused)
+        {
+            timer += Time.deltaTime;
+        }
     }
 
     void showTrackUI()
@@ -69,5 +74,23 @@ public class bgmManager : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         mainUI.SetActive(false);
 
+    }
+
+    public void PauseBGM()
+    {
+        if(!paused)
+        {
+            paused = true;
+            au.Pause();
+        }
+    }
+
+    public void ResumeBGM()
+    {
+        if (paused)
+        {
+            paused = false;
+            au.UnPause();
+        }
     }
 }
