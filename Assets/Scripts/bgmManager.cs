@@ -82,6 +82,7 @@ public class bgmManager : MonoBehaviour
         {
             paused = true;
             au.Pause();
+            mainUI.SetActive(false);
         }
     }
 
@@ -91,6 +92,7 @@ public class bgmManager : MonoBehaviour
         {
             paused = false;
             au.UnPause();
+            mainUI.SetActive(true);
         }
     }
 }
