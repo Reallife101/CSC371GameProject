@@ -8096,7 +8096,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoplayer: {fileID: 452965895}
   ui: {fileID: 1069522060}
-  sc: Level 1 Prototype
+  sc: Into Scene
 --- !u!4 &1998979264
 Transform:
   m_ObjectHideFlags: 0

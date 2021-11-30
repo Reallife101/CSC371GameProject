@@ -23,6 +23,7 @@ public class endLevel : MonoBehaviour
             gameObject.SetActive(false);
             player.GetComponent<movement>().enabled = false;
             player.GetComponent<lookAround>().enabled = false;
+            player.GetComponent<CapsuleCollider>().enabled = false;
             player.transform.GetChild(1).gameObject.SetActive(false);
             au.Stop();
         }
