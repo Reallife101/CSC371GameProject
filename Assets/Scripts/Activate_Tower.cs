@@ -13,7 +13,7 @@ public class Activate_Tower : MonoBehaviour
 
 
     public GameObject clickUI;
-  
+    public GameObject BGM;
     public GameObject Player;
     public GameObject Waves;
     public GameObject exit;
@@ -64,6 +64,7 @@ public class Activate_Tower : MonoBehaviour
         timerIsRunning = false;
         startTime = audioSrc.time;
         audioSrc.Pause();
+        BGM.GetComponent<AudioSource>().UnPause();
         isMusicPlaying = false;
     }
     
@@ -83,6 +84,8 @@ public class Activate_Tower : MonoBehaviour
             if (timeRemaining <= -5)
             {
                 timerIsRunning = false;
+                BGM.GetComponent<AudioSource>().UnPause();
+
             }
             respawnTrigger.SetActive(false);
             respawnDoor.SetActive(false);
@@ -98,6 +101,8 @@ public class Activate_Tower : MonoBehaviour
             {
                 respawnTrigger.SetActive(true);
                 audioSrc.time = startTime;
+                BGM.GetComponent<AudioSource>().Pause();
+
                 audioSrc.Play();
                 
                 isMusicPlaying = true;
