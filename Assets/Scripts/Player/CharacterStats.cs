@@ -16,7 +16,10 @@ public class CharacterStats : ScriptableObject
     // Score & Upgrade Points
     [SerializeField] private const int defaultUpgradePoints = 0;
     public int AvailableUpgradePoints;
-    public int SpentUpgradePointsPlayer;
+    public int SpentUpgradePointsHealth;
+    public int healthUpgrades = 0; 
+    public int SpentUpgradePointsBulletDamage;
+    public int bulletUpgrades = 0;
     public int SpentUpgradePointsMovement;
     public int SpentUpgradePointsCC;
     public int SpentUpgradePointsDamage;
@@ -73,8 +76,12 @@ public class CharacterStats : ScriptableObject
     {
         HealthMax = defaultHealthMax;
         BulletDamage = defaultBulletDamage;
-        AvailableUpgradePoints += SpentUpgradePointsPlayer;
-        SpentUpgradePointsPlayer = 0;
+        AvailableUpgradePoints += SpentUpgradePointsHealth;
+        AvailableUpgradePoints += SpentUpgradePointsBulletDamage;
+        SpentUpgradePointsHealth = 0;
+        SpentUpgradePointsBulletDamage = 0;
+        healthUpgrades = 0;
+        bulletUpgrades = 0;
     }
 
     public void ResetMovementAbility()
@@ -120,11 +127,12 @@ public class CharacterStats : ScriptableObject
     // Used by the Weapon Rack UI to increase stats
     public bool IncreaseHealth(int toAdd)
     {
-        if (AvailableUpgradePoints > 0)
+        if (AvailableUpgradePoints > healthUpgrades)
         {
             HealthMax += toAdd;
-            SpentUpgradePointsPlayer++;
-            AvailableUpgradePoints--;
+            healthUpgrades++;
+            SpentUpgradePointsHealth += healthUpgrades;
+            AvailableUpgradePoints -= healthUpgrades;
             return true;
         }
         return false;
@@ -132,11 +140,12 @@ public class CharacterStats : ScriptableObject
     
     public bool IncreaseDamage(int toAdd)
     {
-        if (AvailableUpgradePoints > 0)
+        if (AvailableUpgradePoints > bulletUpgrades)
         {
             BulletDamage += toAdd;
-            SpentUpgradePointsPlayer++;
-            AvailableUpgradePoints--;
+            bulletUpgrades++;
+            SpentUpgradePointsBulletDamage += bulletUpgrades;
+            AvailableUpgradePoints -= bulletUpgrades;
             return true;
         }
         return false;
