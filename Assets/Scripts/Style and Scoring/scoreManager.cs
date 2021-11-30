@@ -9,7 +9,7 @@ public class scoreManager : MonoBehaviour
     public int score;
     public int levelThreshold;
 
-    [SerializeField] float thresholdMultipler = 1.5f;
+    [SerializeField] float thresholdMultipler = 1.25f;
 
     [SerializeField] CharacterStats Stats;
     [SerializeField] AudioHandler Ah;

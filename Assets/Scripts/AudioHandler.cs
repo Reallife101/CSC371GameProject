@@ -35,7 +35,7 @@ public class AudioHandler : MonoBehaviour
 
     private AudioSource audioPlayer;
 
-    private float hovertime;
+    private bool levelUpPlaying;
 
     private void Start()
     {
@@ -96,7 +96,18 @@ public class AudioHandler : MonoBehaviour
     }
     public void playLevelUp()
     {
-        audioPlayer.PlayOneShot(LevelUp[Random.Range(0, LevelUp.Capacity - 1)]);
+        if (!levelUpPlaying)
+        {
+            int selction = Random.Range(0, LevelUp.Capacity - 1);
+            audioPlayer.PlayOneShot(LevelUp[selction]);
+            levelUpPlaying = true;
+            handleLevelUp(selction);
+        }
+    }
+    private IEnumerator handleLevelUp(int selection)
+    {
+        yield return new WaitForSecondsRealtime(LevelUp[selection].length);
+        levelUpPlaying = false;
     }
     /*
     public void playHover(float tm)
