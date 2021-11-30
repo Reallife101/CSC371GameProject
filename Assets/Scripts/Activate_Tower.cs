@@ -84,12 +84,13 @@ public class Activate_Tower : MonoBehaviour
             if (timeRemaining <= -5)
             {
                 timerIsRunning = false;
-                BGM.GetComponent<bgmManager>().ResumeBGM();
-
+             
             }
             respawnTrigger.SetActive(false);
             respawnDoor.SetActive(false);
             ExitArrow.SetActive(true);
+            BGM.GetComponent<bgmManager>().ResumeBGM();
+
             TowerIsFinished = true;
         }
 
