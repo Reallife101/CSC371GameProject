@@ -17,6 +17,7 @@ public class musicManager : MonoBehaviour
 
     void Start()
     {
+        LoadMusic();
         prepCovers();
     }
 

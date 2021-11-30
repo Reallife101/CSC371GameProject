@@ -28228,9 +28228,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: cutsceneManager, Assembly-CSharp
-        m_MethodName: playVideo
+      - m_Target: {fileID: 1845091189}
+        m_TargetAssemblyTypeName: rewardsMenu, Assembly-CSharp
+        m_MethodName: loadScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -42217,7 +42217,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1445729762}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1845091189}
+        m_TargetAssemblyTypeName: rewardsMenu, Assembly-CSharp
+        m_MethodName: quitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1445729762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50293,6 +50305,9 @@ MonoBehaviour:
   reward1Goal: 3000
   reward2Goal: 4000
   reward3Goal: 5000
+  reward1trackNum: 4
+  reward2trackNum: 5
+  reward3trackNum: 6
   reward1im: {fileID: 1694463232}
   reward2im: {fileID: 1753873669}
   reward3im: {fileID: 1420227218}
@@ -50301,6 +50316,7 @@ MonoBehaviour:
   reward1text: {fileID: 854448893}
   reward2text: {fileID: 2081216442}
   reward3text: {fileID: 1059004844}
+  nextScene: Level_2_Prototype
 --- !u!1 &1846214232
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,6 +16,16 @@ public static class saveMusic
         stream.Close();
     }
 
+    public static void SaveMusic(musicData md)
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        string path = Application.persistentDataPath + "/player.music";
+        FileStream stream = new FileStream(path, FileMode.Create);
+
+        formatter.Serialize(stream, md);
+        stream.Close();
+    }
+
     public static musicData loadMusic()
     {
         string path = Application.persistentDataPath + "/player.music";
