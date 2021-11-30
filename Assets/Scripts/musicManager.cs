@@ -18,9 +18,15 @@ public class musicManager : MonoBehaviour
     void Start()
     {
         prepCovers();
-        au = GetComponent<AudioSource>();
     }
-    
+
+    private void OnEnable()
+    {
+        au = GetComponent<AudioSource>();
+        LoadMusic();
+        prepCovers();
+    }
+
     private void prepCovers()
     {
         for (int i = 0; i< 10; i++)

@@ -6,6 +6,8 @@ public class endLevel : MonoBehaviour
 {
     public GameObject winScreen;
 
+    [SerializeField] AudioSource au;
+
     GameObject player;
 
     private void Start()
@@ -19,7 +21,10 @@ public class endLevel : MonoBehaviour
         {
             winScreen.SetActive(true);
             gameObject.SetActive(false);
-            player.SetActive(false);
+            player.GetComponent<movement>().enabled = false;
+            player.GetComponent<lookAround>().enabled = false;
+            player.transform.GetChild(1).gameObject.SetActive(false);
+            au.Stop();
         }
     }
 }
