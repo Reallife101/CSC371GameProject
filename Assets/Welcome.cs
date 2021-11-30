@@ -25,7 +25,7 @@ public class Welcome : MonoBehaviour
         yield return new WaitForSeconds(seconds);
         this.GetComponent<AudioSource>().Stop();
 
-        BGM.GetComponent<AudioSource>().UnPause();
+        BGM.GetComponent<bgmManager>().ResumeBGM();
 
     }
 
@@ -34,7 +34,7 @@ public class Welcome : MonoBehaviour
         if (FirstTime)
         {
             FirstTime = false;
-            BGM.GetComponent<AudioSource>().Pause();    
+            BGM.GetComponent<bgmManager>().PauseBGM();
             this.GetComponent<AudioSource>().Play();
             StartCoroutine(ExampleCoroutine(seconds));
         }

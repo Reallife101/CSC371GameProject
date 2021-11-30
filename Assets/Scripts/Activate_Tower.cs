@@ -64,7 +64,7 @@ public class Activate_Tower : MonoBehaviour
         timerIsRunning = false;
         startTime = audioSrc.time;
         audioSrc.Pause();
-        BGM.GetComponent<AudioSource>().UnPause();
+        BGM.GetComponent<bgmManager>().ResumeBGM();
         isMusicPlaying = false;
     }
     
@@ -84,7 +84,7 @@ public class Activate_Tower : MonoBehaviour
             if (timeRemaining <= -5)
             {
                 timerIsRunning = false;
-                BGM.GetComponent<AudioSource>().UnPause();
+                BGM.GetComponent<bgmManager>().ResumeBGM();
 
             }
             respawnTrigger.SetActive(false);
@@ -101,7 +101,7 @@ public class Activate_Tower : MonoBehaviour
             {
                 respawnTrigger.SetActive(true);
                 audioSrc.time = startTime;
-                BGM.GetComponent<AudioSource>().Pause();
+                BGM.GetComponent<bgmManager>().PauseBGM();
 
                 audioSrc.Play();
                 
