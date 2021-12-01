@@ -40,6 +40,8 @@ public class StyleManager : MonoBehaviour
     private int scoreLevel;
     private float multiplier;
 
+    public bool EndImmediately = false;
+
     public TMP_Text comboText;
     public TMP_Text rating;
 
@@ -83,7 +85,7 @@ public class StyleManager : MonoBehaviour
             hb.setSlider(Mathf.Max(curVal - Time.deltaTime, 0));
         }
 
-        if (curVal <= 0)
+        if (curVal <= 0 || EndImmediately)
         {
             ui.SetActive(false);
             sm.AddScore((int) (numKills * pointsPerKill * multiplier));
@@ -93,6 +95,12 @@ public class StyleManager : MonoBehaviour
             rating.text = "";
             prevRating = "";
             multiplier = 1.0f;
+        }
+
+        if (EndImmediately)
+        {
+            hb.setSlider(0f);
+            EndImmediately = false;
         }
 
         if (numKills > prevKills)

@@ -24,6 +24,7 @@ public class rewardsMenu : MonoBehaviour
     [SerializeField] Image reward3im;
 
     [SerializeField] scoreManager sm;
+    [SerializeField] StyleManager styleManager;
     [SerializeField] TMP_Text score;
     [SerializeField] TMP_Text reward1text;
     [SerializeField] TMP_Text reward2text;
@@ -33,7 +34,13 @@ public class rewardsMenu : MonoBehaviour
 
     // Start is called before the first frame update
     private void OnEnable()
-    {        
+    {
+        StartCoroutine(handleEnable());
+    }
+
+    // Handles Score Screen
+    private void handleScoreScreen()
+    {
         reward1text.text = reward1Goal + " Score achieved: Unlocked New Song";
         reward2text.text = reward2Goal + " Score achieved: Unlocked New Song";
         reward3text.text = reward3Goal + " Score achieved: Unlocked New Song";
@@ -69,6 +76,14 @@ public class rewardsMenu : MonoBehaviour
         }
 
         saveMusic.SaveMusic(data);
+    }
+
+    // Triggers the imediate end of the combo meter and then the score screen
+    private IEnumerator handleEnable()
+    {
+        styleManager.EndImmediately = true;
+        yield return new WaitForSecondsRealtime(0.5f);
+        handleScoreScreen();
     }
 
     public void loadScene()
