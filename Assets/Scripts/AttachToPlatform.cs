@@ -13,18 +13,21 @@ public class AttachToPlatform : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject == Player)
+        if (other.tag == "Player")
         {
-            Player.transform.parent = transform.parent.parent;
+            print("Got to ontE");
+            Player.transform.parent = transform.parent;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject == Player)
+        if (other.tag == "Player")
         {
+            print("Got to ontExit");
+
             Player.transform.parent = null;
         }
     }

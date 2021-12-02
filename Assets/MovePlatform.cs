@@ -9,52 +9,121 @@ public class MovePlatform : MonoBehaviour
     public int speed;
     private Vector3 startPosition;
     private Vector3 endPosition;
-    private Rigidbody rBody;
-
+    //private Rigidbody rBody;
+    bool atStart = true;
+    bool atFinish = false;
     void Start()
     {
-        rBody = GetComponent<Rigidbody>();
+        //rBody = GetComponent<Rigidbody>();
         startPosition = platformPathStart.transform.position;
         endPosition = platformPathEnd.transform.position;
-        StartCoroutine(Vector3LerpCoroutine(gameObject, endPosition, speed));
+        //StartCoroutine(Vector3LerpCoroutine(gameObject, startPosition, speed));
+        //fromAtoB(gameObject, startPosition, speed);
     }
 
-    void Update()
+    void FixedUpdate()
     {
+
+
+        float step = speed * Time.deltaTime; // calculate distance to move
+        print("Atstart:  " + atStart);
+        print("AtFinish:  " + atFinish);
+        if (atStart && !atFinish)
+        {
+            atFinish = fromAtoB(endPosition, step);
+            print("going from SP to EP");
+            if (atFinish)
+            {
+                atStart = false;
+            }
+        }
+
+        if (!atStart && atFinish)
+        {
+            print("going from EP to SP");
+
+            atStart = fromAtoB(startPosition, step);
+            if (atStart)
+                atFinish = false;
+        }
+
+
+        /*
         print("beginning of update!");
+        // get rid of coroutine, get private varaible called direction, 
 
-        if (rBody.position == endPosition)
+
+        bool temp = AlmostEqual(this.transform.position, endPosition, (float)0.5);
+        bool temp1 = AlmostEqual(this.transform.position, startPosition, (float)0.5);
+        print(temp1);
+        print(temp);
+        if (AlmostEqual(rBody.position, startPosition, (float)0.5) && !atStart)
         {
-            StartCoroutine(Vector3LerpCoroutine(gameObject, startPosition, speed));
+            print("got here! Start");
+            atStart = true;
+            atFinish = false;
+            //StartCoroutine(Vector3LerpCoroutine(gameObject, endPosition, speed));
+            Move(gameObject, endPosition, speed);
         }
-        if (rBody.position == startPosition)
+        if (AlmostEqual(rBody.position, endPosition, (float) 0.5) && !atFinish)
+            //rBody.position.Equals(endPosition))
         {
-            print("got here!");
-
-            StartCoroutine(Vector3LerpCoroutine(gameObject, endPosition, speed));
+            print("got into Ends");
+            atStart = false;
+            atFinish = true;
+            Move(gameObject, startPosition, speed);
+            //StartCoroutine(Vector3LerpCoroutine(gameObject, startPosition, speed));
         }
+        //if (rBody.position.Equals(startPosition))
+        */
     }
 
-    IEnumerator Vector3LerpCoroutine(GameObject obj, Vector3 target, float speed)
+    public static bool AlmostEqual(Vector3 v1, Vector3 v2, float tolerance)
     {
-        Vector3 startPosition = obj.transform.position;
-        float time = 0f;
 
-        while (rBody.position != target)
+        if (Mathf.Abs(v1.x - v2.x) > tolerance) return false;
+        if (Mathf.Abs(v1.y - v2.y) > tolerance) return false;
+        if (Mathf.Abs(v1.z - v2.z) > tolerance) return false;
+        return true;
+    }
+
+
+
+
+    bool fromAtoB ( Vector3 finish, float step)
+    {
+        transform.position = Vector3.MoveTowards(transform.position, finish, step);
+        
+        if (Vector3.Distance(transform.position, finish) < 0.001f)
         {
-            obj.transform.position = Vector3.Lerp(startPosition, target, (time / Vector3.Distance(startPosition, target)) * speed);
-            time += Time.deltaTime;
-            yield return null;
+            return true;
+        }
+        else
+        {
+            print("fromAtoB: ");
+            return false;
+
+        }
+    }
+    /*
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            other.transform.parent = transform;
+
+
         }
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    private void OnTriggerExit(Collider other)
     {
-        col.gameObject.transform.SetParent(gameObject.transform, true);
-    }
+        if (other.tag == "Player")
+        {
+            other.transform.parent = null;
+        }
+    }*/
 
-    void OnCollisionExit2D(Collision2D col)
-    {
-        col.gameObject.transform.parent = null;
-    }
+
+
 }
