@@ -2695,7 +2695,7 @@ MonoBehaviour:
   reward1text: {fileID: 108567293}
   reward2text: {fileID: 492471728}
   reward3text: {fileID: 2118770349}
-  nextScene: Level_2_Prototype
+  nextScene: Win Scene
 --- !u!1 &202907604
 GameObject:
   m_ObjectHideFlags: 0
