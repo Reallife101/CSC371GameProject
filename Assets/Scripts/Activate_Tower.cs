@@ -118,6 +118,11 @@ public class Activate_Tower : MonoBehaviour
 
                 DisplayTime(timeRemaining);
 
+                if(IsApproximately((float)1.0, audioSrc.time))
+                {
+                    exit.SetActive(false);
+                }
+
                 if (W1_1 && IsApproximately(Wave1_1TimeStart, audioSrc.time))
                 {
                     W1_1 = false;

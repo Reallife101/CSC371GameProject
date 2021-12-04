@@ -6,7 +6,7 @@ public class MovePlatform : MonoBehaviour
 {
     public GameObject platformPathStart;
     public GameObject platformPathEnd;
-    public int speed;
+    public float speed;
     private Vector3 startPosition;
     private Vector3 endPosition;
     //private Rigidbody rBody;
@@ -26,12 +26,10 @@ public class MovePlatform : MonoBehaviour
 
 
         float step = speed * Time.deltaTime; // calculate distance to move
-        print("Atstart:  " + atStart);
-        print("AtFinish:  " + atFinish);
+     
         if (atStart && !atFinish)
         {
             atFinish = fromAtoB(endPosition, step);
-            print("going from SP to EP");
             if (atFinish)
             {
                 atStart = false;
@@ -40,7 +38,6 @@ public class MovePlatform : MonoBehaviour
 
         if (!atStart && atFinish)
         {
-            print("going from EP to SP");
 
             atStart = fromAtoB(startPosition, step);
             if (atStart)
@@ -100,7 +97,6 @@ public class MovePlatform : MonoBehaviour
         }
         else
         {
-            print("fromAtoB: ");
             return false;
 
         }
