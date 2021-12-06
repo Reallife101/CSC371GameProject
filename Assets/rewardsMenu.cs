@@ -89,6 +89,7 @@ public class rewardsMenu : MonoBehaviour
     public void loadScene()
     {
         SceneManager.LoadScene(nextScene);
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(nextScene));
     }
 
     public void quitGame()

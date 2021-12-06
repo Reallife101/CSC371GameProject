@@ -18,4 +18,9 @@ public class startMenu : MonoBehaviour
         mainmenu.SetActive(false);
         music.SetActive(true);
     }
+
+    public void quitGame()
+    {
+        Application.Quit();
+    }
 }

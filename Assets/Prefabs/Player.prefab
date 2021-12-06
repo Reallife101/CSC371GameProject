@@ -683,7 +683,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnCooldown: 0
   Cooldown: -Infinity
+  PotionEffect: {fileID: 0}
   cooldownbar: {fileID: 0}
+  abilityNoise: {fileID: 0}
+  parent: {fileID: 0}
 --- !u!114 &2037227418348042556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -698,9 +701,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnCooldown: 0
   Cooldown: -Infinity
+  OverClockEffect: {fileID: 0}
   percentageIncrease: 0.5
   Durration: 2
   cooldownbar: {fileID: 0}
+  parent: {fileID: 0}
+  abilityNoise: {fileID: 0}
 --- !u!114 &5892679413476568123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -715,6 +721,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnCooldown: 0
   Cooldown: -Infinity
+  TeleportEffect: {fileID: 0}
   groundMask:
     serializedVersion: 2
     m_Bits: 64
@@ -724,6 +731,7 @@ MonoBehaviour:
   troubleMaker: {fileID: 646025804223257515}
   Range: 10
   cooldownbar: {fileID: 0}
+  abilityNoise: {fileID: 0}
 --- !u!114 &7975843536984380869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -750,6 +758,7 @@ MonoBehaviour:
   AOERange: 10
   Duration: 10
   cooldownbar: {fileID: 0}
+  abilityNoise: {fileID: 0}
 --- !u!114 &1612624099906317087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -776,6 +785,7 @@ MonoBehaviour:
   AOERange: 10
   Duration: 10
   cooldownbar: {fileID: 0}
+  abilityNoise: {fileID: 0}
 --- !u!114 &6010923268809606419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -794,6 +804,7 @@ MonoBehaviour:
   Damage: 10
   AOERange: 6
   cooldownbar: {fileID: 0}
+  abilityNoise: {fileID: 0}
 --- !u!114 &5687775090139766643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -819,3 +830,4 @@ MonoBehaviour:
   Damage: 10
   AOERange: 6
   cooldownbar: {fileID: 0}
+  abilityNoise: {fileID: 0}

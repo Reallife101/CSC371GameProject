@@ -35,5 +35,6 @@ public class cutsceneManager : MonoBehaviour
     void load(UnityEngine.Video.VideoPlayer vp)
     {
         SceneManager.LoadScene(sc);
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(sc));
     }
 }
