@@ -5012,6 +5012,10 @@ PrefabInstance:
       propertyPath: OverClockEffect
       value: 
       objectReference: {fileID: 1925680020637566994, guid: 14f614bf8fcb5e142963057c0cb91803, type: 3}
+    - target: {fileID: 3379903449979330250, guid: fce9283bb1fbbaf4e88f2ebb5ec599fc, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 630047227}
     - target: {fileID: 4124499525791537971, guid: fce9283bb1fbbaf4e88f2ebb5ec599fc, type: 3}
       propertyPath: cam
       value: 
@@ -14278,7 +14282,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &1247952304
 Light:
   m_ObjectHideFlags: 0
@@ -14291,7 +14295,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -21376,7 +21380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a1314d3e4e866c428eb8c1a7b928881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnPoint: {x: 0, y: 2, z: 0}
+  respawnPoint: {x: 0, y: 3, z: 0}
   ew:
   - {fileID: 0}
   - {fileID: 0}
