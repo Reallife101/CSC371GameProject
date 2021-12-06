@@ -48,7 +48,10 @@ public class EnemyWaveManager : MonoBehaviour
     {
         start = false;
         walls.SetActive(false);
-        waves[waveNum].SetActive(false);
+        if (!done)
+        {
+            waves[waveNum].SetActive(false);
+        }
     }
 
     private GameObject getNext()
