@@ -133,9 +133,10 @@ GameObject:
   - component: {fileID: 452760531666205253}
   - component: {fileID: 452760531666205258}
   - component: {fileID: 452760531666205259}
+  - component: {fileID: 2929600346717917464}
   m_Layer: 5
   m_Name: Button 1
-  m_TagString: Untagged
+  m_TagString: WeaponRackButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -254,6 +255,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2929600346717917464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452760531666205257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7a5d3e443efe5479adf7ca33411c31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Increases the AOE Radius of the Crowd Control Ability by 3 1/3 meters, to
+    a maximium of 20 meters.
+  cost: Costs 1 Upgrade Point.
 --- !u!1 &452760531674980112
 GameObject:
   m_ObjectHideFlags: 0
@@ -1087,9 +1103,10 @@ GameObject:
   - component: {fileID: 452760531838966899}
   - component: {fileID: 452760531838966896}
   - component: {fileID: 452760531838966897}
+  - component: {fileID: 8544384206169116206}
   m_Layer: 5
   m_Name: Damage Button
-  m_TagString: Untagged
+  m_TagString: WeaponRackButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1208,6 +1225,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8544384206169116206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452760531838966903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7a5d3e443efe5479adf7ca33411c31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Increases Bullet Damage by 1.
+  cost: Costs 1 Upgrade Point.
 --- !u!1 &452760531840712467
 GameObject:
   m_ObjectHideFlags: 0
@@ -1906,9 +1937,10 @@ GameObject:
   - component: {fileID: 452760531938719756}
   - component: {fileID: 452760531938719757}
   - component: {fileID: 452760531938719986}
+  - component: {fileID: 906684546080882058}
   m_Layer: 5
   m_Name: Button 3
-  m_TagString: Untagged
+  m_TagString: WeaponRackButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2027,6 +2059,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &906684546080882058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452760531938719984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7a5d3e443efe5479adf7ca33411c31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Changes Burst into Format.
+  cost: Costs 3 Upgrade Points.
 --- !u!1 &452760531974230271
 GameObject:
   m_ObjectHideFlags: 0
@@ -2323,9 +2369,10 @@ GameObject:
   - component: {fileID: 452760532039376278}
   - component: {fileID: 452760532039376279}
   - component: {fileID: 452760532039376276}
+  - component: {fileID: 8448430737566767670}
   m_Layer: 5
   m_Name: Button 3
-  m_TagString: Untagged
+  m_TagString: WeaponRackButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2444,6 +2491,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8448430737566767670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452760532039376282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7a5d3e443efe5479adf7ca33411c31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Changes OverClock into Teleport.
+  cost: Costs 3 Upgrade Points.
 --- !u!1 &452760532044325795
 GameObject:
   m_ObjectHideFlags: 0
@@ -3162,9 +3223,10 @@ GameObject:
   - component: {fileID: 452760532189188835}
   - component: {fileID: 452760532189188832}
   - component: {fileID: 452760532189188833}
+  - component: {fileID: 2322119829304583260}
   m_Layer: 5
   m_Name: Button 1
-  m_TagString: Untagged
+  m_TagString: WeaponRackButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3283,6 +3345,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2322119829304583260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452760532189188839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7a5d3e443efe5479adf7ca33411c31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Increases the AOE radius of the Damage Ablity by 3 meters, to a maximum of
+    15 meters.
+  cost: Costs 1 Upgrade Point.
 --- !u!1 &452760532210763351
 GameObject:
   m_ObjectHideFlags: 0
@@ -3669,6 +3746,7 @@ GameObject:
   - component: {fileID: 452760532275992338}
   - component: {fileID: 452760532275992364}
   - component: {fileID: 452760532275992365}
+  - component: {fileID: 3042525731829806846}
   m_Layer: 5
   m_Name: Description Text
   m_TagString: Untagged
@@ -3792,6 +3870,24 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3042525731829806846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452760532275992339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06bfdf69230983845a84ce6e3136e51e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Press F or leave the Range of the Weapon Rack to close.
+  text_field: {fileID: 0}
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 32
+  targettag: WeaponRackButton
 --- !u!1 &452760532281007044
 GameObject:
   m_ObjectHideFlags: 0
@@ -4260,9 +4356,10 @@ GameObject:
   - component: {fileID: 452760532335731885}
   - component: {fileID: 452760532335731858}
   - component: {fileID: 452760532335731859}
+  - component: {fileID: 7542912555801294664}
   m_Layer: 5
   m_Name: Button 2
-  m_TagString: Untagged
+  m_TagString: WeaponRackButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4381,6 +4478,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7542912555801294664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452760532335731857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7a5d3e443efe5479adf7ca33411c31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Increases the Durration of the Crowd Control Effect by 5 seconds, to a maximium
+    of 25 seconds.
+  cost: Costs 1 Upgrade Point.
 --- !u!1 &452760532337913767
 GameObject:
   m_ObjectHideFlags: 0
@@ -4551,9 +4663,10 @@ GameObject:
   - component: {fileID: 452760532388052793}
   - component: {fileID: 452760532388052798}
   - component: {fileID: 452760532388052799}
+  - component: {fileID: 7957877875776779589}
   m_Layer: 5
   m_Name: Button 3
-  m_TagString: Untagged
+  m_TagString: WeaponRackButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4672,6 +4785,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7957877875776779589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452760532388052797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7a5d3e443efe5479adf7ca33411c31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Changes UnderClock into Root.
+  cost: Costs 3 Upgrade Points.
 --- !u!1 &452760532388258371
 GameObject:
   m_ObjectHideFlags: 0
@@ -5184,9 +5311,10 @@ GameObject:
   - component: {fileID: 452760532645070494}
   - component: {fileID: 452760532645070495}
   - component: {fileID: 452760532645070492}
+  - component: {fileID: 9063953601018732738}
   m_Layer: 5
   m_Name: Health Button
-  m_TagString: Untagged
+  m_TagString: WeaponRackButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5305,6 +5433,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &9063953601018732738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452760532645070466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7a5d3e443efe5479adf7ca33411c31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Increases the Max Health by 5.
+  cost: Costs 1 Upgrade Point.
 --- !u!1 &452760532645937058
 GameObject:
   m_ObjectHideFlags: 0
@@ -5317,9 +5459,10 @@ GameObject:
   - component: {fileID: 452760532645937086}
   - component: {fileID: 452760532645937087}
   - component: {fileID: 452760532645937084}
+  - component: {fileID: 5260319797321771501}
   m_Layer: 5
   m_Name: Button 1
-  m_TagString: Untagged
+  m_TagString: WeaponRackButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5438,6 +5581,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5260319797321771501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452760532645937058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7a5d3e443efe5479adf7ca33411c31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Decreases Cooldown of the Movement Ability by 3 1/3 seconds, to a minumium
+    of 20 seconds.
+  cost: Costs 1 Upgrade Point.
 --- !u!1 &452760532666208815
 GameObject:
   m_ObjectHideFlags: 0
@@ -6251,9 +6409,10 @@ GameObject:
   - component: {fileID: 452760532819054030}
   - component: {fileID: 452760532819054031}
   - component: {fileID: 452760532819054028}
+  - component: {fileID: 170279325869803362}
   m_Layer: 5
   m_Name: Reset Button
-  m_TagString: Untagged
+  m_TagString: WeaponRackButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6372,6 +6531,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &170279325869803362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452760532819054002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7a5d3e443efe5479adf7ca33411c31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Resets Health and Bullet Damage, and refunds Upgrade Points.
+  cost: 
 --- !u!1 &452760532887619184
 GameObject:
   m_ObjectHideFlags: 0
@@ -6920,9 +7093,10 @@ GameObject:
   - component: {fileID: 452760532915978312}
   - component: {fileID: 452760532915978313}
   - component: {fileID: 452760532915978318}
+  - component: {fileID: 3056979190548274703}
   m_Layer: 5
   m_Name: Button 2
-  m_TagString: Untagged
+  m_TagString: WeaponRackButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7041,6 +7215,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3056979190548274703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452760532915978316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7a5d3e443efe5479adf7ca33411c31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Increases the Durration or Range of the Movement Ability by 3 1/3 seconds
+    or meters, to a maximium of 20 seconds or meters.
+  cost: Costs 1 Upgrade Point.
 --- !u!1 &452760532927698928
 GameObject:
   m_ObjectHideFlags: 0
@@ -9953,9 +10142,10 @@ GameObject:
   - component: {fileID: 452760533492163324}
   - component: {fileID: 452760533492163325}
   - component: {fileID: 452760533492163298}
+  - component: {fileID: 3971953628151713054}
   m_Layer: 5
   m_Name: Button 2
-  m_TagString: Untagged
+  m_TagString: WeaponRackButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10074,6 +10264,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3971953628151713054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452760533492163296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7a5d3e443efe5479adf7ca33411c31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Increases the Damage of the Damage Ability by 5, to a maxmium of 25.
+  cost: Costs 1 Upgrade Point.
 --- !u!1 &452760533501624801
 GameObject:
   m_ObjectHideFlags: 0
@@ -10889,9 +11093,10 @@ GameObject:
   - component: {fileID: 8364743019701155452}
   - component: {fileID: 360092286226225834}
   - component: {fileID: 2186846326973721668}
+  - component: {fileID: 4474454367840705159}
   m_Layer: 5
   m_Name: Reset Button
-  m_TagString: Untagged
+  m_TagString: WeaponRackButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11010,6 +11215,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4474454367840705159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001956671970177450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7a5d3e443efe5479adf7ca33411c31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Resets the Movement Ability and refunds Upgrade Points Spent.
+  cost: 
 --- !u!1 &1292280182319756899
 GameObject:
   m_ObjectHideFlags: 0
@@ -11058,6 +11277,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealthText: {fileID: 452760533105658911}
   BulletDamageText: {fileID: 452760533200573241}
+  healthButtonDesc: {fileID: 9063953601018732738}
+  bulletDamageDesc: {fileID: 8544384206169116206}
   Stats: {fileID: 11400000, guid: 7af4fdd4c07837a448550fd655a5db5e, type: 2}
 --- !u!114 &7369567920499162862
 MonoBehaviour:
@@ -11388,9 +11609,10 @@ GameObject:
   - component: {fileID: 1959417880598377433}
   - component: {fileID: 6491440438546055141}
   - component: {fileID: 2091269463100753341}
+  - component: {fileID: 3827265476891470759}
   m_Layer: 5
   m_Name: Reset Button
-  m_TagString: Untagged
+  m_TagString: WeaponRackButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11509,6 +11731,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3827265476891470759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3615421959330000085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7a5d3e443efe5479adf7ca33411c31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Resets the Damage Ability and refunds Upgrade Points.
+  cost: 
 --- !u!1 &5626826517953955159
 GameObject:
   m_ObjectHideFlags: 0
@@ -11655,9 +11891,10 @@ GameObject:
   - component: {fileID: 8689197063549243824}
   - component: {fileID: 4073115309589385973}
   - component: {fileID: 8956856322152615606}
+  - component: {fileID: 1609131464859986560}
   m_Layer: 5
   m_Name: Reset Button
-  m_TagString: Untagged
+  m_TagString: WeaponRackButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11776,3 +12013,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1609131464859986560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7733247726883876373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7a5d3e443efe5479adf7ca33411c31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Resets the Crowd Control Ability and refunds Upgrade Points.
+  cost: 
