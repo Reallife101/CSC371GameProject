@@ -12,6 +12,15 @@ public class HandleCCButtons : MonoBehaviour
 
     private float delta = 10f / 3f;
 
+    private void Start()
+    {
+        if (Stats.Root) { RootBar.increaseValue(1); }
+        int aoeDelta = Mathf.FloorToInt(Stats.CCAOERadius - 10f) / 3;
+        AOERadiusBar.setSlider(aoeDelta);
+        int durrationDelta = Mathf.FloorToInt(Stats.CCDurration - 10f) / 5;
+        DurrationBar.setSlider(durrationDelta);
+    }
+
     // Handles the button presses for the movement block of the Weapon Rack UI
     public void HandleAOERadiusButton()
     {

@@ -10,6 +10,15 @@ public class HandleDamageButtons : MonoBehaviour
 
     [SerializeField] CharacterStats Stats;
 
+    private void Start()
+    {
+        if (Stats.Format) { FormatBar.increaseValue(1); }
+        int aoeDelta = Mathf.FloorToInt(Stats.DamageAOERadius - 6f) / 3;
+        AOERadiusBar.setSlider(aoeDelta);
+        int damageDelta = Mathf.FloorToInt(Stats.AbilityDamage - 10f) / 5;
+        DamageBar.setSlider(damageDelta);
+    }
+
     // Handles the button presses for the movement block of the Weapon Rack UI
     public void HandleAOERadiusButton()
     {

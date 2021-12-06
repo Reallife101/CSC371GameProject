@@ -14,6 +14,19 @@ public class HandleMovementButtons : MonoBehaviour
 
     private float delta = 10.0f / 3.0f;
 
+    private void Start()
+    {
+        if (Stats.Teleport)
+        {
+            TeleportBar.increaseValue(1);
+            DurationRangeText.text = "Range";
+        }
+        int cooldownDelta = Mathf.FloorToInt(Mathf.Abs(Stats.MovementCooldown - 30f)) / 3;
+        CoolDownBar.setSlider(cooldownDelta);
+        int durrationRangeDelta = Mathf.FloorToInt(Stats.MovementDurrationRange - 10f) / 3;
+        DurrationRangeBar.setSlider(durrationRangeDelta);
+    }
+
     // Handles the button presses for the movement block of the Weapon Rack UI
     public void HandleCoolDownButton()
     {
