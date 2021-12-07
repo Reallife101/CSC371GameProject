@@ -4265,7 +4265,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305441, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: m_Name
-      value: EnemyMelee (3)
+      value: EnemyMeleeBig (3)
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305446, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: au
@@ -4275,6 +4275,10 @@ PrefabInstance:
       propertyPath: redJelly
       value: 
       objectReference: {fileID: 905134232}
+    - target: {fileID: 3193926999558305446, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
+      propertyPath: healthMax
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305466, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -4334,6 +4338,10 @@ PrefabInstance:
     - target: {fileID: 4280266946748949723, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: followRegardless
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4583202384698719520, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
+      propertyPath: damageValue
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
@@ -4591,7 +4599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305441, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: m_Name
-      value: EnemyMelee (1)
+      value: EnemyMeleeBig (1)
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305446, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: au
@@ -4601,6 +4609,10 @@ PrefabInstance:
       propertyPath: redJelly
       value: 
       objectReference: {fileID: 905134232}
+    - target: {fileID: 3193926999558305446, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
+      propertyPath: healthMax
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305466, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -4660,6 +4672,10 @@ PrefabInstance:
     - target: {fileID: 4280266946748949723, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: followRegardless
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4583202384698719520, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
+      propertyPath: damageValue
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
@@ -4760,7 +4776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305441, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: m_Name
-      value: EnemyMelee (3)
+      value: EnemyMeleeBig (3)
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305446, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: au
@@ -4836,11 +4852,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4583202384698719520, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: damageValue
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4583202384698719520, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
-      propertyPath: timeBetweenhits
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
@@ -17514,6 +17526,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4280266946748949723, guid: ece1d9b5c183c4c4eb1ca0496f4a2c0a, type: 3}
+      propertyPath: maxDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280266946748949723, guid: ece1d9b5c183c4c4eb1ca0496f4a2c0a, type: 3}
+      propertyPath: minDistance
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ece1d9b5c183c4c4eb1ca0496f4a2c0a, type: 3}
 --- !u!4 &497908899 stripped
@@ -18959,7 +18979,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305441, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: m_Name
-      value: EnemyMelee (1)
+      value: EnemyMeleeBig (1)
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305446, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: au
@@ -18969,6 +18989,10 @@ PrefabInstance:
       propertyPath: redJelly
       value: 
       objectReference: {fileID: 905134232}
+    - target: {fileID: 3193926999558305446, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
+      propertyPath: healthMax
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305466, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -19028,6 +19052,10 @@ PrefabInstance:
     - target: {fileID: 4280266946748949723, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: followRegardless
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4583202384698719520, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
+      propertyPath: damageValue
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
@@ -28644,7 +28672,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305441, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: m_Name
-      value: EnemyMelee (5)
+      value: EnemyMeleeBig (5)
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305446, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: au
@@ -28720,7 +28748,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4583202384698719520, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: damageValue
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
@@ -29244,6 +29272,14 @@ PrefabInstance:
     - target: {fileID: 3193926999558305466, guid: ece1d9b5c183c4c4eb1ca0496f4a2c0a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280266946748949723, guid: ece1d9b5c183c4c4eb1ca0496f4a2c0a, type: 3}
+      propertyPath: maxDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280266946748949723, guid: ece1d9b5c183c4c4eb1ca0496f4a2c0a, type: 3}
+      propertyPath: minDistance
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ece1d9b5c183c4c4eb1ca0496f4a2c0a, type: 3}
@@ -33944,7 +33980,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305441, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: m_Name
-      value: EnemyMelee (1)
+      value: EnemyMeleeBig (1)
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305446, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: au
@@ -33954,6 +33990,10 @@ PrefabInstance:
       propertyPath: redJelly
       value: 
       objectReference: {fileID: 905134232}
+    - target: {fileID: 3193926999558305446, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
+      propertyPath: healthMax
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305466, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -34013,6 +34053,10 @@ PrefabInstance:
     - target: {fileID: 4280266946748949723, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: followRegardless
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4583202384698719520, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
+      propertyPath: damageValue
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
@@ -40481,7 +40525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305441, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: m_Name
-      value: EnemyMelee (3)
+      value: EnemyMeleeBig (3)
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305446, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: au
@@ -40557,7 +40601,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4583202384698719520, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: damageValue
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
@@ -41001,6 +41045,14 @@ PrefabInstance:
     - target: {fileID: 3193926999558305466, guid: ece1d9b5c183c4c4eb1ca0496f4a2c0a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280266946748949723, guid: ece1d9b5c183c4c4eb1ca0496f4a2c0a, type: 3}
+      propertyPath: maxDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280266946748949723, guid: ece1d9b5c183c4c4eb1ca0496f4a2c0a, type: 3}
+      propertyPath: minDistance
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ece1d9b5c183c4c4eb1ca0496f4a2c0a, type: 3}
@@ -45459,7 +45511,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305441, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: m_Name
-      value: EnemyMelee (5)
+      value: EnemyMeleeBig (5)
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305446, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: au
@@ -45535,7 +45587,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4583202384698719520, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: damageValue
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
@@ -50694,7 +50746,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305441, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: m_Name
-      value: EnemyMelee (6)
+      value: EnemyMeleeBig (6)
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305446, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: au
@@ -50704,6 +50756,10 @@ PrefabInstance:
       propertyPath: redJelly
       value: 
       objectReference: {fileID: 905134232}
+    - target: {fileID: 3193926999558305446, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
+      propertyPath: healthMax
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305466, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -50763,6 +50819,10 @@ PrefabInstance:
     - target: {fileID: 4280266946748949723, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: followRegardless
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4583202384698719520, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
+      propertyPath: damageValue
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
@@ -52126,7 +52186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305441, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: m_Name
-      value: EnemyMelee (8)
+      value: EnemyMeleeBig (8)
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305446, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: au
@@ -52202,7 +52262,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4583202384698719520, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: damageValue
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4583202384698719520, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: timeBetweenhits
@@ -53967,7 +54027,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305441, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: m_Name
-      value: EnemyMelee (1)
+      value: EnemyMeleeBig (1)
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305446, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: au
@@ -54043,7 +54103,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4583202384698719520, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: damageValue
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4583202384698719520, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: timeBetweenhits
@@ -56295,7 +56355,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305441, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: m_Name
-      value: EnemyMelee (1)
+      value: EnemyMeleeBig (1)
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305446, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: au
@@ -56371,7 +56431,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4583202384698719520, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: damageValue
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
@@ -60257,7 +60317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305441, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: m_Name
-      value: EnemyMelee (3)
+      value: EnemyMeleeBig (3)
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305446, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: au
@@ -60267,6 +60327,10 @@ PrefabInstance:
       propertyPath: redJelly
       value: 
       objectReference: {fileID: 905134232}
+    - target: {fileID: 3193926999558305446, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
+      propertyPath: healthMax
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305466, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -60326,6 +60390,10 @@ PrefabInstance:
     - target: {fileID: 4280266946748949723, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: followRegardless
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4583202384698719520, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
+      propertyPath: damageValue
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
@@ -65385,6 +65453,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4280266946748949723, guid: ece1d9b5c183c4c4eb1ca0496f4a2c0a, type: 3}
+      propertyPath: maxDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280266946748949723, guid: ece1d9b5c183c4c4eb1ca0496f4a2c0a, type: 3}
+      propertyPath: minDistance
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ece1d9b5c183c4c4eb1ca0496f4a2c0a, type: 3}
 --- !u!4 &1840912500 stripped
@@ -66633,6 +66709,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4280266946748949723, guid: ece1d9b5c183c4c4eb1ca0496f4a2c0a, type: 3}
+      propertyPath: maxDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280266946748949723, guid: ece1d9b5c183c4c4eb1ca0496f4a2c0a, type: 3}
+      propertyPath: minDistance
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ece1d9b5c183c4c4eb1ca0496f4a2c0a, type: 3}
 --- !u!4 &1883146357 stripped
@@ -67668,7 +67752,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305441, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: m_Name
-      value: EnemyMelee (5)
+      value: EnemyMeleeBig (5)
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305446, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: au
@@ -67678,6 +67762,10 @@ PrefabInstance:
       propertyPath: redJelly
       value: 
       objectReference: {fileID: 905134232}
+    - target: {fileID: 3193926999558305446, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
+      propertyPath: healthMax
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305466, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -67737,6 +67825,10 @@ PrefabInstance:
     - target: {fileID: 4280266946748949723, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: followRegardless
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4583202384698719520, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
+      propertyPath: damageValue
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
@@ -68509,6 +68601,14 @@ PrefabInstance:
     - target: {fileID: 3193926999558305466, guid: ece1d9b5c183c4c4eb1ca0496f4a2c0a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280266946748949723, guid: ece1d9b5c183c4c4eb1ca0496f4a2c0a, type: 3}
+      propertyPath: maxDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280266946748949723, guid: ece1d9b5c183c4c4eb1ca0496f4a2c0a, type: 3}
+      propertyPath: minDistance
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ece1d9b5c183c4c4eb1ca0496f4a2c0a, type: 3}
@@ -70971,7 +71071,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305441, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: m_Name
-      value: EnemyMelee (3)
+      value: EnemyMeleeBig (3)
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305446, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: au
@@ -71047,7 +71147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4583202384698719520, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: damageValue
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4583202384698719520, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: timeBetweenhits
@@ -71832,7 +71932,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305441, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: m_Name
-      value: EnemyMelee (6)
+      value: EnemyMeleeBig (6)
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305446, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: au
@@ -71908,7 +72008,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4583202384698719520, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: damageValue
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
@@ -72361,7 +72461,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305441, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: m_Name
-      value: EnemyMelee (13)
+      value: EnemyMeleeBig (13)
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305446, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: au
@@ -72437,7 +72537,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4583202384698719520, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: damageValue
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
