@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1985235402}
-  m_IndirectSpecularColor: {r: 0.21237579, g: 0.094398744, b: 0.20564854, a: 1}
+  m_IndirectSpecularColor: {r: 0.21210527, g: 0.09366379, b: 0.20528564, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -39245,18 +39245,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4280266946748949723, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
-      propertyPath: maxDistance
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4280266946748949723, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
-      propertyPath: minDistance
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4280266946748949723, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
-      propertyPath: followRegardless
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
 --- !u!1001 &1097129401
@@ -41702,18 +41690,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305466, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4280266946748949723, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
-      propertyPath: maxDistance
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4280266946748949723, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
-      propertyPath: minDistance
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4280266946748949723, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
-      propertyPath: followRegardless
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -44610,18 +44586,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305466, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4280266946748949723, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
-      propertyPath: maxDistance
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4280266946748949723, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
-      propertyPath: minDistance
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4280266946748949723, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
-      propertyPath: followRegardless
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -50704,18 +50668,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305466, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4280266946748949723, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
-      propertyPath: maxDistance
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4280266946748949723, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
-      propertyPath: minDistance
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4280266946748949723, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
-      propertyPath: followRegardless
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -58447,18 +58399,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4280266946748949723, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
-      propertyPath: maxDistance
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4280266946748949723, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
-      propertyPath: minDistance
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4280266946748949723, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
-      propertyPath: followRegardless
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
 --- !u!1001 &1631172806
@@ -58684,18 +58624,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3193926999558305466, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4280266946748949723, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
-      propertyPath: maxDistance
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4280266946748949723, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
-      propertyPath: minDistance
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4280266946748949723, guid: 6028d8d4ec69af244aa3fd1ea5389b35, type: 3}
-      propertyPath: followRegardless
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
