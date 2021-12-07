@@ -17,7 +17,9 @@ public class HandlePlayerButtons : MonoBehaviour
     private void Start()
     {
         MaxHealthText.text = "Max Health: " + Stats.HealthMax;
+        healthButtonDesc.ChangeCost(Stats.healthUpgrades + 1);
         BulletDamageText.text = "Damage: " + Stats.BulletDamage;
+        bulletDamageDesc.ChangeCost(Stats.bulletUpgrades + 1);
     }
 
     // Handles the buttons for the health and damage block of the Weapon Rack UI
