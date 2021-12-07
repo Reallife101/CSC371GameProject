@@ -1078,6 +1078,9 @@ MonoBehaviour:
   clickUI: {fileID: 5999431462509837670}
   WeaponRackUI: {fileID: 0}
   on: 0
+  rh: {fileID: 0}
+  respawnPoint: {x: 0, y: 3, z: 0}
+  playerObject: {fileID: 0}
 --- !u!135 &5883501721873242322
 SphereCollider:
   m_ObjectHideFlags: 0
